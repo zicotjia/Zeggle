@@ -17,7 +17,8 @@ class Ball: ZeggleItem {
          collisionAction: @escaping () -> Void = {}) {
 
         super.init(centre: centre, hSpeed: hSpeed,
-                   vSpeed: vSpeed, radius: BallConstants.radius, mass: BallConstants.defaultMass,
+                   vSpeed: vSpeed, radius: BallConstants.radius,
+                   height: 0, width: 0, mass: BallConstants.defaultMass,
                    isFixed: false, elasticity: BallConstants.elasticity, shape: .round)
     }
 

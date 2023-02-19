@@ -7,4 +7,5 @@
 
 enum PhysicsBodyType {
     case round
+    case rectangle
 }

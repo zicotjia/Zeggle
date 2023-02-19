@@ -14,6 +14,8 @@ class PhysicsBody: Hashable, Collidable {
     private(set) var hSpeed: PhysicsVector1D
     private(set) var vSpeed: PhysicsVector1D
     private(set) var radius: PhysicsVector1D
+    private(set) var height: PhysicsVector1D
+    private(set) var width: PhysicsVector1D
     private(set) var mass: Float
     private(set) var isFixed: Bool
     private(set) var elasticity: Float
@@ -24,13 +26,16 @@ class PhysicsBody: Hashable, Collidable {
     }
 
     init(centre: PhysicsVector2D, hSpeed: CGFloat,
-         vSpeed: CGFloat, radius: CGFloat, mass: Float,
-         isFixed: Bool, elasticity: Float, collisionAction: @escaping () -> Void = {}) {
+         vSpeed: CGFloat, radius: CGFloat, height: CGFloat,
+         width: CGFloat, mass: Float, isFixed: Bool,
+         elasticity: Float, collisionAction: @escaping () -> Void = {}) {
         self.uuid = UUID().uuidString
         self.centre = centre
         self.hSpeed = PhysicsVector1D(magnitude: hSpeed)
         self.vSpeed = PhysicsVector1D(magnitude: vSpeed)
         self.radius = PhysicsVector1D(magnitude: radius)
+        self.height = PhysicsVector1D(magnitude: height)
+        self.width = PhysicsVector1D(magnitude: width)
         self.mass = mass
         self.isFixed = isFixed
         self.elasticity = elasticity
@@ -120,6 +125,10 @@ class PhysicsBody: Hashable, Collidable {
     }
 
     func isColliding(with body: LineBody) -> Bool {
+        body.isColliding(with: self)
+    }
+
+    func isColliding(with body: RectangleBody) -> Bool {
         body.isColliding(with: self)
     }
 

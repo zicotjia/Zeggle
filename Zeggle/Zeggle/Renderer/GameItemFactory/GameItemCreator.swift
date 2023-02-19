@@ -17,6 +17,8 @@ class GameItemCreator {
             BallCreator.createBall(item: item)
         case is Peg:
             PegCreator.createPeg(item: item)
+        case is Block:
+            BlockCreator.createBlock(item: item)
         default:
             EmptyView()
         }

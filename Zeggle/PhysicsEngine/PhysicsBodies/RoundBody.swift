@@ -4,8 +4,18 @@
 //
 //  Created by Zico on 12/2/23.
 //
+import CoreGraphics
 
 class RoundBody: PhysicsBody {
+
+    init(centre: PhysicsVector2D, hSpeed: CGFloat,
+         vSpeed: CGFloat, radius: CGFloat, mass: Float, isFixed: Bool,
+         elasticity: Float, collisionAction: @escaping () -> Void = {}) {
+
+        super.init(centre: centre, hSpeed: hSpeed, vSpeed: vSpeed,
+                   radius: radius, height: 0, width: 0, mass: mass,
+                   isFixed: isFixed, elasticity: elasticity)
+    }
 
     override func isColliding(with body: Collidable) -> Bool {
         body.isColliding(with: self)
@@ -28,6 +38,10 @@ class RoundBody: PhysicsBody {
 
         let isColliding = shortestDistance <= radius.magnitude
         return isColliding
+    }
+
+    override func isColliding(with body: RectangleBody) -> Bool {
+        return false
     }
 
 }

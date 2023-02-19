@@ -15,7 +15,7 @@ class Peg: ZeggleItem {
         self.color = color
         super.init(centre: centre, hSpeed: PegConstants.initialHorizontalSpeed,
                    vSpeed: PegConstants.initialVerticalSpeed, radius: PegConstants.radius,
-                   mass: PegConstants.defaultMass, isFixed: true,
+                   height: 0, width: 0, mass: PegConstants.defaultMass, isFixed: true,
                    elasticity: PegConstants.defaultElasticity, shape: .round)
 
         physicsBody.setCollisionAction {

@@ -17,8 +17,9 @@ class ZeggleItem: Hashable {
     }
 
     init(centre: PhysicsVector2D, hSpeed: CGFloat,
-         vSpeed: CGFloat, radius: CGFloat, mass: Float,
-         isFixed: Bool, elasticity: Float, shape: PhysicsBodyType) {
+         vSpeed: CGFloat, radius: CGFloat, height: CGFloat,
+         width: CGFloat, mass: Float, isFixed: Bool, elasticity: Float,
+         shape: PhysicsBodyType) {
 
         self.removeFlag = false
         self.undergoingDeletion = false
@@ -28,6 +29,10 @@ class ZeggleItem: Hashable {
             self.physicsBody = RoundBody(centre: centre, hSpeed: hSpeed,
                                            vSpeed: vSpeed, radius: radius, mass: mass,
                                            isFixed: isFixed, elasticity: elasticity)
+        case PhysicsBodyType.rectangle:
+            self.physicsBody = RectangleBody(centre: centre, hSpeed: hSpeed,
+                                             vSpeed: vSpeed, height: height, width: width,
+                                             mass: mass, isFixed: isFixed, elasticity: elasticity)
         }
 
     }

@@ -16,14 +16,14 @@ class LineBody: PhysicsBody {
     }
 
     init(hSpeed: CGFloat, vSpeed: CGFloat,
-         radius: CGFloat, mass: Float, isFixed: Bool,
+         mass: Float, isFixed: Bool,
          elasticity: Float, collisionAction: @escaping () -> Void = {},
          start: CGPoint, end: CGPoint) {
         self.start = PhysicsVector2D(centre: start)
         self.end = PhysicsVector2D(centre: end)
         let centre = self.start.centre(with: self.end)
         super.init(centre: centre, hSpeed: hSpeed, vSpeed: vSpeed,
-                   radius: radius, mass: mass, isFixed: isFixed,
+                   radius: 0, height: 0, width: 0, mass: mass, isFixed: isFixed,
                    elasticity: elasticity, collisionAction: collisionAction)
     }
 
@@ -59,6 +59,14 @@ class LineBody: PhysicsBody {
 
         let isColliding = shortestDistance <= radius.magnitude
         return isColliding
+    }
+
+    override func isColliding(with body: LineBody) -> Bool {
+        return false
+    }
+
+    override func isColliding(with body: RectangleBody) -> Bool {
+        return false
     }
 
 }

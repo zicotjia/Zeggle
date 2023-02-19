@@ -13,4 +13,5 @@ struct ImageNameToFile {
     static let ball = "ball"
     static let background = "background"
     static let cannon = "cannon copy"
+    static let block = "rectangle-gray"
 }
