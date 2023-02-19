@@ -119,4 +119,8 @@ class PhysicsBody: Hashable, Collidable {
         body.isColliding(with: self)
     }
 
+    func isColliding(with body: LineBody) -> Bool {
+        body.isColliding(with: self)
+    }
+
 }

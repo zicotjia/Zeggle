@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF029A26BDE00F387A2 /* LineBody.swift */; };
 		178ACD942999255700135CBC /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 178ACD932999255700135CBC /* Diagrams */; };
 		17AB3DF32996903500962B4D /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF22996903500962B4D /* GameLoop.swift */; };
 		17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF4299691B000962B4D /* CannonConstants.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17543FF029A26BDE00F387A2 /* LineBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBody.swift; sourceTree = "<group>"; };
 		178ACD932999255700135CBC /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../Diagrams; sourceTree = "<group>"; };
 		17AB3DF22996903500962B4D /* GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoop.swift; sourceTree = "<group>"; };
 		17AB3DF4299691B000962B4D /* CannonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonConstants.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				17C87E8D2998015F00AB8141 /* RoundBody.swift */,
 				17C87E8F299801B600AB8141 /* Collidable.swift */,
 				17C87E912998102200AB8141 /* PhysicsBodyTypes.swift */,
+				17543FF029A26BDE00F387A2 /* LineBody.swift */,
 			);
 			path = PhysicsBodies;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				17C381E429900F1C00417B5A /* PhysicsVector2D.swift in Sources */,
 				17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */,
 				17CA29AF2994091C006C66B9 /* BallConstants.swift in Sources */,
+				17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */,
 				17AB3DF32996903500962B4D /* GameLoop.swift in Sources */,
 				17CA29AD29940848006C66B9 /* PegConstants.swift in Sources */,
 				17CA298D2991805D006C66B9 /* CollisionResolver.swift in Sources */,

@@ -12,4 +12,6 @@ protocol Collidable {
     func isColliding(with body: PhysicsBody) -> Bool
 
     func isColliding(with body: RoundBody) -> Bool
+
+    func isColliding(with body: LineBody) -> Bool
 }

@@ -38,6 +38,11 @@ struct PhysicsVector2D {
         self.hVector = PhysicsVector1D.nullVector
     }
 
+    init(centre: CGPoint) {
+        self.hVector = PhysicsVector1D(magnitude: centre.x)
+        self.vVector = PhysicsVector1D(magnitude: centre.y)
+    }
+
     func add(vector: PhysicsVector2D) -> PhysicsVector2D {
         let newHorizontal = hVector.add(vector: vector.hVector)
         let newVertical = vVector.add(vector: vector.vVector)
@@ -92,6 +97,15 @@ struct PhysicsVector2D {
         return Float(hTimesV.magnitude - vTimesH.magnitude)
     }
 
+    func projection(on vector: PhysicsVector2D) -> PhysicsVector2D {
+        let dotProduct = dotProduct(vector: vector)
+        let magnitude = vector.magnitude
+        let scalarProjection = CGFloat(dotProduct) / pow(magnitude, 2)
+        let projectionH = vector.hVector.multiplyMagnitude(by: scalarProjection)
+        let projectionV = vector.vVector.multiplyMagnitude(by: scalarProjection)
+        return PhysicsVector2D(horizontalVector: projectionH, verticalVector: projectionV)
+    }
+
     func angle(with vector: PhysicsVector2D) -> Float {
         let dotProduct = dotProduct(vector: vector)
         let determinant = determinant(vector: vector)
@@ -104,6 +118,12 @@ struct PhysicsVector2D {
         let horizontalVector = hVector.reverse()
         let verticaVector = vVector.reverse()
         return PhysicsVector2D(horizontalVector: horizontalVector, verticalVector: verticaVector)
+    }
+
+    func centre(with vector: PhysicsVector2D) -> PhysicsVector2D {
+        let horizontalCentre = hVector.add(vector: vector.hVector).divideMagnitude(by: 2)
+        let verticalCentre = vVector.add(vector: vector.vVector).divideMagnitude(by: 2)
+        return PhysicsVector2D(horizontalVector: horizontalCentre, verticalVector: verticalCentre)
     }
 
 }

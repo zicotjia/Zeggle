@@ -22,4 +22,12 @@ class RoundBody: PhysicsBody {
 
         return isOverlapping
     }
+
+    override func isColliding(with body: LineBody) -> Bool {
+        let shortestDistance = body.distance(to: centre)
+
+        let isColliding = shortestDistance <= radius.magnitude
+        return isColliding
+    }
+
 }
