@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		178ACD942999255700135CBC /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 178ACD932999255700135CBC /* Diagrams */; };
+		17AB3DF32996903500962B4D /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF22996903500962B4D /* GameLoop.swift */; };
+		17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF4299691B000962B4D /* CannonConstants.swift */; };
+		17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF6299692F400962B4D /* ItemRemoverA.swift */; };
+		17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF82996955300962B4D /* GameLoopConstants.swift */; };
+		17AB3DFE29969CBB00962B4D /* GameItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DFD29969CBB00962B4D /* GameItemListView.swift */; };
+		17AB3E0029969DBC00962B4D /* PegCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DFF29969DBC00962B4D /* PegCreator.swift */; };
+		17AB3E0329969E5C00962B4D /* PegColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3E0229969E5C00962B4D /* PegColor.swift */; };
+		17AB3E062996B25E00962B4D /* SampleLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3E052996B25E00962B4D /* SampleLevel.swift */; };
+		17C381BA298FFE3B00417B5A /* ZeggleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381B9298FFE3B00417B5A /* ZeggleApp.swift */; };
+		17C381BC298FFE3B00417B5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381BB298FFE3B00417B5A /* ContentView.swift */; };
+		17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C381BD298FFE3C00417B5A /* Assets.xcassets */; };
+		17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C381C0298FFE3C00417B5A /* Preview Assets.xcassets */; };
+		17C381D1298FFF3800417B5A /* PhysicsWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381D0298FFF3800417B5A /* PhysicsWorld.swift */; };
+		17C381D92990040B00417B5A /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381D82990040B00417B5A /* PhysicsBody.swift */; };
+		17C381DF2990079B00417B5A /* PhysicsVector1D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381DE2990079B00417B5A /* PhysicsVector1D.swift */; };
+		17C381E429900F1C00417B5A /* PhysicsVector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C381E329900F1C00417B5A /* PhysicsVector2D.swift */; };
+		17C87E842997EC8100AB8141 /* BallCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E832997EC8100AB8141 /* BallCreator.swift */; };
+		17C87E862997EE3D00AB8141 /* ImageNameToFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E852997EE3D00AB8141 /* ImageNameToFile.swift */; };
+		17C87E892997F3D000AB8141 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E882997F3D000AB8141 /* HelperFunctions.swift */; };
+		17C87E8C2997FFDE00AB8141 /* ZeggleItemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E8B2997FFDE00AB8141 /* ZeggleItemConstants.swift */; };
+		17C87E8E2998015F00AB8141 /* RoundBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E8D2998015F00AB8141 /* RoundBody.swift */; };
+		17C87E90299801B600AB8141 /* Collidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E8F299801B600AB8141 /* Collidable.swift */; };
+		17C87E922998102200AB8141 /* PhysicsBodyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E912998102200AB8141 /* PhysicsBodyTypes.swift */; };
+		17C87E952998252B00AB8141 /* MathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C87E942998252B00AB8141 /* MathHelper.swift */; };
+		17CA298B29917E2D006C66B9 /* WorldBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA298A29917E2D006C66B9 /* WorldBoundaries.swift */; };
+		17CA298D2991805D006C66B9 /* CollisionResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA298C2991805D006C66B9 /* CollisionResolver.swift */; };
+		17CA298F2992AC71006C66B9 /* BoundaryCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA298E2992AC71006C66B9 /* BoundaryCollision.swift */; };
+		17CA29912992B386006C66B9 /* BodiesCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29902992B386006C66B9 /* BodiesCollision.swift */; };
+		17CA29942992C69B006C66B9 /* CollisionResolverA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29932992C69B006C66B9 /* CollisionResolverA.swift */; };
+		17CA299C29940139006C66B9 /* EventResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA299B29940139006C66B9 /* EventResolver.swift */; };
+		17CA29A0299401A0006C66B9 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA299F299401A0006C66B9 /* Level.swift */; };
+		17CA29A2299401CB006C66B9 /* ZeggleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29A1299401CB006C66B9 /* ZeggleItem.swift */; };
+		17CA29A429940324006C66B9 /* Peg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29A329940324006C66B9 /* Peg.swift */; };
+		17CA29A629940580006C66B9 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29A529940580006C66B9 /* Ball.swift */; };
+		17CA29AB2994080E006C66B9 /* DimensionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29AA2994080E006C66B9 /* DimensionConstants.swift */; };
+		17CA29AD29940848006C66B9 /* PegConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29AC29940848006C66B9 /* PegConstants.swift */; };
+		17CA29AF2994091C006C66B9 /* BallConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29AE2994091C006C66B9 /* BallConstants.swift */; };
+		17CA29B129940A67006C66B9 /* WorldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29B029940A67006C66B9 /* WorldConstants.swift */; };
+		17CA29B4299528EF006C66B9 /* Resolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29B3299528EF006C66B9 /* Resolvable.swift */; };
+		17CA29B7299555C5006C66B9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29B6299555C5006C66B9 /* GameView.swift */; };
+		17CA29B9299555E3006C66B9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29B8299555E3006C66B9 /* GameScene.swift */; };
+		17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29BA2995560F006C66B9 /* BackgroundView.swift */; };
+		17CA29BE29955726006C66B9 /* PegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29BD29955726006C66B9 /* PegView.swift */; };
+		17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C129955A2B006C66B9 /* CannonView.swift */; };
+		17CA29C429955A84006C66B9 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C329955A84006C66B9 /* BallView.swift */; };
+		17CA29C6299569F4006C66B9 /* GameItemCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C5299569F4006C66B9 /* GameItemCreator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		178ACD932999255700135CBC /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../Diagrams; sourceTree = "<group>"; };
+		17AB3DF22996903500962B4D /* GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoop.swift; sourceTree = "<group>"; };
+		17AB3DF4299691B000962B4D /* CannonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonConstants.swift; sourceTree = "<group>"; };
+		17AB3DF6299692F400962B4D /* ItemRemoverA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRemoverA.swift; sourceTree = "<group>"; };
+		17AB3DF82996955300962B4D /* GameLoopConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoopConstants.swift; sourceTree = "<group>"; };
+		17AB3DFD29969CBB00962B4D /* GameItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemListView.swift; sourceTree = "<group>"; };
+		17AB3DFF29969DBC00962B4D /* PegCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegCreator.swift; sourceTree = "<group>"; };
+		17AB3E0229969E5C00962B4D /* PegColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegColor.swift; sourceTree = "<group>"; };
+		17AB3E052996B25E00962B4D /* SampleLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLevel.swift; sourceTree = "<group>"; };
+		17C381B6298FFE3B00417B5A /* Zeggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C381B9298FFE3B00417B5A /* ZeggleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeggleApp.swift; sourceTree = "<group>"; };
+		17C381BB298FFE3B00417B5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17C381BD298FFE3C00417B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17C381C0298FFE3C00417B5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		17C381D0298FFF3800417B5A /* PhysicsWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsWorld.swift; sourceTree = "<group>"; };
+		17C381D82990040B00417B5A /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
+		17C381DE2990079B00417B5A /* PhysicsVector1D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsVector1D.swift; sourceTree = "<group>"; };
+		17C381E329900F1C00417B5A /* PhysicsVector2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsVector2D.swift; sourceTree = "<group>"; };
+		17C87E832997EC8100AB8141 /* BallCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallCreator.swift; sourceTree = "<group>"; };
+		17C87E852997EE3D00AB8141 /* ImageNameToFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameToFile.swift; sourceTree = "<group>"; };
+		17C87E882997F3D000AB8141 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		17C87E8B2997FFDE00AB8141 /* ZeggleItemConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeggleItemConstants.swift; sourceTree = "<group>"; };
+		17C87E8D2998015F00AB8141 /* RoundBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBody.swift; sourceTree = "<group>"; };
+		17C87E8F299801B600AB8141 /* Collidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collidable.swift; sourceTree = "<group>"; };
+		17C87E912998102200AB8141 /* PhysicsBodyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyTypes.swift; sourceTree = "<group>"; };
+		17C87E942998252B00AB8141 /* MathHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathHelper.swift; sourceTree = "<group>"; };
+		17CA298A29917E2D006C66B9 /* WorldBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldBoundaries.swift; sourceTree = "<group>"; };
+		17CA298C2991805D006C66B9 /* CollisionResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionResolver.swift; sourceTree = "<group>"; };
+		17CA298E2992AC71006C66B9 /* BoundaryCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundaryCollision.swift; sourceTree = "<group>"; };
+		17CA29902992B386006C66B9 /* BodiesCollision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodiesCollision.swift; sourceTree = "<group>"; };
+		17CA29932992C69B006C66B9 /* CollisionResolverA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionResolverA.swift; sourceTree = "<group>"; };
+		17CA299B29940139006C66B9 /* EventResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResolver.swift; sourceTree = "<group>"; };
+		17CA299F299401A0006C66B9 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		17CA29A1299401CB006C66B9 /* ZeggleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeggleItem.swift; sourceTree = "<group>"; };
+		17CA29A329940324006C66B9 /* Peg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peg.swift; sourceTree = "<group>"; };
+		17CA29A529940580006C66B9 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		17CA29AA2994080E006C66B9 /* DimensionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionConstants.swift; sourceTree = "<group>"; };
+		17CA29AC29940848006C66B9 /* PegConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegConstants.swift; sourceTree = "<group>"; };
+		17CA29AE2994091C006C66B9 /* BallConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallConstants.swift; sourceTree = "<group>"; };
+		17CA29B029940A67006C66B9 /* WorldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldConstants.swift; sourceTree = "<group>"; };
+		17CA29B3299528EF006C66B9 /* Resolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolvable.swift; sourceTree = "<group>"; };
+		17CA29B6299555C5006C66B9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		17CA29B8299555E3006C66B9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		17CA29BA2995560F006C66B9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		17CA29BD29955726006C66B9 /* PegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegView.swift; sourceTree = "<group>"; };
+		17CA29C129955A2B006C66B9 /* CannonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonView.swift; sourceTree = "<group>"; };
+		17CA29C329955A84006C66B9 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		17CA29C5299569F4006C66B9 /* GameItemCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemCreator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17C381B3298FFE3B00417B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17AB3E0129969E4D00962B4D /* ItemStates */ = {
+			isa = PBXGroup;
+			children = (
+				17AB3E0229969E5C00962B4D /* PegColor.swift */,
+			);
+			path = ItemStates;
+			sourceTree = "<group>";
+		};
+		17AB3E042996B24B00962B4D /* SampleLevel */ = {
+			isa = PBXGroup;
+			children = (
+				17AB3E052996B25E00962B4D /* SampleLevel.swift */,
+			);
+			path = SampleLevel;
+			sourceTree = "<group>";
+		};
+		17C381AD298FFE3B00417B5A = {
+			isa = PBXGroup;
+			children = (
+				178ACD932999255700135CBC /* Diagrams */,
+				17C381C7298FFE4500417B5A /* PhysicsEngine */,
+				17C381B8298FFE3B00417B5A /* Zeggle */,
+				17C381B7298FFE3B00417B5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17C381B7298FFE3B00417B5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17C381B6298FFE3B00417B5A /* Zeggle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17C381B8298FFE3B00417B5A /* Zeggle */ = {
+			isa = PBXGroup;
+			children = (
+				17C87E872997F3C500AB8141 /* HelperFunctions */,
+				17AB3E042996B24B00962B4D /* SampleLevel */,
+				17CA29B5299555AA006C66B9 /* Renderer */,
+				17C381C8298FFE5000417B5A /* ZeggleEngine */,
+				17C381B9298FFE3B00417B5A /* ZeggleApp.swift */,
+				17C381BB298FFE3B00417B5A /* ContentView.swift */,
+				17C381BD298FFE3C00417B5A /* Assets.xcassets */,
+				17C381BF298FFE3C00417B5A /* Preview Content */,
+			);
+			path = Zeggle;
+			sourceTree = "<group>";
+		};
+		17C381BF298FFE3C00417B5A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				17C381C0298FFE3C00417B5A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		17C381C7298FFE4500417B5A /* PhysicsEngine */ = {
+			isa = PBXGroup;
+			children = (
+				17C381D72990003500417B5A /* PhysicsBodies */,
+				17C381CA298FFEB600417B5A /* Event */,
+				17C381D0298FFF3800417B5A /* PhysicsWorld.swift */,
+				17C381DE2990079B00417B5A /* PhysicsVector1D.swift */,
+				17C381E329900F1C00417B5A /* PhysicsVector2D.swift */,
+				17CA298A29917E2D006C66B9 /* WorldBoundaries.swift */,
+				17C87E942998252B00AB8141 /* MathHelper.swift */,
+			);
+			path = PhysicsEngine;
+			sourceTree = "<group>";
+		};
+		17C381C8298FFE5000417B5A /* ZeggleEngine */ = {
+			isa = PBXGroup;
+			children = (
+				17AB3E0129969E4D00962B4D /* ItemStates */,
+				17CA29A9299407D9006C66B9 /* GameConstants */,
+				17CA29962993F56E006C66B9 /* ZeggleEngine */,
+				17CA29952993F563006C66B9 /* GameLoop */,
+			);
+			path = ZeggleEngine;
+			sourceTree = "<group>";
+		};
+		17C381CA298FFEB600417B5A /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				17C381D2298FFF4000417B5A /* Collision */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		17C381D2298FFF4000417B5A /* Collision */ = {
+			isa = PBXGroup;
+			children = (
+				17CA298C2991805D006C66B9 /* CollisionResolver.swift */,
+				17CA298E2992AC71006C66B9 /* BoundaryCollision.swift */,
+				17CA29B3299528EF006C66B9 /* Resolvable.swift */,
+				17CA29902992B386006C66B9 /* BodiesCollision.swift */,
+				17CA29932992C69B006C66B9 /* CollisionResolverA.swift */,
+			);
+			path = Collision;
+			sourceTree = "<group>";
+		};
+		17C381D72990003500417B5A /* PhysicsBodies */ = {
+			isa = PBXGroup;
+			children = (
+				17C381D82990040B00417B5A /* PhysicsBody.swift */,
+				17C87E8D2998015F00AB8141 /* RoundBody.swift */,
+				17C87E8F299801B600AB8141 /* Collidable.swift */,
+				17C87E912998102200AB8141 /* PhysicsBodyTypes.swift */,
+			);
+			path = PhysicsBodies;
+			sourceTree = "<group>";
+		};
+		17C87E822997EC6A00AB8141 /* GameItemFactory */ = {
+			isa = PBXGroup;
+			children = (
+				17AB3DFF29969DBC00962B4D /* PegCreator.swift */,
+				17CA29C5299569F4006C66B9 /* GameItemCreator.swift */,
+				17C87E832997EC8100AB8141 /* BallCreator.swift */,
+			);
+			path = GameItemFactory;
+			sourceTree = "<group>";
+		};
+		17C87E872997F3C500AB8141 /* HelperFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				17C87E882997F3D000AB8141 /* HelperFunctions.swift */,
+			);
+			path = HelperFunctions;
+			sourceTree = "<group>";
+		};
+		17CA29952993F563006C66B9 /* GameLoop */ = {
+			isa = PBXGroup;
+			children = (
+				17AB3DF22996903500962B4D /* GameLoop.swift */,
+			);
+			path = GameLoop;
+			sourceTree = "<group>";
+		};
+		17CA29962993F56E006C66B9 /* ZeggleEngine */ = {
+			isa = PBXGroup;
+			children = (
+				17CA299E29940178006C66B9 /* GameItems */,
+				17CA299D2994016C006C66B9 /* Level */,
+				17CA29982994010D006C66B9 /* Delegates */,
+			);
+			path = ZeggleEngine;
+			sourceTree = "<group>";
+		};
+		17CA29982994010D006C66B9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				17CA299B29940139006C66B9 /* EventResolver.swift */,
+				17AB3DF6299692F400962B4D /* ItemRemoverA.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		17CA299D2994016C006C66B9 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				17CA299F299401A0006C66B9 /* Level.swift */,
+			);
+			path = Level;
+			sourceTree = "<group>";
+		};
+		17CA299E29940178006C66B9 /* GameItems */ = {
+			isa = PBXGroup;
+			children = (
+				17CA29A1299401CB006C66B9 /* ZeggleItem.swift */,
+				17CA29A329940324006C66B9 /* Peg.swift */,
+				17CA29A529940580006C66B9 /* Ball.swift */,
+			);
+			path = GameItems;
+			sourceTree = "<group>";
+		};
+		17CA29A9299407D9006C66B9 /* GameConstants */ = {
+			isa = PBXGroup;
+			children = (
+				17CA29AA2994080E006C66B9 /* DimensionConstants.swift */,
+				17CA29AC29940848006C66B9 /* PegConstants.swift */,
+				17CA29AE2994091C006C66B9 /* BallConstants.swift */,
+				17CA29B029940A67006C66B9 /* WorldConstants.swift */,
+				17AB3DF4299691B000962B4D /* CannonConstants.swift */,
+				17AB3DF82996955300962B4D /* GameLoopConstants.swift */,
+				17C87E852997EE3D00AB8141 /* ImageNameToFile.swift */,
+				17C87E8B2997FFDE00AB8141 /* ZeggleItemConstants.swift */,
+			);
+			path = GameConstants;
+			sourceTree = "<group>";
+		};
+		17CA29B5299555AA006C66B9 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				17C87E822997EC6A00AB8141 /* GameItemFactory */,
+				17CA29BC29955719006C66B9 /* GameItemView */,
+				17CA29B6299555C5006C66B9 /* GameView.swift */,
+				17CA29C129955A2B006C66B9 /* CannonView.swift */,
+				17CA29B8299555E3006C66B9 /* GameScene.swift */,
+				17CA29BA2995560F006C66B9 /* BackgroundView.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		17CA29BC29955719006C66B9 /* GameItemView */ = {
+			isa = PBXGroup;
+			children = (
+				17CA29BD29955726006C66B9 /* PegView.swift */,
+				17CA29C329955A84006C66B9 /* BallView.swift */,
+				17AB3DFD29969CBB00962B4D /* GameItemListView.swift */,
+			);
+			path = GameItemView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17C381B5298FFE3B00417B5A /* Zeggle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17C381C4298FFE3C00417B5A /* Build configuration list for PBXNativeTarget "Zeggle" */;
+			buildPhases = (
+				17C381B2298FFE3B00417B5A /* Sources */,
+				17C381B3298FFE3B00417B5A /* Frameworks */,
+				17C381B4298FFE3B00417B5A /* Resources */,
+				17C87E8A2997FECA00AB8141 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zeggle;
+			productName = Zeggle;
+			productReference = 17C381B6298FFE3B00417B5A /* Zeggle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17C381AE298FFE3B00417B5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					17C381B5298FFE3B00417B5A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 17C381B1298FFE3B00417B5A /* Build configuration list for PBXProject "Zeggle" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17C381AD298FFE3B00417B5A;
+			productRefGroup = 17C381B7298FFE3B00417B5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17C381B5298FFE3B00417B5A /* Zeggle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17C381B4298FFE3B00417B5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */,
+				178ACD942999255700135CBC /* Diagrams in Resources */,
+				17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17C87E8A2997FECA00AB8141 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17C381B2298FFE3B00417B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17CA298B29917E2D006C66B9 /* WorldBoundaries.swift in Sources */,
+				17C381E429900F1C00417B5A /* PhysicsVector2D.swift in Sources */,
+				17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */,
+				17CA29AF2994091C006C66B9 /* BallConstants.swift in Sources */,
+				17AB3DF32996903500962B4D /* GameLoop.swift in Sources */,
+				17CA29AD29940848006C66B9 /* PegConstants.swift in Sources */,
+				17CA298D2991805D006C66B9 /* CollisionResolver.swift in Sources */,
+				17AB3E0329969E5C00962B4D /* PegColor.swift in Sources */,
+				17C87E8E2998015F00AB8141 /* RoundBody.swift in Sources */,
+				17C87E952998252B00AB8141 /* MathHelper.swift in Sources */,
+				17C87E922998102200AB8141 /* PhysicsBodyTypes.swift in Sources */,
+				17CA29A0299401A0006C66B9 /* Level.swift in Sources */,
+				17C87E90299801B600AB8141 /* Collidable.swift in Sources */,
+				17CA29B129940A67006C66B9 /* WorldConstants.swift in Sources */,
+				17CA29A429940324006C66B9 /* Peg.swift in Sources */,
+				17CA29BE29955726006C66B9 /* PegView.swift in Sources */,
+				17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */,
+				17CA29B4299528EF006C66B9 /* Resolvable.swift in Sources */,
+				17C381D1298FFF3800417B5A /* PhysicsWorld.swift in Sources */,
+				17C87E862997EE3D00AB8141 /* ImageNameToFile.swift in Sources */,
+				17AB3DFE29969CBB00962B4D /* GameItemListView.swift in Sources */,
+				17CA29C6299569F4006C66B9 /* GameItemCreator.swift in Sources */,
+				17C87E8C2997FFDE00AB8141 /* ZeggleItemConstants.swift in Sources */,
+				17CA29B9299555E3006C66B9 /* GameScene.swift in Sources */,
+				17CA29A629940580006C66B9 /* Ball.swift in Sources */,
+				17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */,
+				17C87E892997F3D000AB8141 /* HelperFunctions.swift in Sources */,
+				17CA29C429955A84006C66B9 /* BallView.swift in Sources */,
+				17CA299C29940139006C66B9 /* EventResolver.swift in Sources */,
+				17C87E842997EC8100AB8141 /* BallCreator.swift in Sources */,
+				17CA29AB2994080E006C66B9 /* DimensionConstants.swift in Sources */,
+				17C381DF2990079B00417B5A /* PhysicsVector1D.swift in Sources */,
+				17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */,
+				17CA29A2299401CB006C66B9 /* ZeggleItem.swift in Sources */,
+				17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */,
+				17AB3E0029969DBC00962B4D /* PegCreator.swift in Sources */,
+				17CA29942992C69B006C66B9 /* CollisionResolverA.swift in Sources */,
+				17CA29912992B386006C66B9 /* BodiesCollision.swift in Sources */,
+				17C381BC298FFE3B00417B5A /* ContentView.swift in Sources */,
+				17AB3E062996B25E00962B4D /* SampleLevel.swift in Sources */,
+				17C381BA298FFE3B00417B5A /* ZeggleApp.swift in Sources */,
+				17C381D92990040B00417B5A /* PhysicsBody.swift in Sources */,
+				17CA29B7299555C5006C66B9 /* GameView.swift in Sources */,
+				17CA298F2992AC71006C66B9 /* BoundaryCollision.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		17C381C2298FFE3C00417B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17C381C3298FFE3C00417B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17C381C5298FFE3C00417B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Zeggle/Preview Content\"";
+				DEVELOPMENT_TEAM = Y8H2DUL2HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hello.Zeggle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17C381C6298FFE3C00417B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Zeggle/Preview Content\"";
+				DEVELOPMENT_TEAM = Y8H2DUL2HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hello.Zeggle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17C381B1298FFE3B00417B5A /* Build configuration list for PBXProject "Zeggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C381C2298FFE3C00417B5A /* Debug */,
+				17C381C3298FFE3C00417B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17C381C4298FFE3C00417B5A /* Build configuration list for PBXNativeTarget "Zeggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C381C5298FFE3C00417B5A /* Debug */,
+				17C381C6298FFE3C00417B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17C381AE298FFE3B00417B5A /* Project object */;
+}
