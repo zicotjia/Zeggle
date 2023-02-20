@@ -15,6 +15,10 @@ class LineBody: PhysicsBody {
         abs(start.distance(with: end))
     }
 
+    var normal: PhysicsVector2D {
+        end.substract(vector: start).perpendicular.normalize()
+    }
+
     init(hSpeed: CGFloat, vSpeed: CGFloat,
          mass: Float, isFixed: Bool,
          elasticity: Float, collisionAction: @escaping () -> Void = {},
@@ -27,11 +31,24 @@ class LineBody: PhysicsBody {
                    elasticity: elasticity, collisionAction: collisionAction)
     }
 
+    init(hSpeed: CGFloat, vSpeed: CGFloat,
+         mass: Float, isFixed: Bool,
+         elasticity: Float, collisionAction: @escaping () -> Void = {},
+         start: PhysicsVector2D, end: PhysicsVector2D) {
+        self.start = start
+        self.end = end
+        let centre = self.start.centre(with: self.end)
+        super.init(centre: centre, hSpeed: hSpeed, vSpeed: vSpeed,
+                   radius: 0, height: 0, width: 0, mass: mass, isFixed: isFixed,
+                   elasticity: elasticity, collisionAction: collisionAction)
+    }
+
     func distance(to centre: PhysicsVector2D) -> CGFloat {
         let startToEnd = end.substract(vector: start)
         let startToCentre = centre.substract(vector: start)
 
         let projection = startToCentre.projection(on: startToEnd)
+
         let pointOfShortestDistance = start.add(vector: projection)
 
         let startToPoint = pointOfShortestDistance.substract(vector: start)
@@ -41,12 +58,12 @@ class LineBody: PhysicsBody {
             : startToPoint.vVector.magnitude / startToEnd.vVector.magnitude
 
         if temp <= 0.0 {
-            return sqrt(centre.distance(with: start))
+            return centre.distance(with: start)
         } else if temp >= 1.0 {
-            return sqrt(centre.distance(with: end))
+            return centre.distance(with: end)
         }
 
-        return sqrt(centre.distance(with: pointOfShortestDistance))
+        return centre.distance(with: pointOfShortestDistance)
     }
 
     override func isColliding(with body: Collidable) -> Bool {

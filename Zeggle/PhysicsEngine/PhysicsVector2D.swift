@@ -15,7 +15,11 @@ struct PhysicsVector2D {
     private(set) var vVector: PhysicsVector1D
 
     var magnitude: CGFloat {
-        return hypot(hVector.magnitude, vVector.magnitude)
+        hypot(hVector.magnitude, vVector.magnitude)
+    }
+
+    var perpendicular: PhysicsVector2D {
+        PhysicsVector2D(horizontalVector: vVector, verticalVector: hVector)
     }
 
     init(horizontal: CGFloat, vertical: CGFloat) {

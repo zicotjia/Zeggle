@@ -37,6 +37,9 @@ class RoundBody: PhysicsBody {
         let shortestDistance = body.distance(to: centre)
 
         let isColliding = shortestDistance <= radius.magnitude
+        if isColliding {
+            print(shortestDistance)
+        }
         return isColliding
     }
 

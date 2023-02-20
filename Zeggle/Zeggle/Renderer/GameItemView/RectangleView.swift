@@ -14,7 +14,7 @@ struct RectangleView: View {
         Image(ImageNameToFile.block)
             .resizable()
             .border(.black, width: 3)
-            .frame(width: rectangle.physicsBody.height.magnitude, height: rectangle.physicsBody.width.magnitude)
+            .frame(width: rectangle.physicsBody.width.magnitude, height: rectangle.physicsBody.height.magnitude)
             .position(x: rectangle.physicsBody.centre.hVector.magnitude,
                       y: rectangle.physicsBody.centre.vVector.magnitude)
             .opacity(rectangle.healthBar)

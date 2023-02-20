@@ -18,6 +18,7 @@ class BodiesCollision: Resolvable {
     }
 
     func resolve() {
+
         entityTwo.collisionAction()
         entityOne.collisionAction()
         applyVelocityChanges()
@@ -31,9 +32,31 @@ class BodiesCollision: Resolvable {
         return collidableOne.isColliding(with: collidableTwo)
     }
 
-    private func findNormal() -> PhysicsVector2D {
+    private func findNormal() -> PhysicsVector2D? {
         let entityOneCentre = entityOne.centre
         let entityTwoCentre = entityTwo.centre
+
+        if let line = entityOne as? LineBody {
+            return line.normal
+        }
+
+        if let line = entityTwo as? LineBody {
+            return line.normal
+        }
+
+        if let rect = entityOne as? RectangleBody {
+            guard let line = rect.getSideThatCollide(with: entityTwo) else {
+                return nil
+            }
+            return line.normal
+        }
+
+        if let rect = entityTwo as? RectangleBody {
+            guard let line = rect.getSideThatCollide(with: entityOne) else {
+                return nil
+            }
+            return line.normal
+        }
 
         let differenceVector = entityOneCentre.substract(vector: entityTwoCentre)
         return differenceVector.normalize()
@@ -42,7 +65,10 @@ class BodiesCollision: Resolvable {
     private func applyVelocityChanges() {
         let minElasticity: Float = min(entityOne.elasticity, entityTwo.elasticity)
         let relativeVelocity = entityTwo.velocity.substract(vector: entityOne.velocity)
-        let normal = findNormal()
+
+        guard let normal = findNormal() else {
+            return
+        }
 
         let velocityAlongNormal = relativeVelocity.dotProduct(vector: normal)
         let inverseOfMassOne = 1.0 / entityOne.mass
@@ -53,15 +79,14 @@ class BodiesCollision: Resolvable {
 
         let impulse = normal.multiply(by: CGFloat(scalarImpulse))
 
-        immediatelyDisplaceCollidingItem(entity: entityTwo)
-        immediatelyDisplaceCollidingItem(entity: entityOne)
-
         if !entityOne.isFixed {
+            immediatelyDisplaceCollidingItem(entity: entityOne)
             let velocityChange = impulse.multiply(by: 1 / CGFloat((entityOne.mass * -1)))
             entityOne.addVelocity(with: velocityChange)
         }
 
         if !entityTwo.isFixed {
+            immediatelyDisplaceCollidingItem(entity: entityTwo)
             let velocityChange = impulse.multiply(by: 1 / CGFloat((entityTwo.mass)))
             entityTwo.addVelocity(with: velocityChange)
         }

@@ -12,7 +12,7 @@ struct ZeggleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GameView(scene: GameScene(gameLoop: GameLoop(level: SampleLevel.level)))
+            GameView(scene: GameScene(gameLoop: GameLoop(level: SampleLevel.testBlock)))
 
         }
     }

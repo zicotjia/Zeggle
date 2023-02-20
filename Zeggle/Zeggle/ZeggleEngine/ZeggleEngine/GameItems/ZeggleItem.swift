@@ -29,10 +29,14 @@ class ZeggleItem: Hashable {
             self.physicsBody = RoundBody(centre: centre, hSpeed: hSpeed,
                                            vSpeed: vSpeed, radius: radius, mass: mass,
                                            isFixed: isFixed, elasticity: elasticity)
-        case PhysicsBodyType.rectangle:
+        case .rectangle:
             self.physicsBody = RectangleBody(centre: centre, hSpeed: hSpeed,
                                              vSpeed: vSpeed, height: height, width: width,
                                              mass: mass, isFixed: isFixed, elasticity: elasticity)
+        case .line:
+            self.physicsBody = LineBody(hSpeed: 0, vSpeed: 0, mass: PegConstants.defaultMass,
+                                        isFixed: isFixed, elasticity: 1.0, start: CGPoint(x: 500, y: 800),
+                                        end: CGPoint(x: 300, y: 800))
         }
 
     }

@@ -34,8 +34,11 @@ class SampleLevel {
                                            Block(centre: PhysicsVector2D(horizontal: 200, vertical: 800)),
                                            Block(centre: PhysicsVector2D(horizontal: 300, vertical: 800)),
                                            Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800)),
-                                           Block(centre: PhysicsVector2D(horizontal: 500, vertical: 800))
+                                           Block(centre: PhysicsVector2D(horizontal: 500, vertical: 800)),
+                                           Line()
                                           ])
 
-    static let emptyLevel = Level(zeggleItems: [])
+    static let emptyLevel = Level(zeggleItems: [Line()])
+
+    static let testBlock = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 500, vertical: 800))])
 }

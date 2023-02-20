@@ -84,9 +84,6 @@ class PhysicsBody: Hashable, Collidable {
     }
 
     func updatePosition(timeElapsed: Float) {
-        guard !isFixed else {
-            return
-        }
         let horizontalDisplacement = hSpeed.multiplyMagnitude(by: CGFloat(timeElapsed))
         let verticalDisplacement = vSpeed.multiplyMagnitude(by: CGFloat(timeElapsed))
         moveBy(xDisplacement: horizontalDisplacement, yDisplacement: verticalDisplacement)
@@ -97,6 +94,8 @@ class PhysicsBody: Hashable, Collidable {
     }
 
     func lockBodyInplace() {
+        removeVerticalSpeed()
+        removeHorizontalSpeed()
         isFixed = true
     }
 

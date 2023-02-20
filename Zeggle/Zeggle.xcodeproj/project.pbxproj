@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		174D14B629A28D9600B7DF03 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B529A28D9600B7DF03 /* RectangleView.swift */; };
 		174D14BA29A2912C00B7DF03 /* BlockCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B929A2912C00B7DF03 /* BlockCreator.swift */; };
+		174D14BC29A3C6C600B7DF03 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14BB29A3C6C600B7DF03 /* Line.swift */; };
 		17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF029A26BDE00F387A2 /* LineBody.swift */; };
 		17543FFA29A2898B00F387A2 /* RectangleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF929A2898B00F387A2 /* RectangleBody.swift */; };
 		17543FFC29A28BF700F387A2 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FFB29A28BF700F387A2 /* Block.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		174D14B529A28D9600B7DF03 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		174D14B929A2912C00B7DF03 /* BlockCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreator.swift; sourceTree = "<group>"; };
+		174D14BB29A3C6C600B7DF03 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		17543FF029A26BDE00F387A2 /* LineBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBody.swift; sourceTree = "<group>"; };
 		17543FF929A2898B00F387A2 /* RectangleBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBody.swift; sourceTree = "<group>"; };
 		17543FFB29A28BF700F387A2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				17CA29A329940324006C66B9 /* Peg.swift */,
 				17CA29A529940580006C66B9 /* Ball.swift */,
 				17543FFB29A28BF700F387A2 /* Block.swift */,
+				174D14BB29A3C6C600B7DF03 /* Line.swift */,
 			);
 			path = GameItems;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				17CA29B9299555E3006C66B9 /* GameScene.swift in Sources */,
 				17CA29A629940580006C66B9 /* Ball.swift in Sources */,
 				17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */,
+				174D14BC29A3C6C600B7DF03 /* Line.swift in Sources */,
 				17C87E892997F3D000AB8141 /* HelperFunctions.swift in Sources */,
 				17CA29C429955A84006C66B9 /* BallView.swift in Sources */,
 				17CA299C29940139006C66B9 /* EventResolver.swift in Sources */,
