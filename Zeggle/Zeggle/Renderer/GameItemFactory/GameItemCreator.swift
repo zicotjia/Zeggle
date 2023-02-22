@@ -19,6 +19,8 @@ class GameItemCreator {
             PegCreator.createPeg(item: item)
         case is Block:
             BlockCreator.createBlock(item: item)
+        case is Bucket:
+            BucketCreator.createBucket(item: item)
         default:
             EmptyView()
         }

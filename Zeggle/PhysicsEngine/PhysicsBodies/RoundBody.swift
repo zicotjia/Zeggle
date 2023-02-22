@@ -18,10 +18,16 @@ class RoundBody: PhysicsBody {
     }
 
     override func isColliding(with body: Collidable) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     override func isColliding(with body: RoundBody) -> Bool {
+        guard collisionEnable else {
+            return false
+        }
         let entityOneCentre = self.centre
         let entityTwoCentre = body.centre
 
@@ -34,16 +40,19 @@ class RoundBody: PhysicsBody {
     }
 
     override func isColliding(with body: LineBody) -> Bool {
+        guard collisionEnable else {
+            return false
+        }
         let shortestDistance = body.distance(to: centre)
 
         let isColliding = shortestDistance <= radius.magnitude
-        if isColliding {
-            print(shortestDistance)
-        }
         return isColliding
     }
 
     override func isColliding(with body: RectangleBody) -> Bool {
+        guard collisionEnable else {
+            return false
+        }
         return false
     }
 

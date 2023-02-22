@@ -9,4 +9,5 @@ enum PhysicsBodyType {
     case round
     case rectangle
     case line
+    case empty
 }

@@ -7,7 +7,7 @@
 import CoreGraphics
 
 class ZeggleItem: Hashable {
-    private(set) var physicsBody: PhysicsBody
+    var physicsBody: PhysicsBody
     private(set) var removeFlag: Bool
     private(set) var undergoingDeletion: Bool
     private(set) var healthBar: Double
@@ -24,6 +24,7 @@ class ZeggleItem: Hashable {
         self.removeFlag = false
         self.undergoingDeletion = false
         self.healthBar = 1.0
+
         switch shape {
         case .round:
             self.physicsBody = RoundBody(centre: centre, hSpeed: hSpeed,
@@ -37,6 +38,11 @@ class ZeggleItem: Hashable {
             self.physicsBody = LineBody(hSpeed: 0, vSpeed: 0, mass: PegConstants.defaultMass,
                                         isFixed: isFixed, elasticity: 1.0, start: CGPoint(x: 500, y: 800),
                                         end: CGPoint(x: 300, y: 800))
+
+        case .empty:
+            self.physicsBody = EmptyBody(centre: centre, hSpeed: hSpeed, vSpeed: vSpeed,
+                                         mass: mass, height: height, width: width,
+                                         isFixed: isFixed, elasticity: elasticity)
         }
 
     }

@@ -11,28 +11,29 @@ import CoreGraphics
 // standard collision resolver
 class CollisionResolverA<T: PhysicsBody>: CollisionResolver {
     private unowned let physicsWorld: PhysicsWorld<T>
+    var collisionsToBeResolved: [Resolvable] = []
+    var hasCollided = Set<T>()
 
     init(physicsWorld: PhysicsWorld<T>) {
         self.physicsWorld = physicsWorld
     }
 
-    func resolveCollision() {
-        var collisionsToBeResolved: [Resolvable] = []
-        let boundaries = physicsWorld.boundaries
+    private func simpleBodiesCollision(entityOne: T, entityTwo: T) {
+        let collisionChecker = BodiesCollision(entityOne: entityOne, entityTwo: entityTwo)
+        if collisionChecker.areColliding() {
+            collisionsToBeResolved.append(collisionChecker)
+            hasCollided.insert(entityOne)
+            hasCollided.insert(entityTwo)
+        }
+    }
 
-        var hasCollided = Set<T>()
+    func resolveCollision() {
+        let boundaries = physicsWorld.boundaries
 
         for entityOne in physicsWorld.entities {
 
             for entityTwo in physicsWorld.entities where entityTwo != entityOne && !hasCollided.contains(entityTwo) {
-
-                let collisionChecker = BodiesCollision(entityOne: entityOne, entityTwo: entityTwo)
-
-                if collisionChecker.areColliding() {
-                    collisionsToBeResolved.append(collisionChecker)
-                    hasCollided.insert(entityOne)
-                    hasCollided.insert(entityTwo)
-                }
+                simpleBodiesCollision(entityOne: entityOne, entityTwo: entityTwo)
             }
 
             let boundaryCollisionChecker = BoundaryCollision(entity: entityOne, boundaries: boundaries)
@@ -45,5 +46,8 @@ class CollisionResolverA<T: PhysicsBody>: CollisionResolver {
         for collision in collisionsToBeResolved {
             collision.resolve()
         }
+
+        collisionsToBeResolved = []
+        hasCollided = Set<T>()
     }
 }

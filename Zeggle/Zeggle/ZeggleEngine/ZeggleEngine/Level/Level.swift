@@ -13,6 +13,7 @@ class Level {
     private var itemRemover: EventResolver?
     private(set) var items: Set<ZeggleItem>
     private(set) var ball: Ball?
+    private(set) var bucket: Bucket?
 
     init(zeggleItems: Set<ZeggleItem>) {
         let levelBoundaries = WorldBoundaries(ceiling: DimensionsConstants.ceiling,
@@ -30,6 +31,15 @@ class Level {
 
     func setItemRemover(itemRemover: EventResolver) {
         self.itemRemover = itemRemover
+    }
+
+    func createBucket() {
+        guard bucket == nil else {
+            return
+        }
+        let newBucket = Bucket(centre: PhysicsVector2D(horizontal: 400, vertical: 800))
+        addItem(zeggleItem: newBucket)
+        bucket = newBucket
     }
 
     func shootCannon(angle: Float) {

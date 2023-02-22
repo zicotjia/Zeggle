@@ -18,6 +18,7 @@ class PhysicsBody: Hashable, Collidable {
     private(set) var width: PhysicsVector1D
     private(set) var mass: Float
     private(set) var isFixed: Bool
+    private(set) var collisionEnable = true
     private(set) var elasticity: Float
     private(set) var collisionAction: () -> Void
 
@@ -44,6 +45,14 @@ class PhysicsBody: Hashable, Collidable {
 
     func moveTo(centre: PhysicsVector2D) {
         self.centre = centre
+    }
+
+    func moveBy(diplacement: PhysicsVector2D) {
+        let newX = centre.hVector.add(vector: diplacement.hVector)
+        let newY = centre.vVector.add(vector: diplacement.vVector)
+        let newCentre = PhysicsVector2D(horizontalVector: newX, verticalVector: newY)
+
+        moveTo(centre: newCentre)
     }
 
     func moveBy(xDisplacement: PhysicsVector1D, yDisplacement: PhysicsVector1D) {
@@ -103,6 +112,14 @@ class PhysicsBody: Hashable, Collidable {
         isFixed = false
     }
 
+    func disableCollision() {
+        collisionEnable = false
+    }
+
+    func enableCollision() {
+        collisionEnable = true
+    }
+
     static func == (lhs: PhysicsBody, rhs: PhysicsBody) -> Bool {
         return lhs.uuid == rhs.uuid
     }
@@ -112,23 +129,38 @@ class PhysicsBody: Hashable, Collidable {
     }
 
     func isColliding(with body: Collidable) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     func isColliding(with body: PhysicsBody) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     func isColliding(with body: RoundBody) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     func isColliding(with body: LineBody) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     func isColliding(with body: RectangleBody) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
 }

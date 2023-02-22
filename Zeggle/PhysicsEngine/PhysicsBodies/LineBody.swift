@@ -43,13 +43,20 @@ class LineBody: PhysicsBody {
                    elasticity: elasticity, collisionAction: collisionAction)
     }
 
-    func distance(to centre: PhysicsVector2D) -> CGFloat {
+    func getPointOfShortestDistance(to centre: PhysicsVector2D) -> PhysicsVector2D {
         let startToEnd = end.substract(vector: start)
         let startToCentre = centre.substract(vector: start)
 
         let projection = startToCentre.projection(on: startToEnd)
 
         let pointOfShortestDistance = start.add(vector: projection)
+
+        return pointOfShortestDistance
+    }
+    func distance(to centre: PhysicsVector2D) -> CGFloat {
+        let startToEnd = end.substract(vector: start)
+
+        let pointOfShortestDistance = getPointOfShortestDistance(to: centre)
 
         let startToPoint = pointOfShortestDistance.substract(vector: start)
 
@@ -67,10 +74,16 @@ class LineBody: PhysicsBody {
     }
 
     override func isColliding(with body: Collidable) -> Bool {
-        body.isColliding(with: self)
+        guard collisionEnable else {
+            return false
+        }
+        return body.isColliding(with: self)
     }
 
     override func isColliding(with body: RoundBody) -> Bool {
+        guard collisionEnable else {
+            return false
+        }
         let shortestDistance = distance(to: body.centre)
         let radius = body.radius
 

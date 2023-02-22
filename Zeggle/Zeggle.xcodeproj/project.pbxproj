@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170B60D029A4CAAE0001E943 /* ComplexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60CF29A4CAAE0001E943 /* ComplexItem.swift */; };
+		170B60D429A4CC2C0001E943 /* EmptyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60D329A4CC2C0001E943 /* EmptyBody.swift */; };
+		170B60D629A4CD550001E943 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60D529A4CD550001E943 /* Bucket.swift */; };
+		170B60D829A517480001E943 /* BlockConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60D729A517480001E943 /* BlockConstants.swift */; };
+		170B60DA29A51AD00001E943 /* BucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60D929A51AD00001E943 /* BucketView.swift */; };
+		170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B60DB29A51F1A0001E943 /* BucketCreator.swift */; };
 		174D14B629A28D9600B7DF03 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B529A28D9600B7DF03 /* RectangleView.swift */; };
 		174D14BA29A2912C00B7DF03 /* BlockCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B929A2912C00B7DF03 /* BlockCreator.swift */; };
-		174D14BC29A3C6C600B7DF03 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14BB29A3C6C600B7DF03 /* Line.swift */; };
 		17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF029A26BDE00F387A2 /* LineBody.swift */; };
 		17543FFA29A2898B00F387A2 /* RectangleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF929A2898B00F387A2 /* RectangleBody.swift */; };
 		17543FFC29A28BF700F387A2 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FFB29A28BF700F387A2 /* Block.swift */; };
@@ -63,9 +68,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170B60CF29A4CAAE0001E943 /* ComplexItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexItem.swift; sourceTree = "<group>"; };
+		170B60D329A4CC2C0001E943 /* EmptyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBody.swift; sourceTree = "<group>"; };
+		170B60D529A4CD550001E943 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		170B60D729A517480001E943 /* BlockConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockConstants.swift; sourceTree = "<group>"; };
+		170B60D929A51AD00001E943 /* BucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketView.swift; sourceTree = "<group>"; };
+		170B60DB29A51F1A0001E943 /* BucketCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketCreator.swift; sourceTree = "<group>"; };
 		174D14B529A28D9600B7DF03 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		174D14B929A2912C00B7DF03 /* BlockCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreator.swift; sourceTree = "<group>"; };
-		174D14BB29A3C6C600B7DF03 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		17543FF029A26BDE00F387A2 /* LineBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBody.swift; sourceTree = "<group>"; };
 		17543FF929A2898B00F387A2 /* RectangleBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBody.swift; sourceTree = "<group>"; };
 		17543FFB29A28BF700F387A2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 				17C87E912998102200AB8141 /* PhysicsBodyType.swift */,
 				17543FF029A26BDE00F387A2 /* LineBody.swift */,
 				17543FF929A2898B00F387A2 /* RectangleBody.swift */,
+				170B60D329A4CC2C0001E943 /* EmptyBody.swift */,
 			);
 			path = PhysicsBodies;
 			sourceTree = "<group>";
@@ -252,6 +263,7 @@
 				17CA29C5299569F4006C66B9 /* GameItemCreator.swift */,
 				17C87E832997EC8100AB8141 /* BallCreator.swift */,
 				174D14B929A2912C00B7DF03 /* BlockCreator.swift */,
+				170B60DB29A51F1A0001E943 /* BucketCreator.swift */,
 			);
 			path = GameItemFactory;
 			sourceTree = "<group>";
@@ -306,7 +318,8 @@
 				17CA29A329940324006C66B9 /* Peg.swift */,
 				17CA29A529940580006C66B9 /* Ball.swift */,
 				17543FFB29A28BF700F387A2 /* Block.swift */,
-				174D14BB29A3C6C600B7DF03 /* Line.swift */,
+				170B60CF29A4CAAE0001E943 /* ComplexItem.swift */,
+				170B60D529A4CD550001E943 /* Bucket.swift */,
 			);
 			path = GameItems;
 			sourceTree = "<group>";
@@ -322,6 +335,7 @@
 				17AB3DF82996955300962B4D /* GameLoopConstants.swift */,
 				17C87E852997EE3D00AB8141 /* ImageNameToFile.swift */,
 				17C87E8B2997FFDE00AB8141 /* ZeggleItemConstants.swift */,
+				170B60D729A517480001E943 /* BlockConstants.swift */,
 			);
 			path = GameConstants;
 			sourceTree = "<group>";
@@ -343,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				17CA29BD29955726006C66B9 /* PegView.swift */,
+				170B60D929A51AD00001E943 /* BucketView.swift */,
 				17CA29C329955A84006C66B9 /* BallView.swift */,
 				17AB3DFD29969CBB00962B4D /* GameItemListView.swift */,
 				174D14B529A28D9600B7DF03 /* RectangleView.swift */,
@@ -469,10 +484,13 @@
 				17CA29C6299569F4006C66B9 /* GameItemCreator.swift in Sources */,
 				17C87E8C2997FFDE00AB8141 /* ZeggleItemConstants.swift in Sources */,
 				17CA29B9299555E3006C66B9 /* GameScene.swift in Sources */,
+				170B60DA29A51AD00001E943 /* BucketView.swift in Sources */,
 				17CA29A629940580006C66B9 /* Ball.swift in Sources */,
+				170B60D829A517480001E943 /* BlockConstants.swift in Sources */,
 				17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */,
-				174D14BC29A3C6C600B7DF03 /* Line.swift in Sources */,
+				170B60D029A4CAAE0001E943 /* ComplexItem.swift in Sources */,
 				17C87E892997F3D000AB8141 /* HelperFunctions.swift in Sources */,
+				170B60D629A4CD550001E943 /* Bucket.swift in Sources */,
 				17CA29C429955A84006C66B9 /* BallView.swift in Sources */,
 				17CA299C29940139006C66B9 /* EventResolver.swift in Sources */,
 				17C87E842997EC8100AB8141 /* BallCreator.swift in Sources */,
@@ -480,12 +498,14 @@
 				174D14BA29A2912C00B7DF03 /* BlockCreator.swift in Sources */,
 				17C381DF2990079B00417B5A /* PhysicsVector1D.swift in Sources */,
 				17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */,
+				170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */,
 				17CA29A2299401CB006C66B9 /* ZeggleItem.swift in Sources */,
 				17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */,
 				17AB3E0029969DBC00962B4D /* PegCreator.swift in Sources */,
 				17CA29942992C69B006C66B9 /* CollisionResolverA.swift in Sources */,
 				17CA29912992B386006C66B9 /* BodiesCollision.swift in Sources */,
 				17C381BC298FFE3B00417B5A /* ContentView.swift in Sources */,
+				170B60D429A4CC2C0001E943 /* EmptyBody.swift in Sources */,
 				17AB3E062996B25E00962B4D /* SampleLevel.swift in Sources */,
 				17C381BA298FFE3B00417B5A /* ZeggleApp.swift in Sources */,
 				17C381D92990040B00417B5A /* PhysicsBody.swift in Sources */,
