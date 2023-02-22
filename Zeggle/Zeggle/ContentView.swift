@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        GameScene(gameLoop: GameLoop(level: SampleLevel.testBucket))
+        Text("Hello")
     }
 
 }

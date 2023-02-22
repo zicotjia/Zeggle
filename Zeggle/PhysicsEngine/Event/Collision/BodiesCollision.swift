@@ -31,8 +31,8 @@ class BodiesCollision: Resolvable {
         }
 
         let direction = entityOne.centre.substract(vector: entityTwo.centre).normalize()
-        print(direction)
-        resolvePosition(direction: direction, depth: depth)
+
+        // resolvePosition(direction: direction, depth: depth)
         applyVelocityChanges(normal: normal)
 
         entityTwo.collisionAction()

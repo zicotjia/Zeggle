@@ -11,10 +11,10 @@ class Peg: ZeggleItem {
 
     private(set) var color: PegColor
 
-    init(centre: PhysicsVector2D, color: PegColor, collisionAction: @escaping () -> Void = {}) {
+    init(centre: PhysicsVector2D, radius: CGFloat, color: PegColor, collisionAction: @escaping () -> Void = {}) {
         self.color = color
         super.init(centre: centre, hSpeed: PegConstants.initialHorizontalSpeed,
-                   vSpeed: PegConstants.initialVerticalSpeed, radius: PegConstants.radius,
+                   vSpeed: PegConstants.initialVerticalSpeed, radius: radius,
                    height: 0, width: 0, mass: PegConstants.defaultMass, isFixed: true,
                    elasticity: PegConstants.defaultElasticity, shape: .round)
 

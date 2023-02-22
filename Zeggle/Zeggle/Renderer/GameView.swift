@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct GameView: View {
-    private(set) var scene: GameScene
+    @StateObject var gameLoop: GameLoop
 
     var body: some View {
         ZStack {
-            scene
+            if gameLoop.state == .levelPicker {
+                LevelPickerScene().environmentObject(gameLoop)
+            } else {
+                GameScene().environmentObject(gameLoop)
+            }
         }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
 
-    static let scene = GameScene(gameLoop: GameLoop(level: Level(zeggleItems: [])))
+    static let gameLoop =  GameLoop(level: Level(zeggleItems: []))
 
     static var previews: some View {
-        GameView(scene: scene)
+        GameView(gameLoop: gameLoop)
     }
 }

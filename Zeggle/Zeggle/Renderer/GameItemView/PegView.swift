@@ -23,7 +23,7 @@ struct PegView: View {
 
 struct PegView_Previews: PreviewProvider {
 
-    static let peg = Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 400), color: .blue)
+    static let peg = Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 400), radius: 50, color: .blue)
 
     static var previews: some View {
         PegView(peg: .constant(peg), imageName: "peg-orange-glow")

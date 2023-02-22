@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    @EnvironmentObject var gameLoop: GameLoop
+    @State private var showingAlert = false
+
     var body: some View {
         ZStack {
             Image(ImageNameToFile.background)
                 .resizable(resizingMode: .stretch)
                 .ignoresSafeArea()
+            Text("\(gameLoop.time)")
         }
     }
 }

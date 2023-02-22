@@ -65,6 +65,15 @@
 		17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C129955A2B006C66B9 /* CannonView.swift */; };
 		17CA29C429955A84006C66B9 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C329955A84006C66B9 /* BallView.swift */; };
 		17CA29C6299569F4006C66B9 /* GameItemCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA29C5299569F4006C66B9 /* GameItemCreator.swift */; };
+		17D8420529A60ED100AA69D8 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8420429A60ED100AA69D8 /* GameMode.swift */; };
+		17D8420929A60FD600AA69D8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8420829A60FD600AA69D8 /* GameState.swift */; };
+		17D8420E29A611D300AA69D8 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8420D29A611D300AA69D8 /* GameDetailsView.swift */; };
+		17D8421229A62C0F00AA69D8 /* FlagTriggerer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421129A62C0F00AA69D8 /* FlagTriggerer.swift */; };
+		17D8421429A62C4800AA69D8 /* StandardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421329A62C4800AA69D8 /* StandardMode.swift */; };
+		17D8421829A6300100AA69D8 /* BallDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421729A6300100AA69D8 /* BallDetailsView.swift */; };
+		17D8421A29A63EC200AA69D8 /* LevelPickerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */; };
+		17D8422029A6890E00AA69D8 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 17D8421F29A6890E00AA69D8 /* SQLite */; };
+		17D8422329A6893300AA69D8 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8422229A6893300AA69D8 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +136,14 @@
 		17CA29C129955A2B006C66B9 /* CannonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonView.swift; sourceTree = "<group>"; };
 		17CA29C329955A84006C66B9 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		17CA29C5299569F4006C66B9 /* GameItemCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemCreator.swift; sourceTree = "<group>"; };
+		17D8420429A60ED100AA69D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		17D8420829A60FD600AA69D8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		17D8420D29A611D300AA69D8 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsView.swift; sourceTree = "<group>"; };
+		17D8421129A62C0F00AA69D8 /* FlagTriggerer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagTriggerer.swift; sourceTree = "<group>"; };
+		17D8421329A62C4800AA69D8 /* StandardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardMode.swift; sourceTree = "<group>"; };
+		17D8421729A6300100AA69D8 /* BallDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallDetailsView.swift; sourceTree = "<group>"; };
+		17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerScene.swift; sourceTree = "<group>"; };
+		17D8422229A6893300AA69D8 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D8422029A6890E00AA69D8 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +195,7 @@
 		17C381B8298FFE3B00417B5A /* Zeggle */ = {
 			isa = PBXGroup;
 			children = (
+				17D8422129A6892000AA69D8 /* Database */,
 				17C87E872997F3C500AB8141 /* HelperFunctions */,
 				17AB3E042996B24B00962B4D /* SampleLevel */,
 				17CA29B5299555AA006C66B9 /* Renderer */,
@@ -279,6 +298,8 @@
 		17CA29952993F563006C66B9 /* GameLoop */ = {
 			isa = PBXGroup;
 			children = (
+				17D8420729A60FCB00AA69D8 /* GameState */,
+				17D8420329A60EC300AA69D8 /* GameMode */,
 				17AB3DF22996903500962B4D /* GameLoop.swift */,
 			);
 			path = GameLoop;
@@ -299,6 +320,8 @@
 			children = (
 				17CA299B29940139006C66B9 /* EventResolver.swift */,
 				17AB3DF6299692F400962B4D /* ItemRemoverA.swift */,
+				17D8421129A62C0F00AA69D8 /* FlagTriggerer.swift */,
+				17D8421329A62C4800AA69D8 /* StandardMode.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -343,12 +366,14 @@
 		17CA29B5299555AA006C66B9 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				17D8420C29A611C700AA69D8 /* Details */,
 				17C87E822997EC6A00AB8141 /* GameItemFactory */,
 				17CA29BC29955719006C66B9 /* GameItemView */,
 				17CA29B6299555C5006C66B9 /* GameView.swift */,
 				17CA29C129955A2B006C66B9 /* CannonView.swift */,
 				17CA29B8299555E3006C66B9 /* GameScene.swift */,
 				17CA29BA2995560F006C66B9 /* BackgroundView.swift */,
+				17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -363,6 +388,39 @@
 				174D14B529A28D9600B7DF03 /* RectangleView.swift */,
 			);
 			path = GameItemView;
+			sourceTree = "<group>";
+		};
+		17D8420329A60EC300AA69D8 /* GameMode */ = {
+			isa = PBXGroup;
+			children = (
+				17D8420429A60ED100AA69D8 /* GameMode.swift */,
+			);
+			path = GameMode;
+			sourceTree = "<group>";
+		};
+		17D8420729A60FCB00AA69D8 /* GameState */ = {
+			isa = PBXGroup;
+			children = (
+				17D8420829A60FD600AA69D8 /* GameState.swift */,
+			);
+			path = GameState;
+			sourceTree = "<group>";
+		};
+		17D8420C29A611C700AA69D8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				17D8420D29A611D300AA69D8 /* GameDetailsView.swift */,
+				17D8421729A6300100AA69D8 /* BallDetailsView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		17D8422129A6892000AA69D8 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				17D8422229A6893300AA69D8 /* Database.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +440,9 @@
 			dependencies = (
 			);
 			name = Zeggle;
+			packageProductDependencies = (
+				17D8421F29A6890E00AA69D8 /* SQLite */,
+			);
 			productName = Zeggle;
 			productReference = 17C381B6298FFE3B00417B5A /* Zeggle.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +471,9 @@
 				Base,
 			);
 			mainGroup = 17C381AD298FFE3B00417B5A;
+			packageReferences = (
+				17D8421E29A6890E00AA69D8 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = 17C381B7298FFE3B00417B5A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -457,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D8420529A60ED100AA69D8 /* GameMode.swift in Sources */,
 				17CA298B29917E2D006C66B9 /* WorldBoundaries.swift in Sources */,
 				17C381E429900F1C00417B5A /* PhysicsVector2D.swift in Sources */,
 				17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */,
@@ -469,12 +534,16 @@
 				17C87E8E2998015F00AB8141 /* RoundBody.swift in Sources */,
 				17C87E952998252B00AB8141 /* MathHelper.swift in Sources */,
 				17C87E922998102200AB8141 /* PhysicsBodyType.swift in Sources */,
+				17D8421229A62C0F00AA69D8 /* FlagTriggerer.swift in Sources */,
 				17CA29A0299401A0006C66B9 /* Level.swift in Sources */,
+				17D8421429A62C4800AA69D8 /* StandardMode.swift in Sources */,
 				17C87E90299801B600AB8141 /* Collidable.swift in Sources */,
 				174D14B629A28D9600B7DF03 /* RectangleView.swift in Sources */,
 				17CA29B129940A67006C66B9 /* WorldConstants.swift in Sources */,
 				17CA29A429940324006C66B9 /* Peg.swift in Sources */,
+				17D8421829A6300100AA69D8 /* BallDetailsView.swift in Sources */,
 				17CA29BE29955726006C66B9 /* PegView.swift in Sources */,
+				17D8420E29A611D300AA69D8 /* GameDetailsView.swift in Sources */,
 				17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */,
 				17CA29B4299528EF006C66B9 /* Resolvable.swift in Sources */,
 				17C381D1298FFF3800417B5A /* PhysicsWorld.swift in Sources */,
@@ -485,6 +554,7 @@
 				17C87E8C2997FFDE00AB8141 /* ZeggleItemConstants.swift in Sources */,
 				17CA29B9299555E3006C66B9 /* GameScene.swift in Sources */,
 				170B60DA29A51AD00001E943 /* BucketView.swift in Sources */,
+				17D8422329A6893300AA69D8 /* Database.swift in Sources */,
 				17CA29A629940580006C66B9 /* Ball.swift in Sources */,
 				170B60D829A517480001E943 /* BlockConstants.swift in Sources */,
 				17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */,
@@ -501,6 +571,7 @@
 				170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */,
 				17CA29A2299401CB006C66B9 /* ZeggleItem.swift in Sources */,
 				17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */,
+				17D8420929A60FD600AA69D8 /* GameState.swift in Sources */,
 				17AB3E0029969DBC00962B4D /* PegCreator.swift in Sources */,
 				17CA29942992C69B006C66B9 /* CollisionResolverA.swift in Sources */,
 				17CA29912992B386006C66B9 /* BodiesCollision.swift in Sources */,
@@ -512,6 +583,7 @@
 				17CA29B7299555C5006C66B9 /* GameView.swift in Sources */,
 				17CA298F2992AC71006C66B9 /* BoundaryCollision.swift in Sources */,
 				17543FFA29A2898B00F387A2 /* RectangleBody.swift in Sources */,
+				17D8421A29A63EC200AA69D8 /* LevelPickerScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +784,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17D8421E29A6890E00AA69D8 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17D8421F29A6890E00AA69D8 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17D8421E29A6890E00AA69D8 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17C381AE298FFE3B00417B5A /* Project object */;
 }
