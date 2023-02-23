@@ -17,7 +17,7 @@ class GameLoop: ObservableObject {
 
     init(level: Level) {
         self.level = level
-        state = GameState.inGame
+        state = GameState.levelPicker
         createDisplayLink()
     }
 
@@ -28,6 +28,31 @@ class GameLoop: ObservableObject {
 
         displayLink = CADisplayLink(target: self, selector: #selector(step))
         displayLink.add(to: .current, forMode: RunLoop.Mode.default)
+    }
+
+    func enterLevelEditor() {
+        state = .levelDesigner
+    }
+
+    func switchLevel(level: Level) {
+        self.level = level
+    }
+
+    func addItem(item: ZeggleItem) {
+        level.addItem(zeggleItem: item)
+    }
+
+    func resetLevel() {
+        state = .inGame
+        level = Database.getLevelWithName(name: level.name)
+    }
+
+    func exitLevel() {
+        state = .levelPicker
+    }
+
+    func renameLevel(newName: String) {
+        level.rename(newName: newName)
     }
 
     func shootCannon(angle: Float) {
@@ -47,7 +72,8 @@ class GameLoop: ObservableObject {
     }
 
     func gameHasEnded() -> Bool {
-        state == .lose || state == .win
+        let hasEnded = state == .lose || state == .win
+        return hasEnded
     }
 
     func checkGameState() {

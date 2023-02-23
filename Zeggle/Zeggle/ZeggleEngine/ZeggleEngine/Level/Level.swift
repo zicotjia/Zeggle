@@ -7,7 +7,7 @@
 
 import CoreGraphics
 
-class Level {
+class Level: Hashable {
 
     private(set) var name: String
     private var physicsWorld: PhysicsWorld<PhysicsBody>
@@ -36,6 +36,10 @@ class Level {
         physicsWorld.setCollisionResolver(use: CollisionResolverA(physicsWorld: physicsWorld))
         self.setItemRemover(itemRemover: ItemRemoverA(level: self))
         self.setGameMode(conditionChecker: StandardMode(level: self))
+    }
+
+    func rename(newName: String) {
+        name = newName
     }
 
     func setGameMode(conditionChecker: ConditionChecker) {
@@ -89,8 +93,14 @@ class Level {
         guard !items.contains(zeggleItem) else {
             return
         }
+        print("added")
         items.insert(zeggleItem)
         physicsWorld.addEntity(entity: zeggleItem.physicsBody)
+    }
+
+    func reset() {
+        items = []
+        physicsWorld.reset()
     }
 
     func triggerWin() {
@@ -115,6 +125,14 @@ class Level {
             return
         }
         gameMode?.checkCondition()
+    }
+
+    static func == (lhs: Level, rhs: Level) -> Bool {
+        lhs.name == rhs.name
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
 
 }

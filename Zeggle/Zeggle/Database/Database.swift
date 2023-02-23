@@ -35,7 +35,7 @@ class Database {
         do {
             let query = """
                         CREATE TABLE IF NOT EXISTS Levels (
-                            name TEXT PRIMARY KEY
+                            name TEXT PRIMARY KEY,
                             numberOfBalls INTEGER
                         );
                         """
@@ -156,6 +156,12 @@ class Database {
             print(error)
         }
         return []
+    }
+
+    static func getLevelWithName(name: String) -> Level {
+        let pegs = getLevelsPegs(levelName: name)
+        let level = Level(name: name, zeggleItems: pegs)
+        return level
     }
 
     static func getLevelsWithPegs() -> [Level] {

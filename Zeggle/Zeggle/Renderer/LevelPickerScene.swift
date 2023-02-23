@@ -9,11 +9,15 @@ import SwiftUI
 
 struct LevelPickerScene: View {
     @EnvironmentObject var gameLoop: GameLoop
+    @StateObject var levelListViewModel = LevelListViewModel()
 
     var body: some View {
-        Button(action: {gameLoop.startGame()}, label: {
-           Text("Click")
-        })
+        LevelSelectView()
+            .environmentObject(gameLoop)
+            .environmentObject(levelListViewModel)
+            .onAppear {
+                levelListViewModel.getLevelsFromDB()
+            }
     }
 }
 

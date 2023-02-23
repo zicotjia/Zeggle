@@ -42,6 +42,10 @@ class PhysicsWorld<T: PhysicsBody> {
         entities.remove(entity)
     }
 
+    func reset() {
+        entities = []
+    }
+
     func updateSelf(timeElapsed: Float) {
         for entity in entities {
             entity.applyGravity(force: gravity, for: timeElapsed)

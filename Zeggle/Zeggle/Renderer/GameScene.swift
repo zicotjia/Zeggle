@@ -11,21 +11,21 @@ struct GameScene: View {
     @EnvironmentObject var gameLoop: GameLoop
 
     var body: some View {
-        VStack {
+        let gameEnded = gameLoop.gameHasEnded()
+        return VStack {
             GameDetailsView().environmentObject(gameLoop)
             ZStack {
                 BackgroundView().environmentObject(gameLoop)
                 GameItemListView(entities: gameLoop.level.items).environmentObject(gameLoop)
                 CannonView().environmentObject(gameLoop)
             }
-        }.alert(isPresented: .constant(gameLoop.gameHasEnded())) {
-            Alert(title: Text("Alert!"), message: Text("Message"),
-                  primaryButton: Alert.Button.default(Text("Yes"), action: {
-                    gameLoop.changeState(state: .levelPicker)
-                    print("changed")
+        }.alert(isPresented: .constant(gameEnded)) {
+            Alert(title: Text("Game Over"), message: Text("Do you want to replay?"),
+                  primaryButton: Alert.Button.default(Text("No"), action: {
+                    gameLoop.enterLevelEditor()
                     }),
-                  secondaryButton: Alert.Button.cancel(Text("No"), action: {
-                    print("No")
+                  secondaryButton: Alert.Button.cancel(Text("Yes"), action: {
+                    gameLoop.resetLevel()
                     })
             )
         }
