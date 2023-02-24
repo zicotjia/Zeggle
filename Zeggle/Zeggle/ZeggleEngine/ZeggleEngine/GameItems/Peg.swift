@@ -21,6 +21,8 @@ class Peg: ZeggleItem {
         physicsBody.setCollisionAction {
             self.setHasCollided()
         }
+
+        changePoint(to: 2)
     }
 
     private func setHasCollided() {

@@ -9,16 +9,17 @@ import Foundation
 import CoreGraphics
 
 // standard collision resolver
-class CollisionResolverA<T: PhysicsBody>: CollisionResolver {
-    private unowned let physicsWorld: PhysicsWorld<T>
-    var collisionsToBeResolved: [Resolvable] = []
-    var hasCollided = Set<T>()
+class CollisionResolverA: CollisionResolver {
 
-    init(physicsWorld: PhysicsWorld<T>) {
+    private unowned let physicsWorld: PhysicsWorld
+    var collisionsToBeResolved: [Resolvable] = []
+    var hasCollided = Set<PhysicsBody>()
+
+    init(physicsWorld: PhysicsWorld) {
         self.physicsWorld = physicsWorld
     }
 
-    private func simpleBodiesCollision(entityOne: T, entityTwo: T) {
+    private func simpleBodiesCollision(entityOne: PhysicsBody, entityTwo: PhysicsBody) {
         let collisionChecker = BodiesCollision(entityOne: entityOne, entityTwo: entityTwo)
         if collisionChecker.areColliding() {
             collisionsToBeResolved.append(collisionChecker)
@@ -48,6 +49,29 @@ class CollisionResolverA<T: PhysicsBody>: CollisionResolver {
         }
 
         collisionsToBeResolved = []
-        hasCollided = Set<T>()
+        hasCollided = Set<PhysicsBody>()
+    }
+
+    func isEntityColliding(entity: PhysicsBody) -> Bool {
+        guard !physicsWorld.entities.contains(entity) else {
+            return false
+        }
+
+        let boundaries = physicsWorld.boundaries
+
+        let boundaryCollisionChecker = BoundaryCollision(entity: entity, boundaries: boundaries)
+
+        if boundaryCollisionChecker.isColliding() {
+            return true
+        }
+
+        for otherEntity in physicsWorld.entities {
+            let collisionChecker = BodiesCollision(entityOne: entity, entityTwo: otherEntity)
+            if collisionChecker.areColliding() {
+                return true
+            }
+        }
+
+        return false
     }
 }

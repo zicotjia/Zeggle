@@ -14,7 +14,7 @@ struct GameItemListView: View {
     var body: some View {
         ZStack {
             ForEach(Array(entities), id: \.self) { entity in
-                GameItemCreator.createItemView(item: entity)
+                GameItemCreator.createItemView(item: entity, state: .off)
             }
         }
 

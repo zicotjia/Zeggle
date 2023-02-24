@@ -20,12 +20,12 @@ struct GameScene: View {
                 CannonView().environmentObject(gameLoop)
             }
         }.alert(isPresented: .constant(gameEnded)) {
-            Alert(title: Text("Game Over"), message: Text("Do you want to replay?"),
+            Alert(title: Text(gameLoop.gameEndMessage()), message: Text("Do you want to replay?"),
                   primaryButton: Alert.Button.default(Text("No"), action: {
-                    gameLoop.enterLevelEditor()
+                    gameLoop.exitLevel()
                     }),
                   secondaryButton: Alert.Button.cancel(Text("Yes"), action: {
-                    gameLoop.resetLevel()
+                    gameLoop.restart()
                     })
             )
         }

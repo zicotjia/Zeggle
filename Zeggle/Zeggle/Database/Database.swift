@@ -36,7 +36,7 @@ class Database {
             let query = """
                         CREATE TABLE IF NOT EXISTS Levels (
                             name TEXT PRIMARY KEY,
-                            numberOfBalls INTEGER
+                            numberOfBalls INT
                         );
                         """
 
@@ -143,11 +143,6 @@ class Database {
 
                 let centre = PhysicsVector2D(centre: CGPoint(x: XPos, y: YPos))
 
-                let physicsBody = RoundBody(centre: centre, hSpeed: PegConstants.initialHorizontalSpeed,
-                                            vSpeed: PegConstants.initialVerticalSpeed,
-                                            radius: radius, mass: PegConstants.defaultMass,
-                                            isFixed: PegConstants.defaultIsFixed, elasticity: PegConstants.defaultElasticity)
-
                 let peg = Peg(centre: centre, radius: radius, color: color)
                 pegs.insert(peg)
             }
@@ -160,8 +155,31 @@ class Database {
 
     static func getLevelWithName(name: String) -> Level {
         let pegs = getLevelsPegs(levelName: name)
-        let level = Level(name: name, zeggleItems: pegs)
-        return level
+
+        do {
+            let query = "SELECT TOTAL(numberOfBalls) FROM Levels WHERE name = ?;"
+
+            let preparedQuery = try database?.prepare(query)
+
+            guard let queryRows = try preparedQuery?.run(name) else {
+                return Level(zeggleItems: [])
+            }
+
+            var numberOfBalls = 10
+            for row in queryRows {
+                guard let noOfBalls = row[0] as? Double else {
+                    continue
+                }
+                numberOfBalls = Int(noOfBalls)
+            }
+            let level = Level(name: name, zeggleItems: pegs)
+            level.setNumberOfBall(to: numberOfBalls)
+            return level
+        } catch {
+            print(error)
+        }
+
+        return Level(zeggleItems: [])
     }
 
     static func getLevelsWithPegs() -> [Level] {
@@ -173,8 +191,7 @@ class Database {
         var levels: [Level] = []
 
         for levelName in getLevelNames() {
-            let pegs = getLevelsPegs(levelName: levelName)
-            let level = Level(name: levelName, zeggleItems: pegs)
+            let level = getLevelWithName(name: levelName)
             levels.append(level)
         }
 

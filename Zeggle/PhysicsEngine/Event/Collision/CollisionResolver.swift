@@ -9,4 +9,5 @@ import Foundation
 
 protocol CollisionResolver: AnyObject {
     func resolveCollision()
+    func isEntityColliding(entity: PhysicsBody) -> Bool
 }

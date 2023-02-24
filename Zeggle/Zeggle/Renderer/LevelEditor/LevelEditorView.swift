@@ -4,6 +4,9 @@ struct LevelEditorView: View {
 
     @Binding var levelEditorState: LevelEditorStates
     @EnvironmentObject private var gameLoop: GameLoop
+    @EnvironmentObject var levelListViewModel: LevelListViewModel
+    @State var newItems: [ZeggleItem] = []
+    @State var itemRadius = PegConstants.radius
 
     var tapGesture: some Gesture {
         DragGesture(minimumDistance: 0).onEnded { value in
@@ -14,26 +17,29 @@ struct LevelEditorView: View {
 
             let position = value.location
 
+            guard position.y < DimensionsConstants.tappableMinY else {
+                return
+            }
+
             guard let color = levelEditorState.color else {
                 return
             }
 
-            let newItem = Peg(centre: PhysicsVector2D(centre: position), radius: PegConstants.radius, color: color)
+            let newItem = Peg(centre: PhysicsVector2D(centre: position), radius: itemRadius, color: color)
 
             gameLoop.level.addItem(zeggleItem: newItem)
-            print("added Item")
         }
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
+            ZStack {
                 LevelView(entities: gameLoop.level.items, levelEditorState: $levelEditorState)
                     .gesture(tapGesture)
-
-                ToolBarView(levelEditorState: $levelEditorState)
+                    .border(.black, width: 3)
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+            ToolBarView(levelEditorState: $levelEditorState, radius: $itemRadius)
+        }
     }
 }
 
@@ -44,6 +50,6 @@ struct LevelDesignerView_Previews: PreviewProvider {
     static let previewPeg2 = Peg(centre: PhysicsVector2D(centre: CGPoint(x: 100, y: 200)), radius: 50, color: PegColor.blue)
 
     static var previews: some View {
-        LevelEditorView(levelEditorState: .constant(LevelEditorStates.off))
+        LevelEditorView(levelEditorState: .constant(LevelEditorStates.off), itemRadius: 10)
     }
 }

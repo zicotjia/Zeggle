@@ -11,12 +11,12 @@ import SwiftUI
 class GameItemCreator {
 
     @ViewBuilder
-    static func createItemView(item: ZeggleItem) -> some View {
+    static func createItemView(item: ZeggleItem, state: LevelEditorStates) -> some View {
         switch item {
         case is Ball:
             BallCreator.createBall(item: item)
         case is Peg:
-            PegCreator.createPeg(item: item)
+            PegCreator.createPeg(item: item, state: state)
         case is Block:
             BlockCreator.createBlock(item: item)
         case is Bucket:

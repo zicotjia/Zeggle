@@ -9,8 +9,9 @@ struct LevelSelectView: View {
             BackgroundView()
             VStack {
                 ScrollView(.vertical) {
+                    SampleLevelListView(sampleLevels: levelListViewModel.sampleLevels)
                     LazyVGrid(columns: [GridItem(.flexible())]) {
-                        ForEach(levelListViewModel.sampleLevels, id: \.self.name) { level in
+                        ForEach(levelListViewModel.levels, id: \.self) { level in
                             LevelWindowView(level: level)
                                 .frame(width:
                                         LevelSelectionConstants.miniLevelWidth,
@@ -20,24 +21,14 @@ struct LevelSelectView: View {
                                     gameLoop.switchLevel(level: level)
                                     gameLoop.enterLevelEditor()
                                 }
-
-                        }
-                        ForEach(levelListViewModel.levels, id: \.self.name) { level in
-                            LevelWindowView(level: level)
-                                .frame(width:
-                                        LevelSelectionConstants.miniLevelWidth,
-                                       height:
-                                        LevelSelectionConstants.miniLevelHeight)
-                                .onTapGesture {
-                                    gameLoop.switchLevel(level: level)
-                                    gameLoop.startGame()
-                                }
                         }
                     }
                 }
+                Button("Create New Level") {
+                    gameLoop.switchLevel(level: Level(zeggleItems: []))
+                    gameLoop.enterLevelEditor()
+                }
             }
-        }.onAppear {
-            levelListViewModel.getLevelsFromDB()
         }
    }
 }

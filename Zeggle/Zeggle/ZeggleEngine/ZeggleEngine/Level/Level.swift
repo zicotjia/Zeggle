@@ -10,16 +10,19 @@ import CoreGraphics
 class Level: Hashable {
 
     private(set) var name: String
-    private var physicsWorld: PhysicsWorld<PhysicsBody>
+    private var physicsWorld: PhysicsWorld
     private var itemRemover: EventResolver?
-    private var gameMode: ConditionChecker?
-    private(set) var timer: Int?
+    private var scoreCalculator: EventResolver?
+    private(set) var gameMode: ConditionChecker?
+    var timer: Float
     private(set) var numberOfBalls: Int
     private(set) var items: Set<ZeggleItem>
     private(set) var ball: Ball?
     private(set) var bucket: Bucket?
     private(set) var winFlag = false
     private(set) var loseFlag = false
+    var score = 0
+    private(set) var target = 0
 
     init(name: String = "untitled", zeggleItems: Set<ZeggleItem>) {
         self.name = name
@@ -29,17 +32,32 @@ class Level: Hashable {
                                               rightWall: DimensionsConstants.rightWall)
 
         self.items = zeggleItems
-        self.numberOfBalls = 1
+        self.numberOfBalls = 5
         let physicsBodies = zeggleItems.map {$0.physicsBody}
         self.physicsWorld = PhysicsWorld(entities: Set(physicsBodies), boundaries: levelBoundaries,
                                        gravity: WorldConstants.defaultGravity, wind: PhysicsVector1D.nullVector)
         physicsWorld.setCollisionResolver(use: CollisionResolverA(physicsWorld: physicsWorld))
+        self.timer = WorldConstants.defaultTimer
         self.setItemRemover(itemRemover: ItemRemoverA(level: self))
-        self.setGameMode(conditionChecker: StandardMode(level: self))
+        self.setScoreCalculator(calculator: StandardCalculator(level: self))
+        self.changeGameMode(gameMode: .standard)
     }
 
     func rename(newName: String) {
         name = newName
+    }
+
+    func changeGameMode(gameMode: GameMode) {
+        switch gameMode {
+        case .standard:
+            setGameMode(conditionChecker: StandardMode(level: self))
+        case .timeAttack:
+            setGameMode(conditionChecker: TimeAttack(level: self))
+        case .beatTheScore:
+            setGameMode(conditionChecker: BeatTheScore(level: self))
+        case .dodgeBall:
+            setGameMode(conditionChecker: DodgeBall(level: self))
+        }
     }
 
     func setGameMode(conditionChecker: ConditionChecker) {
@@ -48,6 +66,18 @@ class Level: Hashable {
 
     func setItemRemover(itemRemover: EventResolver) {
         self.itemRemover = itemRemover
+    }
+
+    func setScoreCalculator(calculator: EventResolver) {
+        self.scoreCalculator = calculator
+    }
+
+    func setNumberOfBall(to amount: Int) {
+        numberOfBalls = amount
+    }
+
+    func setTarget(to amount: Int) {
+        target = amount
     }
 
     func createBucket() {
@@ -90,16 +120,17 @@ class Level: Hashable {
     }
 
     func addItem(zeggleItem: ZeggleItem) {
-        guard !items.contains(zeggleItem) else {
+        guard zeggleItem is Ball || !items.contains(zeggleItem) &&
+                !physicsWorld.entityIsColliding(entity: zeggleItem.physicsBody) else {
             return
         }
-        print("added")
         items.insert(zeggleItem)
         physicsWorld.addEntity(entity: zeggleItem.physicsBody)
     }
 
     func reset() {
         items = []
+        score = 0
         physicsWorld.reset()
     }
 
@@ -111,11 +142,29 @@ class Level: Hashable {
         loseFlag = true
     }
 
+    func getMaximumPoints() -> Int {
+        var count = 0
+        for item in items {
+            count += item.point
+        }
+        return count
+    }
+
+    func setTimer(time: Int) {
+        timer = Float(time)
+    }
+
     func updateSelf(timeElapsed: Float) {
         for item in items {
             item.updatePosition(timeElapsed: timeElapsed)
         }
         physicsWorld.updateSelf(timeElapsed: timeElapsed)
+
+        guard scoreCalculator != nil else {
+            return
+        }
+        scoreCalculator?.resolve()
+
         guard itemRemover != nil else {
             return
         }

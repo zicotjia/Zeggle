@@ -8,38 +8,45 @@
 import Foundation
 import CoreGraphics
 
-class PhysicsWorld<T: PhysicsBody> {
-    private(set) var entities: Set<T>
+class PhysicsWorld {
+    private(set) var entities: Set<PhysicsBody>
     private(set) var boundaries: WorldBoundaries
-    private var collisionResolver: CollisionResolver?
+    private var collisionResolver: (any CollisionResolver)?
     private(set) var gravity: PhysicsVector1D
     // although wind is not part of the required specification i add it for future feature
     private(set) var wind: PhysicsVector1D
 
-    init(entities: Set<T>, boundaries: WorldBoundaries, gravity: PhysicsVector1D, wind: PhysicsVector1D) {
+    init(entities: Set<PhysicsBody>, boundaries: WorldBoundaries, gravity: PhysicsVector1D, wind: PhysicsVector1D) {
         self.entities = entities
         self.boundaries = boundaries
         self.gravity = gravity
         self.wind = wind
     }
 
-    func setCollisionResolver(use resolver: CollisionResolver) {
+    func setCollisionResolver(use resolver: any CollisionResolver) {
         collisionResolver = resolver
     }
 
-    func addEntity(entity: T) {
+    func addEntity(entity: PhysicsBody) {
         guard !entities.contains(entity) else {
             return
         }
         entities.insert(entity)
     }
 
-    func deleteEntity(entity: T) {
+    func deleteEntity(entity: PhysicsBody) {
         guard entities.contains(entity) else {
             return
         }
 
         entities.remove(entity)
+    }
+
+    func entityIsColliding(entity: PhysicsBody) -> Bool {
+        guard let isColliding = collisionResolver?.isEntityColliding(entity: entity) else {
+            return false
+        }
+        return isColliding
     }
 
     func reset() {

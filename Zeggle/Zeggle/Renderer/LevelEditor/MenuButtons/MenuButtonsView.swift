@@ -11,6 +11,7 @@ struct MenuButtonsView: View {
 
     var body: some View {
         HStack {
+            Spacer().frame(width: 8)
             LoadButtonView()
             Spacer()
             SaveButtonView()
@@ -18,6 +19,7 @@ struct MenuButtonsView: View {
             ResetButtonView()
             NameBarView()
             StartButtonView()
+            Spacer().frame(width: 8)
         }
     }
 }

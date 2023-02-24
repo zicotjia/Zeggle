@@ -7,7 +7,6 @@
 
 // standard item remover for level.
 class ItemRemoverA: EventResolver {
-
     private unowned var level: Level
     private var removableItems: [ZeggleItem] = []
 

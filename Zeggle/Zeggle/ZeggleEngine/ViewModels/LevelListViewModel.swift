@@ -11,11 +11,13 @@ class LevelListViewModel: ObservableObject {
     }
 
     func getLevelsFromDB() {
+        levels = []
         levels.append(contentsOf: Database.getLevelsWithPegs())
     }
 
     func updateLevel(level: Level) {
         Database.updateLevelAndPegsToDB(level: level)
+        getLevelsFromDB()
     }
 
     func resetLevel(level: Level) {

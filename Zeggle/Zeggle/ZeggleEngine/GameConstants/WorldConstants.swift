@@ -7,4 +7,5 @@
 
 struct WorldConstants {
     static let defaultGravity = PhysicsVector1D(magnitude: 20)
+    static let defaultTimer = Float(60)
 }

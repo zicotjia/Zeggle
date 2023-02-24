@@ -15,8 +15,20 @@ struct GameDetailsView: View {
             Spacer()
             BallDetailsView(ballsLeft: .constant(gameLoop.getNumberOfBallsLeft()))
             Spacer()
-            Text("\(Int(gameLoop.time))")
+            Text(gameLoop.level.gameMode is TimeAttack ||
+                 gameLoop.level.gameMode is BeatTheScore ||
+                 gameLoop.level.gameMode is DodgeBall
+                 ? "\(Int(gameLoop.level.timer))"
+                 : " ")
             Spacer()
+            Text(gameLoop.level.gameMode is DodgeBall
+                 ? " "
+                 : "Score = \(gameLoop.level.score)")
+            Spacer()
+            if gameLoop.level.gameMode is BeatTheScore {
+                Text("Target = \(gameLoop.level.target)")
+                Spacer()
+            }
         }
     }
 }

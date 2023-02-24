@@ -11,6 +11,7 @@ class ZeggleItem: Hashable {
     private(set) var removeFlag: Bool
     private(set) var undergoingDeletion: Bool
     private(set) var healthBar: Double
+    var point = 0
 
     var isDead: Bool {
         healthBar <= 0
@@ -70,6 +71,10 @@ class ZeggleItem: Hashable {
         if undergoingDeletion {
             healthBar -= 0.05
         }
+    }
+
+    func changePoint(to point: Int) {
+        self.point = point
     }
 
     static func == (lhs: ZeggleItem, rhs: ZeggleItem) -> Bool {

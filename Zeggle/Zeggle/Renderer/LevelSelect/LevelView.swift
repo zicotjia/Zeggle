@@ -4,15 +4,14 @@ struct LevelView: View {
 
     var entities: Set<ZeggleItem>
     @Binding var levelEditorState: LevelEditorStates
-    
 
     var body: some View {
         ZStack {
-            Image(ImageNameToFile.background)
+           Image(ImageNameToFile.background)
                 .resizable(resizingMode: .stretch)
                 .ignoresSafeArea()
             ForEach(Array(entities), id: \.self) { entity in
-                GameItemCreator.createItemView(item: entity)
+                GameItemCreator.createItemView(item: entity, state: levelEditorState)
             }
         }
     }

@@ -128,10 +128,10 @@ class SampleLevel {
         filledLevel2.rename(newName: "Sample 2")
 
         let emptyLevel = Level(zeggleItems: [])
-        level.rename(newName: "emptyLevel")
+        emptyLevel.rename(newName: "emptyLevel")
 
         let testBlock = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800))])
-        level.rename(newName: "testBlock")
+        testBlock.rename(newName: "testBlock")
 
         return [filledLevel, filledLevel2, emptyLevel, testBlock]
     }

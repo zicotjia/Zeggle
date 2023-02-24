@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LevelPickerScene: View {
     @EnvironmentObject var gameLoop: GameLoop
-    @StateObject var levelListViewModel = LevelListViewModel()
+    @EnvironmentObject var levelListViewModel: LevelListViewModel
 
     var body: some View {
         LevelSelectView()

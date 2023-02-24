@@ -22,10 +22,9 @@ class StandardMode: ConditionChecker {
         guard !level.winFlag && !level.loseFlag else {
             return
         }
-        for item in level.items where item is Peg {
+        guard level.items.count == 0 else {
             return
         }
-        print("you win")
         level.triggerWin()
     }
 
@@ -37,7 +36,6 @@ class StandardMode: ConditionChecker {
         let noActiveBall = level.ball == nil
 
         if noMoreBalls && noActiveBall {
-            print("you lose")
             level.triggerLose()
         }
     }

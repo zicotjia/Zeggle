@@ -12,6 +12,7 @@ class GameLoop: ObservableObject {
     @Published var time = Float(0.0)
     @Published private(set) var level: Level
     @Published var state: GameState
+    @Published var test = Float(0.0)
 
     var displayLink: CADisplayLink!
 
@@ -30,6 +31,10 @@ class GameLoop: ObservableObject {
         displayLink.add(to: .current, forMode: RunLoop.Mode.default)
     }
 
+    func setNumberOfBalls(to amount: Int) {
+        level.setNumberOfBall(to: amount)
+    }
+
     func enterLevelEditor() {
         state = .levelDesigner
     }
@@ -42,13 +47,23 @@ class GameLoop: ObservableObject {
         level.addItem(zeggleItem: item)
     }
 
+    func resetTime() {
+        time = 0
+    }
+
+    func restart() {
+        resetLevel()
+        resetTime()
+        startGame()
+    }
+
     func resetLevel() {
-        state = .inGame
         level = Database.getLevelWithName(name: level.name)
     }
 
     func exitLevel() {
         state = .levelPicker
+        resetTime()
     }
 
     func renameLevel(newName: String) {
@@ -61,6 +76,10 @@ class GameLoop: ObservableObject {
 
     func getNumberOfBallsLeft() -> Int {
         level.numberOfBalls
+    }
+
+    func changeGameMode(gameMode: GameMode) {
+        level.changeGameMode(gameMode: gameMode)
     }
 
     func startGame() {
@@ -76,6 +95,20 @@ class GameLoop: ObservableObject {
         return hasEnded
     }
 
+    func gameEndMessage() -> String {
+        guard level.winFlag || level.loseFlag else {
+            return ""
+        }
+        if level.winFlag {
+            return "You Win"
+        }
+        if level.loseFlag {
+            return "You Lose"
+        }
+
+        return ""
+    }
+
     func checkGameState() {
         if level.winFlag {
             state = .win
@@ -87,8 +120,13 @@ class GameLoop: ObservableObject {
     }
 
     @objc func step(displaylink: CADisplayLink) {
+        if state == .levelDesigner {
+            test += 1
+        }
+
         guard state == .inGame else {
             return
+
         }
         time += Float(1.0 / 60)
         level.updateSelf(timeElapsed: GameLoopConstants.standardSPF)
