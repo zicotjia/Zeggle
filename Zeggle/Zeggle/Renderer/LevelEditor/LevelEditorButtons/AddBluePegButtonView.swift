@@ -2,12 +2,13 @@ import SwiftUI
 
 struct AddBluePegButtonView: View {
     @Binding var levelEditorState: LevelEditorStates
+    var itemType: ItemType = .bluePeg
 
     func handleClick() {
-        if levelEditorState == LevelEditorStates.addBluePeg {
+        if levelEditorState == LevelEditorStates.item(value: .bluePeg) {
             levelEditorState = LevelEditorStates.off
         } else {
-            levelEditorState = LevelEditorStates.addBluePeg
+            levelEditorState = LevelEditorStates.item(value: .bluePeg)
         }
     }
 
@@ -17,7 +18,7 @@ struct AddBluePegButtonView: View {
         } label: {
             Image("peg-blue").resizable()
                 .frame(width: ButtonConstants.radius * 2, height: ButtonConstants.radius * 2)
-                .opacity(levelEditorState == LevelEditorStates.addBluePeg
+                .opacity(levelEditorState == LevelEditorStates.item(value: .bluePeg)
                          ? ButtonConstants.fullOpacity
                          : ButtonConstants.onDragOpacity)
         }

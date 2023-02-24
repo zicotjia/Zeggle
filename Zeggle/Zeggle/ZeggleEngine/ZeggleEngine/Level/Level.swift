@@ -15,9 +15,11 @@ class Level: Hashable {
     private var scoreCalculator: EventResolver?
     private(set) var gameMode: ConditionChecker?
     var timer: Float
-    private(set) var numberOfBalls: Int
+    private(set) var numberOfBalls: Int = 5
+    private(set) var numberOfSpookyBalls: Int = 5
     private(set) var items: Set<ZeggleItem>
     private(set) var ball: Ball?
+    private(set) var ballType: BallType = .standard
     private(set) var bucket: Bucket?
     private(set) var winFlag = false
     private(set) var loseFlag = false
@@ -32,7 +34,6 @@ class Level: Hashable {
                                               rightWall: DimensionsConstants.rightWall)
 
         self.items = zeggleItems
-        self.numberOfBalls = 5
         let physicsBodies = zeggleItems.map {$0.physicsBody}
         self.physicsWorld = PhysicsWorld(entities: Set(physicsBodies), boundaries: levelBoundaries,
                                        gravity: WorldConstants.defaultGravity, wind: PhysicsVector1D.nullVector)
@@ -76,8 +77,16 @@ class Level: Hashable {
         numberOfBalls = amount
     }
 
+    func setNumberOfSpookyBall(to amount: Int) {
+        numberOfSpookyBalls = amount
+    }
+
     func setTarget(to amount: Int) {
         target = amount
+    }
+
+    func switchBallType(to type: BallType) {
+        ballType = type
     }
 
     func createBucket() {
@@ -90,16 +99,31 @@ class Level: Hashable {
     }
 
     func shootCannon(angle: Float) {
-        guard ball == nil && numberOfBalls != 0 else {
+        guard ball == nil else {
             return
         }
         let totalSpeed = BallConstants.ballInitialVelocity
         let verticalSpeed = sin(CGFloat(angle) * Double.pi / 180) * totalSpeed
         let horizontalSpeed = cos(CGFloat(angle) * Double.pi / 180) * totalSpeed
-        let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed, vSpeed: verticalSpeed)
-        addItem(zeggleItem: newBall)
-        numberOfBalls -= 1
-        ball = newBall
+        if ballType == .standard {
+            guard numberOfBalls > 0 else {
+                return
+            }
+            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed, vSpeed: verticalSpeed, type: ballType)
+            addItem(zeggleItem: newBall)
+            numberOfBalls -= 1
+            ball = newBall
+        }
+        if ballType == .spooky {
+            guard numberOfSpookyBalls > 0 else {
+                return
+            }
+            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed, vSpeed: verticalSpeed, type: ballType)
+            addItem(zeggleItem: newBall)
+            numberOfSpookyBalls -= 1
+            ball = newBall
+        }
+
     }
 
     func removeBall() {

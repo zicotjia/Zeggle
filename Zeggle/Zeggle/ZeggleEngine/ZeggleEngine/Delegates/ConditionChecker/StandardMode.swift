@@ -32,7 +32,7 @@ class StandardMode: ConditionChecker {
         guard !level.winFlag && !level.loseFlag else {
             return
         }
-        let noMoreBalls = level.numberOfBalls == 0
+        let noMoreBalls = level.numberOfBalls == 0 && level.numberOfSpookyBalls == 0
         let noActiveBall = level.ball == nil
 
         if noMoreBalls && noActiveBall {

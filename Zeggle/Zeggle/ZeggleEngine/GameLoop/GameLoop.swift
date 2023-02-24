@@ -35,6 +35,10 @@ class GameLoop: ObservableObject {
         level.setNumberOfBall(to: amount)
     }
 
+    func setNumberOfSpookyBalls(to amount: Int) {
+        level.setNumberOfSpookyBall(to: amount)
+    }
+
     func enterLevelEditor() {
         state = .levelDesigner
     }
@@ -76,6 +80,18 @@ class GameLoop: ObservableObject {
 
     func getNumberOfBallsLeft() -> Int {
         level.numberOfBalls
+    }
+
+    func getNumberOfSpookyBalls() -> Int {
+        level.numberOfSpookyBalls
+    }
+
+    func getAmmoType() -> BallType {
+        level.ballType
+    }
+
+    func switchAmmoType(to type: BallType) {
+        level.switchBallType(to: type)
     }
 
     func changeGameMode(gameMode: GameMode) {

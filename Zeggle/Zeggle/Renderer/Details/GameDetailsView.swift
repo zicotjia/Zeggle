@@ -13,7 +13,7 @@ struct GameDetailsView: View {
     var body: some View {
         HStack {
             Spacer()
-            BallDetailsView(ballsLeft: .constant(gameLoop.getNumberOfBallsLeft()))
+            AmmoView()
             Spacer()
             Text(gameLoop.level.gameMode is TimeAttack ||
                  gameLoop.level.gameMode is BeatTheScore ||

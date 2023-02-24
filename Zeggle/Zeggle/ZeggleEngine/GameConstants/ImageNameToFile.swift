@@ -15,4 +15,6 @@ struct ImageNameToFile {
     static let cannon = "cannon copy"
     static let block = "rectangle-gray"
     static let bucket = "bucket"
+    static let spooky = "peg-purple"
+    static let zombie = "peg-zombie"
 }

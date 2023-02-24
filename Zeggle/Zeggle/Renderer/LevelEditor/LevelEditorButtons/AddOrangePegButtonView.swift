@@ -2,12 +2,13 @@ import SwiftUI
 
 struct AddOrangePegButtonView: View {
     @Binding var levelEditorState: LevelEditorStates
+    var itemType: ItemType = .orangePeg
 
     func handleClick() {
-        if levelEditorState == LevelEditorStates.addOrangePeg {
+        if levelEditorState == LevelEditorStates.item(value: .orangePeg) {
             levelEditorState = LevelEditorStates.off
         } else {
-            levelEditorState = LevelEditorStates.addOrangePeg
+            levelEditorState = LevelEditorStates.item(value: .orangePeg)
         }
     }
 
@@ -17,7 +18,7 @@ struct AddOrangePegButtonView: View {
         } label: {
             Image("peg-orange").resizable()
                 .frame(width: ButtonConstants.radius * 2, height: ButtonConstants.radius * 2)
-                .opacity(levelEditorState == LevelEditorStates.addOrangePeg
+                .opacity(levelEditorState == LevelEditorStates.item(value: .orangePeg)
                          ? ButtonConstants.fullOpacity
                          : ButtonConstants.onDragOpacity)
         }

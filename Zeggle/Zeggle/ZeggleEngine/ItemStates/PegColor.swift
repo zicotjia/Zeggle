@@ -8,4 +8,5 @@
 enum PegColor: String {
     case orange = "peg-orange"
     case blue = "peg-blue"
+    case zombie = "peg-zombie"
 }

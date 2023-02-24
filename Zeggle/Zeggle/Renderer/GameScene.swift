@@ -35,7 +35,7 @@ struct GameScene: View {
 
 struct GameScene_Previews: PreviewProvider {
 
-    static let ball = Ball(centre: PhysicsVector2D(horizontal: 300, vertical: 50), hSpeed: 0, vSpeed: 0)
+    static let ball = Ball(centre: PhysicsVector2D(horizontal: 300, vertical: 50), hSpeed: 0, vSpeed: 0, type: .standard)
 
     static let peg = Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 300), radius: 50, color: .orange)
 

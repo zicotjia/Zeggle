@@ -11,6 +11,7 @@ class ZeggleItem: Hashable {
     private(set) var removeFlag: Bool
     private(set) var undergoingDeletion: Bool
     private(set) var healthBar: Double
+    private(set) var deletionAction: () -> Void = {}
     var point = 0
 
     var isDead: Bool {
@@ -46,6 +47,16 @@ class ZeggleItem: Hashable {
                                          isFixed: isFixed, elasticity: elasticity)
         }
 
+    }
+
+    func restoreHealth() {
+        healthBar = 1.0
+        undergoingDeletion = false
+        removeFlag = false
+    }
+
+    func setDeletionAction(action: @escaping () -> Void) {
+        deletionAction = action
     }
 
     func triggerRemovalFlag() {

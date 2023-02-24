@@ -9,6 +9,7 @@
 class ItemRemoverA: EventResolver {
     private unowned var level: Level
     private var removableItems: [ZeggleItem] = []
+    private var respawn = false
 
     init(level: Level) {
         self.level = level
@@ -27,35 +28,41 @@ class ItemRemoverA: EventResolver {
     }
 
     private func deleteItem() {
-        for item in removableItems where item.isDead {
+        for item in removableItems where item.isDead && !(item is Ball) {
+            item.deletionAction()
             level.deleteItem(zeggleItem: item)
         }
     }
 
     private func conditionForRemoval() -> Bool {
         guard let currentBall = level.ball else {
-            return false
+            return true
         }
 
         return currentBall.readyForRemoval() || currentBall.stuckForTooLong()
     }
 
     func resolve() {
-        guard let currentBall = level.ball else {
-            return
-        }
-
-        guard conditionForRemoval() else {
-            return
-        }
-        loadEntitiesForRemoval()
 
         triggerStartOfDeletion()
 
         deleteItem()
 
+        guard conditionForRemoval() else {
+            return
+        }
+
+        loadEntitiesForRemoval()
+
+        guard let currentBall = level.ball else {
+            return
+        }
+
         if currentBall.isDead {
-            level.removeBall()
+            if !currentBall.isSpooky {
+                level.removeBall()
+            }
+            currentBall.deletionAction()
         }
 
     }

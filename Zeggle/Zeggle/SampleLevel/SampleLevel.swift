@@ -115,7 +115,7 @@ class SampleLevel {
                                               Peg(centre: PhysicsVector2D(horizontal: 350, vertical: 450),
                                                   radius: 30, color: .orange),
                                               Peg(centre: PhysicsVector2D(horizontal: 450, vertical: 450),
-                                                  radius: 20, color: .orange)
+                                                  radius: 20, color: .zombie)
                                              ])
         filledLevel.rename(newName: "Sample 1")
 

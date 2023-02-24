@@ -36,7 +36,8 @@ class Database {
             let query = """
                         CREATE TABLE IF NOT EXISTS Levels (
                             name TEXT PRIMARY KEY,
-                            numberOfBalls INT
+                            numberOfBalls Double,
+                            numberOfSpookyBalls Double
                         );
                         """
 
@@ -157,7 +158,7 @@ class Database {
         let pegs = getLevelsPegs(levelName: name)
 
         do {
-            let query = "SELECT TOTAL(numberOfBalls) FROM Levels WHERE name = ?;"
+            let query = "SELECT numberOfBalls, numberOfSpookyBalls FROM Levels WHERE name = ?;"
 
             let preparedQuery = try database?.prepare(query)
 
@@ -166,14 +167,18 @@ class Database {
             }
 
             var numberOfBalls = 10
+            var numberOfSpookyBalls = 10
             for row in queryRows {
-                guard let noOfBalls = row[0] as? Double else {
+                guard let noOfBalls = row[0] as? Double,
+                      let noOfSpookyBalls = row[1] as? Double else {
                     continue
                 }
                 numberOfBalls = Int(noOfBalls)
+                numberOfSpookyBalls = Int(noOfSpookyBalls)
             }
             let level = Level(name: name, zeggleItems: pegs)
             level.setNumberOfBall(to: numberOfBalls)
+            level.setNumberOfSpookyBall(to: numberOfSpookyBalls)
             return level
         } catch {
             print(error)
@@ -198,14 +203,14 @@ class Database {
         return levels
     }
 
-    private static func saveLevelIntoDB(levelName: String, numberOfBalls: Int) {
+    private static func saveLevelIntoDB(level: Level) {
         do {
-            let query = "INSERT INTO Levels VALUES (?, ?);"
+            let query = "INSERT INTO Levels VALUES (?, ?, ?);"
 
             let preparedQuery = try database?.prepare(query)
 
-            try preparedQuery?.run(levelName, numberOfBalls)
-            print("Saved Level \(levelName) into Database")
+            try preparedQuery?.run(level.name, level.numberOfBalls, level.numberOfSpookyBalls)
+            print("Saved Level \(level.name) into Database")
         } catch {
             print(error)
         }
@@ -219,6 +224,8 @@ class Database {
                 return "orange"
             case .blue:
                 return "blue"
+            case .zombie:
+                return "zombie"
             }
         }
 
@@ -245,7 +252,7 @@ class Database {
     }
 
     static func saveLevelAndPegsIntoDB(level: Level) {
-        saveLevelIntoDB(levelName: level.name, numberOfBalls: level.numberOfBalls)
+        saveLevelIntoDB(level: level)
         savePegsOfLevelIntoDB(level: level)
     }
 

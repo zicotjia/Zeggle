@@ -22,6 +22,9 @@ class PegCreator {
                 PegView(peg: .constant(peg),
                         deleteButtonOn: .constant(state == .deletePeg),
                         imageName: peg.removeFlag ? ImageNameToFile.orangePegGlow : ImageNameToFile.orangePeg)
+            case .zombie:
+                PegView(peg: .constant(peg), deleteButtonOn: .constant(state == .deletePeg),
+                        imageName: ImageNameToFile.zombie)
             }
         } else {
             EmptyView()

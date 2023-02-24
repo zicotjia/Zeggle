@@ -38,7 +38,6 @@ class PhysicsWorld {
         guard entities.contains(entity) else {
             return
         }
-
         entities.remove(entity)
     }
 
