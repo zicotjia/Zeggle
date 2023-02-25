@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class GameItemCreator {
+class GameItemViewCreator {
 
     @ViewBuilder
     static func createItemView(item: ZeggleItem, state: LevelEditorStates) -> some View {
@@ -18,7 +18,7 @@ class GameItemCreator {
         case is Peg:
             PegCreator.createPeg(item: item, state: state)
         case is Block:
-            BlockCreator.createBlock(item: item)
+            BlockCreator.createBlock(item: item, state: state)
         case is Bucket:
             BucketCreator.createBucket(item: item)
         default:

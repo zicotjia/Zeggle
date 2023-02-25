@@ -11,7 +11,7 @@ struct LevelView: View {
                 .resizable(resizingMode: .stretch)
                 .ignoresSafeArea()
             ForEach(Array(entities), id: \.self) { entity in
-                GameItemCreator.createItemView(item: entity, state: levelEditorState)
+                GameItemViewCreator.createItemView(item: entity, state: levelEditorState)
             }
         }
     }

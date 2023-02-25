@@ -21,11 +21,11 @@ struct LevelEditorView: View {
                 return
             }
 
-            guard let color = levelEditorState.color else {
+            guard let itemType = levelEditorState.itemType else {
                 return
             }
 
-            let newItem = Peg(centre: PhysicsVector2D(centre: position), radius: itemRadius, color: color)
+            let newItem = GameItemFactory.createItem(itemType: itemType, centre: position, radius: itemRadius)
 
             gameLoop.level.addItem(zeggleItem: newItem)
         }

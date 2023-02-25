@@ -4,13 +4,16 @@
 //
 //  Created by Zico on 20/2/23.
 //
+import CoreGraphics
+
 class Block: ZeggleItem {
 
-    init(centre: PhysicsVector2D, collisionAction: @escaping () -> Void = {}) {
+    init(centre: PhysicsVector2D, height: CGFloat, collisionAction: @escaping () -> Void = {}) {
 
         super.init(centre: centre, hSpeed: PegConstants.initialHorizontalSpeed,
                    vSpeed: PegConstants.initialVerticalSpeed, radius: PegConstants.radius,
-                   height: 200, width: 200, mass: PegConstants.defaultMass, isFixed: true,
+                   height: height, width: height * BlockConstants.heightToWidthRatio,
+                   mass: PegConstants.defaultMass, isFixed: true,
                    elasticity: PegConstants.defaultElasticity, shape: PhysicsBodyType.rectangle)
 
         physicsBody.setCollisionAction {

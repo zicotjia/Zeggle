@@ -10,9 +10,9 @@ import SwiftUI
 class BlockCreator {
 
     @ViewBuilder
-    static func createBlock(item: ZeggleItem) -> some View {
+    static func createBlock(item: ZeggleItem, state: LevelEditorStates) -> some View {
         if let block = item as? Block {
-            RectangleView(rectangle: .constant(block))
+            RectangleView(rectangle: .constant(block), deleteButtonOn: .constant(state == .deletePeg))
         } else {
             EmptyView()
         }

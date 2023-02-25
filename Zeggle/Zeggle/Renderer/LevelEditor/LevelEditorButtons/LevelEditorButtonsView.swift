@@ -9,8 +9,9 @@ struct LevelEditorButtonView: View {
         VStack {
             HStack {
                 Spacer().frame(width: 20)
-                AddBluePegButtonView(levelEditorState: $levelEditorState)
-                AddOrangePegButtonView(levelEditorState: $levelEditorState)
+                ForEach(ItemType.allCases) { item in
+                    AddItemButtonView(levelEditorState: $levelEditorState, itemType: item)
+                }
                 Spacer()
                 DeleteButtonView(levelEditorState: $levelEditorState)
                 SizeSliderView(radius: $radius)

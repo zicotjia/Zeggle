@@ -61,7 +61,7 @@ class SampleLevel {
     }()
 
     static let testBlock = {
-        let level = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800))])
+        let level = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800), height: 50)])
         level.rename(newName: "testBlock")
         return level
     }()
@@ -130,7 +130,7 @@ class SampleLevel {
         let emptyLevel = Level(zeggleItems: [])
         emptyLevel.rename(newName: "emptyLevel")
 
-        let testBlock = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800))])
+        let testBlock = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800), height: 50)])
         testBlock.rename(newName: "testBlock")
 
         return [filledLevel, filledLevel2, emptyLevel, testBlock]
