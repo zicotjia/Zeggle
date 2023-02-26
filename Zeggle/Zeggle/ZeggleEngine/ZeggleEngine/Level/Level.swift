@@ -11,7 +11,7 @@ class Level: Hashable {
 
     private(set) var name: String
     private var physicsWorld: PhysicsWorld
-    private(set) var itemRemover: EventResolver?
+    private(set) var itemRemover: ObjectRemover?
     private(set) var gameMode: ConditionChecker?
     private(set) var isMusical = false
     var timer: Float
@@ -79,7 +79,7 @@ class Level: Hashable {
         self.gameMode = conditionChecker
     }
 
-    func setItemRemover(itemRemover: EventResolver) {
+    func setItemRemover(itemRemover: ObjectRemover) {
         self.itemRemover = itemRemover
     }
 

@@ -6,7 +6,7 @@
 //
 
 // standard item remover for level.
-class StandardRemover: EventResolver {
+class StandardRemover: ObjectRemover {
     private unowned var level: Level
     private var removableItems: [ZeggleItem] = []
     private var respawn = false

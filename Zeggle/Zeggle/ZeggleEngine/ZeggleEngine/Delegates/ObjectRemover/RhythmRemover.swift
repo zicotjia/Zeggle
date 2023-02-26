@@ -1,4 +1,4 @@
-class RhythmRemover: EventResolver {
+class RhythmRemover: ObjectRemover {
     private unowned var level: Level
     private var deletableItems: Stack<ZeggleItem> = Stack()
     private var isDeleting = false

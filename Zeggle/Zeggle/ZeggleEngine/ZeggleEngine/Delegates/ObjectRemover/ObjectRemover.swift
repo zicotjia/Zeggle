@@ -5,7 +5,7 @@
 //  Created by Zico on 9/2/23.
 //
 
-protocol EventResolver: AnyObject {
+protocol ObjectRemover: AnyObject {
     func resolve()
 
     func isResolved() -> Bool

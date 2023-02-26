@@ -5,7 +5,7 @@
 //  Created by Zico on 24/2/23.
 //
 
-class StandardCalculator: EventResolver {
+class StandardCalculator: ObjectRemover {
     private unowned var level: Level
     private var itemsCollided: Set<ZeggleItem> = []
     private var added: Set<ZeggleItem> = []

@@ -13,6 +13,6 @@ struct SaveButtonView: View {
 
 struct SaveButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SaveButtonView().environmentObject(LevelViewModel()).environmentObject(LevelListViewModel())
+        SaveButtonView().environmentObject(LevelListViewModel())
     }
 }
