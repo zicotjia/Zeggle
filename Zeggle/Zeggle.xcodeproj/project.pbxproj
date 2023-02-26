@@ -55,7 +55,6 @@
 		178ACD942999255700135CBC /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 178ACD932999255700135CBC /* Diagrams */; };
 		1798EABC29AB6B1E000C671E /* RhythmRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABB29AB6B1E000C671E /* RhythmRemover.swift */; };
 		1798EAC029AB8323000C671E /* ToggleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABF29AB8323000C671E /* ToggleMusicView.swift */; };
-		1798EAC229AB9742000C671E /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 1798EAC129AB9742000C671E /* Diagrams */; };
 		17AB3DF32996903500962B4D /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF22996903500962B4D /* GameLoop.swift */; };
 		17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF4299691B000962B4D /* CannonConstants.swift */; };
 		17AB3DF7299692F400962B4D /* StandardRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF6299692F400962B4D /* StandardRemover.swift */; };
@@ -748,7 +747,6 @@
 				17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */,
 				178ACD942999255700135CBC /* Diagrams in Resources */,
 				17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */,
-				1798EAC229AB9742000C671E /* Diagrams in Resources */,
 				172D336429AA4DA2002CBC7A /* GameItemViewCreator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
