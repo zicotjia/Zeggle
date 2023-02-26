@@ -55,6 +55,7 @@
 		178ACD942999255700135CBC /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 178ACD932999255700135CBC /* Diagrams */; };
 		1798EABC29AB6B1E000C671E /* RhythmRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABB29AB6B1E000C671E /* RhythmRemover.swift */; };
 		1798EAC029AB8323000C671E /* ToggleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABF29AB8323000C671E /* ToggleMusicView.swift */; };
+		1798EAC429AB9E2D000C671E /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 1798EAC329AB9E2D000C671E /* Diagrams */; };
 		17AB3DF32996903500962B4D /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF22996903500962B4D /* GameLoop.swift */; };
 		17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF4299691B000962B4D /* CannonConstants.swift */; };
 		17AB3DF7299692F400962B4D /* StandardRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF6299692F400962B4D /* StandardRemover.swift */; };
@@ -172,7 +173,7 @@
 		178ACD932999255700135CBC /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../Diagrams; sourceTree = "<group>"; };
 		1798EABB29AB6B1E000C671E /* RhythmRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmRemover.swift; sourceTree = "<group>"; };
 		1798EABF29AB8323000C671E /* ToggleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMusicView.swift; sourceTree = "<group>"; };
-		1798EAC129AB9742000C671E /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../../../Diagrams; sourceTree = "<group>"; };
+		1798EAC329AB9E2D000C671E /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../Diagrams; sourceTree = "<group>"; };
 		17AB3DF22996903500962B4D /* GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoop.swift; sourceTree = "<group>"; };
 		17AB3DF4299691B000962B4D /* CannonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonConstants.swift; sourceTree = "<group>"; };
 		17AB3DF6299692F400962B4D /* StandardRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRemover.swift; sourceTree = "<group>"; };
@@ -361,6 +362,7 @@
 		17C381AD298FFE3B00417B5A = {
 			isa = PBXGroup;
 			children = (
+				1798EAC329AB9E2D000C671E /* Diagrams */,
 				17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */,
 				17F0180729AA6CB500EE5C38 /* AudioEngine */,
 				178ACD932999255700135CBC /* Diagrams */,
@@ -640,7 +642,6 @@
 			isa = PBXGroup;
 			children = (
 				17F0181329AA776700EE5C38 /* MyMusicPlayer.swift */,
-				1798EAC129AB9742000C671E /* Diagrams */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -747,6 +748,7 @@
 				17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */,
 				178ACD942999255700135CBC /* Diagrams in Resources */,
 				17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */,
+				1798EAC429AB9E2D000C671E /* Diagrams in Resources */,
 				172D336429AA4DA2002CBC7A /* GameItemViewCreator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
