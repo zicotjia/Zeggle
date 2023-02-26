@@ -46,7 +46,6 @@
 		172D335E29A94B2B002CBC7A /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D335D29A94B2B002CBC7A /* ItemType.swift */; };
 		172D336029AA15E8002CBC7A /* AddItemButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D335F29AA15E8002CBC7A /* AddItemButtonView.swift */; };
 		172D336229AA465B002CBC7A /* GameItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D336129AA465B002CBC7A /* GameItemFactory.swift */; };
-		172D336429AA4DA2002CBC7A /* GameItemViewCreator in Resources */ = {isa = PBXBuildFile; fileRef = 172D336329AA4DA2002CBC7A /* GameItemViewCreator */; };
 		174D14B629A28D9600B7DF03 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B529A28D9600B7DF03 /* RectangleView.swift */; };
 		174D14BA29A2912C00B7DF03 /* BlockCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D14B929A2912C00B7DF03 /* BlockCreator.swift */; };
 		17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF029A26BDE00F387A2 /* LineBody.swift */; };
@@ -110,6 +109,7 @@
 		17D8421A29A63EC200AA69D8 /* LevelPickerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */; };
 		17D8422029A6890E00AA69D8 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 17D8421F29A6890E00AA69D8 /* SQLite */; };
 		17D8422329A6893300AA69D8 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8422229A6893300AA69D8 /* Database.swift */; };
+		17E0BC9629ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 17E0BC9529ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 */; };
 		17F0180A29AA6CED00EE5C38 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180929AA6CED00EE5C38 /* Note.swift */; };
 		17F0180D29AA73FC00EE5C38 /* Beat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180C29AA73FC00EE5C38 /* Beat.swift */; };
 		17F0180F29AA751800EE5C38 /* NoteBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180E29AA751800EE5C38 /* NoteBeat.swift */; };
@@ -120,7 +120,6 @@
 		17F0181D29AA8F3200EE5C38 /* SampleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181C29AA8F3200EE5C38 /* SampleTrack.swift */; };
 		17F0182129AAA88C00EE5C38 /* CMajorScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182029AAA88C00EE5C38 /* CMajorScale.swift */; };
 		17F0182329AAAA4D00EE5C38 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182229AAAA4D00EE5C38 /* Scale.swift */; };
-		17F0182529AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */; };
 		17F0182A29AB5BEA00EE5C38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182929AB5BEA00EE5C38 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,7 +163,7 @@
 		172D335D29A94B2B002CBC7A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		172D335F29AA15E8002CBC7A /* AddItemButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButtonView.swift; sourceTree = "<group>"; };
 		172D336129AA465B002CBC7A /* GameItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemFactory.swift; sourceTree = "<group>"; };
-		172D336329AA4DA2002CBC7A /* GameItemViewCreator */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameItemViewCreator; path = ../../../../../../GameItemViewCreator; sourceTree = "<group>"; };
+		172D336329AA4DA2002CBC7A /* GameItemViewCreator */ = {isa = PBXFileReference; lastKnownFileType = text; name = GameItemViewCreator; path = ../../../../../../GameItemViewCreator; sourceTree = "<group>"; };
 		174D14B529A28D9600B7DF03 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		174D14B929A2912C00B7DF03 /* BlockCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreator.swift; sourceTree = "<group>"; };
 		17543FF029A26BDE00F387A2 /* LineBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBody.swift; sourceTree = "<group>"; };
@@ -228,6 +227,7 @@
 		17D8421729A6300100AA69D8 /* BallDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallDetailsView.swift; sourceTree = "<group>"; };
 		17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerScene.swift; sourceTree = "<group>"; };
 		17D8422229A6893300AA69D8 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		17E0BC9529ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Best of Guitars-4U-v1.0.sf2"; path = "AudioEngine/SoundFont/Best of Guitars-4U-v1.0.sf2"; sourceTree = "<group>"; };
 		17F0180929AA6CED00EE5C38 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		17F0180C29AA73FC00EE5C38 /* Beat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beat.swift; sourceTree = "<group>"; };
 		17F0180E29AA751800EE5C38 /* NoteBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBeat.swift; sourceTree = "<group>"; };
@@ -238,7 +238,6 @@
 		17F0181C29AA8F3200EE5C38 /* SampleTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrack.swift; sourceTree = "<group>"; };
 		17F0182029AAA88C00EE5C38 /* CMajorScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMajorScale.swift; sourceTree = "<group>"; };
 		17F0182229AAAA4D00EE5C38 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
-		17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Best of Guitars-4U-v1.0.sf2"; path = "../SoundFont/Best of Guitars-4U-v1.0.sf2"; sourceTree = "<group>"; };
 		17F0182929AB5BEA00EE5C38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,8 +361,8 @@
 		17C381AD298FFE3B00417B5A = {
 			isa = PBXGroup;
 			children = (
+				17E0BC9529ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 */,
 				1798EAC329AB9E2D000C671E /* Diagrams */,
-				17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */,
 				17F0180729AA6CB500EE5C38 /* AudioEngine */,
 				178ACD932999255700135CBC /* Diagrams */,
 				17C381C7298FFE4500417B5A /* PhysicsEngine */,
@@ -614,9 +613,17 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		17E0BC9429ABD97C00188DE0 /* SoundFont */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SoundFont;
+			sourceTree = "<group>";
+		};
 		17F0180729AA6CB500EE5C38 /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				17E0BC9429ABD97C00188DE0 /* SoundFont */,
 				17F0181F29AAA87F00EE5C38 /* Scale */,
 				17F0181929AA8BD100EE5C38 /* Constant */,
 				17F0181829AA814A00EE5C38 /* Track */,
@@ -744,12 +751,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F0182529AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 in Resources */,
+				17E0BC9629ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 in Resources */,
 				17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */,
 				178ACD942999255700135CBC /* Diagrams in Resources */,
 				17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */,
 				1798EAC429AB9E2D000C671E /* Diagrams in Resources */,
-				172D336429AA4DA2002CBC7A /* GameItemViewCreator in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
