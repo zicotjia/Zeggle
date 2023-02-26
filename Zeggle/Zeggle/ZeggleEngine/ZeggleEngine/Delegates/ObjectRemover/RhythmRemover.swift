@@ -62,6 +62,7 @@ class RhythmRemover: EventResolver {
             if currItem is Ball {
                 continue
             }
+            level.score += currItem.point
             level.deleteItem(zeggleItem: currItem)
         }
         set = []

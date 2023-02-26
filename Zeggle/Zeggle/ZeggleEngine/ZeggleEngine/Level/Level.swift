@@ -12,7 +12,6 @@ class Level: Hashable {
     private(set) var name: String
     private var physicsWorld: PhysicsWorld
     private(set) var itemRemover: EventResolver?
-    private(set) var scoreCalculator: EventResolver?
     private(set) var gameMode: ConditionChecker?
     private(set) var isMusical = false
     var timer: Float
@@ -46,7 +45,6 @@ class Level: Hashable {
         physicsWorld.setCollisionResolver(use: CollisionResolverA(physicsWorld: physicsWorld))
         self.timer = WorldConstants.defaultTimer
         self.setItemRemover(itemRemover: StandardRemover(level: self))
-        self.setScoreCalculator(calculator: StandardCalculator(level: self))
         self.changeGameMode(gameMode: .standard)
     }
 
@@ -83,10 +81,6 @@ class Level: Hashable {
 
     func setItemRemover(itemRemover: EventResolver) {
         self.itemRemover = itemRemover
-    }
-
-    func setScoreCalculator(calculator: EventResolver) {
-        self.scoreCalculator = calculator
     }
 
     func setNumberOfBall(to amount: Int) {
@@ -202,11 +196,6 @@ class Level: Hashable {
             item.updatePosition(timeElapsed: timeElapsed)
         }
         physicsWorld.updateSelf(timeElapsed: timeElapsed)
-
-        guard scoreCalculator != nil else {
-            return
-        }
-        scoreCalculator?.resolve()
 
         guard let itemRemover = itemRemover else {
             return

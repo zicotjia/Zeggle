@@ -30,7 +30,10 @@ class StandardRemover: EventResolver {
     private func deleteItem() {
         for item in removableItems where item.isDead && !(item is Ball) {
             item.deletionAction()
-            level.deleteItem(zeggleItem: item)
+            if level.items.contains(item) {
+                level.deleteItem(zeggleItem: item)
+                level.score += item.point
+            }
         }
     }
 
