@@ -34,7 +34,6 @@ struct CannonView: View {
             self.angle = newAngle
             gameLoop.level.shootCannon(angle: newAngle)
         }
-
     }
 }
 

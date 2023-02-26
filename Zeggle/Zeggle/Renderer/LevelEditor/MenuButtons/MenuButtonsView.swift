@@ -18,6 +18,7 @@ struct MenuButtonsView: View {
             Spacer()
             ResetButtonView()
             NameBarView()
+            ToggleMusicView()
             StartButtonView()
             Spacer().frame(width: 8)
         }

@@ -17,7 +17,9 @@ struct GameView: View {
             if gameLoop.state == .levelPicker {
                 LevelPickerScene().environmentObject(gameLoop).environmentObject(levelListViewModel)
             } else if gameLoop.state == .levelDesigner {
-                LevelEditorView(levelEditorState: $levelEditorState).environmentObject(gameLoop).environmentObject(levelListViewModel)
+                LevelEditorView(levelEditorState: $levelEditorState)
+                    .environmentObject(gameLoop)
+                    .environmentObject(levelListViewModel)
             } else {
                 GameScene().environmentObject(gameLoop)
             }

@@ -13,6 +13,8 @@ class GameLoop: ObservableObject {
     @Published private(set) var level: Level
     @Published var state: GameState
     @Published var test = Float(0.0)
+    private(set) var gameMode: GameMode = .standard
+    private(set) var sample = false
 
     var displayLink: CADisplayLink!
 
@@ -29,6 +31,14 @@ class GameLoop: ObservableObject {
 
         displayLink = CADisplayLink(target: self, selector: #selector(step))
         displayLink.add(to: .current, forMode: RunLoop.Mode.default)
+    }
+
+    func toggleMusicOn() {
+        level.toggleMusicOn()
+    }
+
+    func toggleMusicOff() {
+        level.toggleMusicOff()
     }
 
     func setNumberOfBalls(to amount: Int) {
@@ -79,7 +89,7 @@ class GameLoop: ObservableObject {
     }
 
     func getNumberOfBallsLeft() -> Int {
-        level.numberOfBalls
+        level.numberOfStandardBalls
     }
 
     func getNumberOfSpookyBalls() -> Int {
@@ -95,10 +105,11 @@ class GameLoop: ObservableObject {
     }
 
     func changeGameMode(gameMode: GameMode) {
-        level.changeGameMode(gameMode: gameMode)
+        self.gameMode = gameMode
     }
 
     func startGame() {
+        level.changeGameMode(gameMode: gameMode)
         state = .inGame
     }
 

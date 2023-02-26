@@ -45,9 +45,11 @@ struct LevelEditorView: View {
 
 struct LevelDesignerView_Previews: PreviewProvider {
 
-    static let previewPeg = Peg(centre: PhysicsVector2D(centre: CGPoint(x: 100, y: 100)), radius: 50, color: PegColor.orange)
+    static let previewPeg = Peg(centre: PhysicsVector2D(centre: CGPoint(x: 100, y: 100)), radius: 50,
+                                color: PegColor.orange)
 
-    static let previewPeg2 = Peg(centre: PhysicsVector2D(centre: CGPoint(x: 100, y: 200)), radius: 50, color: PegColor.blue)
+    static let previewPeg2 = Peg(centre: PhysicsVector2D(centre: CGPoint(x: 100, y: 200)), radius: 50,
+                                 color: PegColor.blue)
 
     static var previews: some View {
         LevelEditorView(levelEditorState: .constant(LevelEditorStates.off), itemRadius: 10)

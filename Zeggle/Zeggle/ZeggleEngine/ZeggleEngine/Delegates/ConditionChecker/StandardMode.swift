@@ -32,11 +32,25 @@ class StandardMode: ConditionChecker {
         guard !level.winFlag && !level.loseFlag else {
             return
         }
-        let noMoreBalls = level.numberOfBalls == 0 && level.numberOfSpookyBalls == 0
+
+        let noMoreBalls = level.numberOfBalls == 0
         let noActiveBall = level.ball == nil
 
-        if noMoreBalls && noActiveBall {
-            level.triggerLose()
+        guard noMoreBalls && noActiveBall else {
+            return
         }
+
+        for item in level.items {
+            guard let peg = item as? Peg else {
+                continue
+            }
+
+            if peg.zombie && !peg.physicsBody.isFixed {
+                return
+            }
+        }
+
+        level.triggerLose()
+
     }
 }

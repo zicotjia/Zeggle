@@ -16,6 +16,9 @@ class TimeAttack: ConditionChecker {
     }
 
     func checkCondition() {
+        guard !level.timerLock else {
+            return
+        }
         level.timer -= Float(1.0 / 120)
         checkWinCondition()
         checkLoseCondition()

@@ -9,7 +9,6 @@ enum ItemType: String, CaseIterable, Identifiable {
     case orangePeg = "peg-orange"
     case bluePeg = "peg-blue"
     case zombiePeg = "peg-zombie"
-    case grayRectangle = "rectangle-gray"
 
     var id: ItemType { self }
 }

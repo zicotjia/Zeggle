@@ -29,4 +29,11 @@ class LevelListViewModel: ObservableObject {
             break
         }
     }
+
+    func isNameTaken(name: String) -> Bool {
+        for level in levels where level.name == name {
+            return true
+        }
+        return false
+    }
 }

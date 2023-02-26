@@ -54,9 +54,11 @@
 		17543FFA29A2898B00F387A2 /* RectangleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FF929A2898B00F387A2 /* RectangleBody.swift */; };
 		17543FFC29A28BF700F387A2 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17543FFB29A28BF700F387A2 /* Block.swift */; };
 		178ACD942999255700135CBC /* Diagrams in Resources */ = {isa = PBXBuildFile; fileRef = 178ACD932999255700135CBC /* Diagrams */; };
+		1798EABC29AB6B1E000C671E /* RhythmRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABB29AB6B1E000C671E /* RhythmRemover.swift */; };
+		1798EAC029AB8323000C671E /* ToggleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798EABF29AB8323000C671E /* ToggleMusicView.swift */; };
 		17AB3DF32996903500962B4D /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF22996903500962B4D /* GameLoop.swift */; };
 		17AB3DF5299691B000962B4D /* CannonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF4299691B000962B4D /* CannonConstants.swift */; };
-		17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF6299692F400962B4D /* ItemRemoverA.swift */; };
+		17AB3DF7299692F400962B4D /* StandardRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF6299692F400962B4D /* StandardRemover.swift */; };
 		17AB3DF92996955300962B4D /* GameLoopConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DF82996955300962B4D /* GameLoopConstants.swift */; };
 		17AB3DFE29969CBB00962B4D /* GameItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DFD29969CBB00962B4D /* GameItemListView.swift */; };
 		17AB3E0029969DBC00962B4D /* PegCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB3DFF29969DBC00962B4D /* PegCreator.swift */; };
@@ -108,6 +110,18 @@
 		17D8421A29A63EC200AA69D8 /* LevelPickerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */; };
 		17D8422029A6890E00AA69D8 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 17D8421F29A6890E00AA69D8 /* SQLite */; };
 		17D8422329A6893300AA69D8 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8422229A6893300AA69D8 /* Database.swift */; };
+		17F0180A29AA6CED00EE5C38 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180929AA6CED00EE5C38 /* Note.swift */; };
+		17F0180D29AA73FC00EE5C38 /* Beat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180C29AA73FC00EE5C38 /* Beat.swift */; };
+		17F0180F29AA751800EE5C38 /* NoteBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180E29AA751800EE5C38 /* NoteBeat.swift */; };
+		17F0181129AA762800EE5C38 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181029AA762800EE5C38 /* Rest.swift */; };
+		17F0181429AA776700EE5C38 /* MyMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181329AA776700EE5C38 /* MyMusicPlayer.swift */; };
+		17F0181729AA77C700EE5C38 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181629AA77C700EE5C38 /* Track.swift */; };
+		17F0181B29AA8BDC00EE5C38 /* TrackConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181A29AA8BDC00EE5C38 /* TrackConstants.swift */; };
+		17F0181D29AA8F3200EE5C38 /* SampleTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0181C29AA8F3200EE5C38 /* SampleTrack.swift */; };
+		17F0182129AAA88C00EE5C38 /* CMajorScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182029AAA88C00EE5C38 /* CMajorScale.swift */; };
+		17F0182329AAAA4D00EE5C38 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182229AAAA4D00EE5C38 /* Scale.swift */; };
+		17F0182529AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */; };
+		17F0182A29AB5BEA00EE5C38 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0182929AB5BEA00EE5C38 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,9 +172,11 @@
 		17543FF929A2898B00F387A2 /* RectangleBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBody.swift; sourceTree = "<group>"; };
 		17543FFB29A28BF700F387A2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		178ACD932999255700135CBC /* Diagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagrams; path = ../Diagrams; sourceTree = "<group>"; };
+		1798EABB29AB6B1E000C671E /* RhythmRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmRemover.swift; sourceTree = "<group>"; };
+		1798EABF29AB8323000C671E /* ToggleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMusicView.swift; sourceTree = "<group>"; };
 		17AB3DF22996903500962B4D /* GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoop.swift; sourceTree = "<group>"; };
 		17AB3DF4299691B000962B4D /* CannonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonConstants.swift; sourceTree = "<group>"; };
-		17AB3DF6299692F400962B4D /* ItemRemoverA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRemoverA.swift; sourceTree = "<group>"; };
+		17AB3DF6299692F400962B4D /* StandardRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRemover.swift; sourceTree = "<group>"; };
 		17AB3DF82996955300962B4D /* GameLoopConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoopConstants.swift; sourceTree = "<group>"; };
 		17AB3DFD29969CBB00962B4D /* GameItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemListView.swift; sourceTree = "<group>"; };
 		17AB3DFF29969DBC00962B4D /* PegCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegCreator.swift; sourceTree = "<group>"; };
@@ -212,6 +228,18 @@
 		17D8421729A6300100AA69D8 /* BallDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallDetailsView.swift; sourceTree = "<group>"; };
 		17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerScene.swift; sourceTree = "<group>"; };
 		17D8422229A6893300AA69D8 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		17F0180929AA6CED00EE5C38 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		17F0180C29AA73FC00EE5C38 /* Beat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beat.swift; sourceTree = "<group>"; };
+		17F0180E29AA751800EE5C38 /* NoteBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBeat.swift; sourceTree = "<group>"; };
+		17F0181029AA762800EE5C38 /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		17F0181329AA776700EE5C38 /* MyMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicPlayer.swift; sourceTree = "<group>"; };
+		17F0181629AA77C700EE5C38 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		17F0181A29AA8BDC00EE5C38 /* TrackConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackConstants.swift; sourceTree = "<group>"; };
+		17F0181C29AA8F3200EE5C38 /* SampleTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTrack.swift; sourceTree = "<group>"; };
+		17F0182029AAA88C00EE5C38 /* CMajorScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMajorScale.swift; sourceTree = "<group>"; };
+		17F0182229AAAA4D00EE5C38 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Best of Guitars-4U-v1.0.sf2"; path = "../SoundFont/Best of Guitars-4U-v1.0.sf2"; sourceTree = "<group>"; };
+		17F0182929AB5BEA00EE5C38 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +308,7 @@
 				172D333429A7CE67002CBC7A /* ResetButtonView.swift */,
 				172D333629A7D154002CBC7A /* StartButtonView.swift */,
 				172D333829A7D16A002CBC7A /* MenuButtonsView.swift */,
+				1798EABF29AB8323000C671E /* ToggleMusicView.swift */,
 			);
 			path = MenuButtons;
 			sourceTree = "<group>";
@@ -300,7 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				17CA299B29940139006C66B9 /* EventResolver.swift */,
-				17AB3DF6299692F400962B4D /* ItemRemoverA.swift */,
+				17AB3DF6299692F400962B4D /* StandardRemover.swift */,
+				1798EABB29AB6B1E000C671E /* RhythmRemover.swift */,
 			);
 			path = ObjectRemover;
 			sourceTree = "<group>";
@@ -333,6 +363,8 @@
 		17C381AD298FFE3B00417B5A = {
 			isa = PBXGroup;
 			children = (
+				17F0182429AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 */,
+				17F0180729AA6CB500EE5C38 /* AudioEngine */,
 				178ACD932999255700135CBC /* Diagrams */,
 				17C381C7298FFE4500417B5A /* PhysicsEngine */,
 				17C381B8298FFE3B00417B5A /* Zeggle */,
@@ -464,6 +496,7 @@
 		17CA29962993F56E006C66B9 /* ZeggleEngine */ = {
 			isa = PBXGroup;
 			children = (
+				17F0182829AB5BD400EE5C38 /* DataStructure */,
 				17CA299E29940178006C66B9 /* GameItems */,
 				17CA299D2994016C006C66B9 /* Level */,
 				17CA29982994010D006C66B9 /* Delegates */,
@@ -581,6 +614,71 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		17F0180729AA6CB500EE5C38 /* AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				17F0181F29AAA87F00EE5C38 /* Scale */,
+				17F0181929AA8BD100EE5C38 /* Constant */,
+				17F0181829AA814A00EE5C38 /* Track */,
+				17F0181229AA775B00EE5C38 /* MusicPlayer */,
+				17F0180829AA6CC500EE5C38 /* Notes */,
+				17F0181C29AA8F3200EE5C38 /* SampleTrack.swift */,
+			);
+			path = AudioEngine;
+			sourceTree = "<group>";
+		};
+		17F0180829AA6CC500EE5C38 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				17F0180929AA6CED00EE5C38 /* Note.swift */,
+				17F0180C29AA73FC00EE5C38 /* Beat.swift */,
+				17F0180E29AA751800EE5C38 /* NoteBeat.swift */,
+				17F0181029AA762800EE5C38 /* Rest.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		17F0181229AA775B00EE5C38 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				17F0181329AA776700EE5C38 /* MyMusicPlayer.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		17F0181829AA814A00EE5C38 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				17F0181629AA77C700EE5C38 /* Track.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		17F0181929AA8BD100EE5C38 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				17F0181A29AA8BDC00EE5C38 /* TrackConstants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		17F0181F29AAA87F00EE5C38 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				17F0182029AAA88C00EE5C38 /* CMajorScale.swift */,
+				17F0182229AAAA4D00EE5C38 /* Scale.swift */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
+		17F0182829AB5BD400EE5C38 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				17F0182929AB5BEA00EE5C38 /* Stack.swift */,
+			);
+			path = DataStructure;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -646,6 +744,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F0182529AB425100EE5C38 /* Best of Guitars-4U-v1.0.sf2 in Resources */,
 				17C381C1298FFE3C00417B5A /* Preview Assets.xcassets in Resources */,
 				178ACD942999255700135CBC /* Diagrams in Resources */,
 				17C381BE298FFE3C00417B5A /* Assets.xcassets in Resources */,
@@ -680,13 +779,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F0181B29AA8BDC00EE5C38 /* TrackConstants.swift in Sources */,
 				172D333729A7D154002CBC7A /* StartButtonView.swift in Sources */,
+				1798EAC029AB8323000C671E /* ToggleMusicView.swift in Sources */,
 				17CA298B29917E2D006C66B9 /* WorldBoundaries.swift in Sources */,
 				172D335E29A94B2B002CBC7A /* ItemType.swift in Sources */,
 				172D335529A935CB002CBC7A /* BallType.swift in Sources */,
 				17C381E429900F1C00417B5A /* PhysicsVector2D.swift in Sources */,
-				17AB3DF7299692F400962B4D /* ItemRemoverA.swift in Sources */,
+				17AB3DF7299692F400962B4D /* StandardRemover.swift in Sources */,
 				17CA29AF2994091C006C66B9 /* BallConstants.swift in Sources */,
+				17F0181129AA762800EE5C38 /* Rest.swift in Sources */,
 				172D332F29A7CBB9002CBC7A /* LoadButtonView.swift in Sources */,
 				17543FF129A26BDE00F387A2 /* LineBody.swift in Sources */,
 				172D336029AA15E8002CBC7A /* AddItemButtonView.swift in Sources */,
@@ -696,6 +798,7 @@
 				17CA298D2991805D006C66B9 /* CollisionResolver.swift in Sources */,
 				17AB3E0329969E5C00962B4D /* PegColor.swift in Sources */,
 				17C87E8E2998015F00AB8141 /* RoundBody.swift in Sources */,
+				17F0182329AAAA4D00EE5C38 /* Scale.swift in Sources */,
 				17C87E952998252B00AB8141 /* MathHelper.swift in Sources */,
 				17C87E922998102200AB8141 /* PhysicsBodyType.swift in Sources */,
 				17D8421229A62C0F00AA69D8 /* FlagTriggerer.swift in Sources */,
@@ -706,13 +809,16 @@
 				17CA29B129940A67006C66B9 /* WorldConstants.swift in Sources */,
 				172D330A29A7A09B002CBC7A /* LevelListViewModel.swift in Sources */,
 				172D334929A8D6AB002CBC7A /* BeatTheScore.swift in Sources */,
+				1798EABC29AB6B1E000C671E /* RhythmRemover.swift in Sources */,
 				17CA29A429940324006C66B9 /* Peg.swift in Sources */,
 				17D8421829A6300100AA69D8 /* BallDetailsView.swift in Sources */,
+				17F0181429AA776700EE5C38 /* MyMusicPlayer.swift in Sources */,
 				172D335329A9135E002CBC7A /* DodgeBall.swift in Sources */,
 				172D334629A8BE90002CBC7A /* AmmoPickerView.swift in Sources */,
 				172D334029A7F2D8002CBC7A /* SampleLevelListView.swift in Sources */,
 				17CA29BE29955726006C66B9 /* PegView.swift in Sources */,
 				172D331429A7A5F7002CBC7A /* LevelWindowConstants.swift in Sources */,
+				17F0182129AAA88C00EE5C38 /* CMajorScale.swift in Sources */,
 				172D333B29A7D182002CBC7A /* LevelEditorView.swift in Sources */,
 				172D335029A90FE2002CBC7A /* SizeSliderView.swift in Sources */,
 				17D8420E29A611D300AA69D8 /* GameDetailsView.swift in Sources */,
@@ -738,22 +844,27 @@
 				170B60D029A4CAAE0001E943 /* ComplexItem.swift in Sources */,
 				17C87E892997F3D000AB8141 /* HelperFunctions.swift in Sources */,
 				172D333129A7CC64002CBC7A /* SaveButtonView.swift in Sources */,
+				17F0182A29AB5BEA00EE5C38 /* Stack.swift in Sources */,
 				170B60D629A4CD550001E943 /* Bucket.swift in Sources */,
 				17CA29C429955A84006C66B9 /* BallView.swift in Sources */,
 				172D332D29A7CB8F002CBC7A /* LevelEditorButtonsView.swift in Sources */,
 				17CA299C29940139006C66B9 /* EventResolver.swift in Sources */,
 				172D332929A7CB56002CBC7A /* AddOrangePegButtonView.swift in Sources */,
 				17C87E842997EC8100AB8141 /* BallCreator.swift in Sources */,
+				17F0181D29AA8F3200EE5C38 /* SampleTrack.swift in Sources */,
 				172D334429A8B1C1002CBC7A /* GameMode.swift in Sources */,
+				17F0180A29AA6CED00EE5C38 /* Note.swift in Sources */,
 				17CA29AB2994080E006C66B9 /* DimensionConstants.swift in Sources */,
 				174D14BA29A2912C00B7DF03 /* BlockCreator.swift in Sources */,
 				17C381DF2990079B00417B5A /* PhysicsVector1D.swift in Sources */,
 				17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */,
 				170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */,
 				172D332529A7CA2A002CBC7A /* AddBluePegButtonView.swift in Sources */,
+				17F0181729AA77C700EE5C38 /* Track.swift in Sources */,
 				172D330E29A7A42A002CBC7A /* LevelView.swift in Sources */,
 				172D333329A7CCE5002CBC7A /* NameBarView.swift in Sources */,
 				172D333529A7CE67002CBC7A /* ResetButtonView.swift in Sources */,
+				17F0180D29AA73FC00EE5C38 /* Beat.swift in Sources */,
 				17CA29A2299401CB006C66B9 /* ZeggleItem.swift in Sources */,
 				17CA29C229955A2B006C66B9 /* CannonView.swift in Sources */,
 				172D331829A7A6FD002CBC7A /* LevelSelectionConstants.swift in Sources */,
@@ -775,6 +886,7 @@
 				17CA298F2992AC71006C66B9 /* BoundaryCollision.swift in Sources */,
 				172D330C29A7A0CC002CBC7A /* LevelViewModel.swift in Sources */,
 				17543FFA29A2898B00F387A2 /* RectangleBody.swift in Sources */,
+				17F0180F29AA751800EE5C38 /* NoteBeat.swift in Sources */,
 				17D8421A29A63EC200AA69D8 /* LevelPickerScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -912,6 +1024,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -941,6 +1054,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

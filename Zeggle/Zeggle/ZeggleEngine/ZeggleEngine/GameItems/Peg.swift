@@ -11,7 +11,7 @@ class Peg: ZeggleItem {
 
     private(set) var color: PegColor
     private var periodOfImmobility = 0
-    private var zombie: Bool = false
+    private(set) var zombie: Bool = false
 
     init(centre: PhysicsVector2D, radius: CGFloat, color: PegColor, collisionAction: @escaping () -> Void = {}) {
         self.color = color
@@ -20,17 +20,21 @@ class Peg: ZeggleItem {
                    height: 0, width: 0, mass: PegConstants.defaultMass, isFixed: true,
                    elasticity: PegConstants.defaultElasticity, shape: .round)
 
+        changePoint(to: 2)
+
         if color == .zombie {
             self.zombie = true
+            self.physicsBody.setMass(to: 10)
             physicsBody.setCollisionAction {
                 self.physicsBody.unlockBodyInPlace()
             }
+            changePoint(to: 0)
         } else {
             physicsBody.setCollisionAction {
                 self.setHasCollided()
             }
         }
-        changePoint(to: 2)
+
     }
 
     private func setHasCollided() {

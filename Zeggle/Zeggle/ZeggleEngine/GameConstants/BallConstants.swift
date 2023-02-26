@@ -18,6 +18,6 @@ struct BallConstants {
         vertical: 50)
     static let ballInitialXPosition = DimensionsConstants.horizontalCentrePosition
     static let ballInitialYPosition = 50
-    static let VelocityStuckRange = (-4...4)
+    static let VelocityStuckRange = (-5...5)
     static let timeToBeConsideredStuck: Int = 20
 }

@@ -16,10 +16,6 @@ struct BackgroundView: View {
             Image(ImageNameToFile.background)
                 .resizable(resizingMode: .stretch)
                 .ignoresSafeArea()
-            HStack {
-                Text("\(gameLoop.level.ball?.physicsBody.centre.vVector.magnitude ?? 20)")
-                Text("\(gameLoop.level.ball?.physicsBody.centre.hVector.magnitude ?? 20)")
-            }
         }
     }
 }

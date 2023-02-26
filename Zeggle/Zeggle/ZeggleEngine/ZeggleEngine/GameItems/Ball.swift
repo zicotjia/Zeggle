@@ -60,6 +60,14 @@ class Ball: ZeggleItem {
 
     }
 
+    func lockSelf() {
+        physicsBody.lockBodyInplace()
+    }
+
+    func unlockSelf() {
+        physicsBody.unlockBodyInPlace()
+    }
+
     override func updatePosition(timeElapsed: Float) {
         super.updatePosition(timeElapsed: timeElapsed)
         checkIfStuck()

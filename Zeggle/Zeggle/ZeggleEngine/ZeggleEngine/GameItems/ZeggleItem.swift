@@ -10,7 +10,7 @@ class ZeggleItem: Hashable {
     var physicsBody: PhysicsBody
     private(set) var removeFlag: Bool
     private(set) var undergoingDeletion: Bool
-    private(set) var healthBar: Double
+    var healthBar: Double
     private(set) var deletionAction: () -> Void = {}
     var point = 0
 
@@ -80,7 +80,7 @@ class ZeggleItem: Hashable {
         }
 
         if undergoingDeletion {
-            healthBar -= 0.05
+            healthBar -= 0.033
         }
     }
 

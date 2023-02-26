@@ -10,19 +10,22 @@ class BeatTheScore: ConditionChecker {
 
     init(level: Level) {
         self.level = level
-        level.setTarget(to: checkMaximumScore() / 2)
+        level.setTarget(to: Int(checkMaximumScore() * 0.9))
         level.setTimer(time: level.items.count * 2)
     }
 
-    private func checkMaximumScore() -> Int {
+    private func checkMaximumScore() -> Double {
         var count = 0
         for item in level.items {
             count += item.point
         }
-        return count
+        return Double(count)
     }
 
     func checkCondition() {
+        guard !level.timerLock else {
+            return
+        }
         level.timer -= Float(1.0 / 120)
         checkWinCondition()
         checkLoseCondition()

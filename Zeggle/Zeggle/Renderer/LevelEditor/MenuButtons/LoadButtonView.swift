@@ -16,7 +16,6 @@ struct LoadButtonView: View {
         Button("Load") {
             gameLoop.changeState(state: .levelPicker)
         }
-
     }
 }
 

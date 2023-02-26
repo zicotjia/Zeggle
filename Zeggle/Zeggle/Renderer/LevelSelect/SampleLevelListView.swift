@@ -21,7 +21,7 @@ struct SampleLevelListView: View {
                             LevelSelectionConstants.miniLevelHeight)
                     .onTapGesture {
                         gameLoop.switchLevel(level: level)
-                        gameLoop.startGame()
+                        gameLoop.enterLevelEditor()
                     }
 
             }

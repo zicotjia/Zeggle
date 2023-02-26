@@ -6,7 +6,7 @@
 //
 
 // standard item remover for level.
-class ItemRemoverA: EventResolver {
+class StandardRemover: EventResolver {
     private unowned var level: Level
     private var removableItems: [ZeggleItem] = []
     private var respawn = false
@@ -44,15 +44,15 @@ class ItemRemoverA: EventResolver {
 
     func resolve() {
 
-        triggerStartOfDeletion()
-
-        deleteItem()
+        loadEntitiesForRemoval()
 
         guard conditionForRemoval() else {
             return
         }
 
-        loadEntitiesForRemoval()
+        triggerStartOfDeletion()
+
+        deleteItem()
 
         guard let currentBall = level.ball else {
             return

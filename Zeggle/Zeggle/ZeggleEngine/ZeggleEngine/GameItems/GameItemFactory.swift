@@ -17,8 +17,6 @@ class GameItemFactory {
             return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .blue)
         case .zombiePeg:
             return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .zombie)
-        case .grayRectangle:
-            return Block(centre: PhysicsVector2D(centre: centre), height: radius)
         }
     }
 }

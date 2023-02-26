@@ -11,11 +11,13 @@ class Level: Hashable {
 
     private(set) var name: String
     private var physicsWorld: PhysicsWorld
-    private var itemRemover: EventResolver?
-    private var scoreCalculator: EventResolver?
+    private(set) var itemRemover: EventResolver?
+    private(set) var scoreCalculator: EventResolver?
     private(set) var gameMode: ConditionChecker?
+    private(set) var isMusical = false
     var timer: Float
-    private(set) var numberOfBalls: Int = 5
+    var timerLock = false
+    private(set) var numberOfStandardBalls: Int = 5
     private(set) var numberOfSpookyBalls: Int = 5
     private(set) var items: Set<ZeggleItem>
     private(set) var ball: Ball?
@@ -26,7 +28,11 @@ class Level: Hashable {
     var score = 0
     private(set) var target = 0
 
-    init(name: String = "untitled", zeggleItems: Set<ZeggleItem>) {
+    var numberOfBalls: Int {
+        numberOfSpookyBalls + numberOfStandardBalls
+    }
+
+    init(name: String = "", zeggleItems: Set<ZeggleItem>) {
         self.name = name
         let levelBoundaries = WorldBoundaries(ceiling: DimensionsConstants.ceiling,
                                               floor: DimensionsConstants.floor,
@@ -39,13 +45,23 @@ class Level: Hashable {
                                        gravity: WorldConstants.defaultGravity, wind: PhysicsVector1D.nullVector)
         physicsWorld.setCollisionResolver(use: CollisionResolverA(physicsWorld: physicsWorld))
         self.timer = WorldConstants.defaultTimer
-        self.setItemRemover(itemRemover: ItemRemoverA(level: self))
+        self.setItemRemover(itemRemover: StandardRemover(level: self))
         self.setScoreCalculator(calculator: StandardCalculator(level: self))
         self.changeGameMode(gameMode: .standard)
     }
 
     func rename(newName: String) {
         name = newName
+    }
+
+    func toggleMusicOn() {
+        self.isMusical = true
+        self.setItemRemover(itemRemover: RhythmRemover(level: self))
+    }
+
+    func toggleMusicOff() {
+        self.isMusical = false
+        self.setItemRemover(itemRemover: StandardRemover(level: self))
     }
 
     func changeGameMode(gameMode: GameMode) {
@@ -74,7 +90,7 @@ class Level: Hashable {
     }
 
     func setNumberOfBall(to amount: Int) {
-        numberOfBalls = amount
+        numberOfStandardBalls = amount
     }
 
     func setNumberOfSpookyBall(to amount: Int) {
@@ -102,23 +118,26 @@ class Level: Hashable {
         guard ball == nil else {
             return
         }
+
         let totalSpeed = BallConstants.ballInitialVelocity
         let verticalSpeed = sin(CGFloat(angle) * Double.pi / 180) * totalSpeed
         let horizontalSpeed = cos(CGFloat(angle) * Double.pi / 180) * totalSpeed
         if ballType == .standard {
-            guard numberOfBalls > 0 else {
+            guard numberOfStandardBalls > 0 else {
                 return
             }
-            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed, vSpeed: verticalSpeed, type: ballType)
+            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed,
+                               vSpeed: verticalSpeed, type: ballType)
             addItem(zeggleItem: newBall)
-            numberOfBalls -= 1
+            numberOfStandardBalls -= 1
             ball = newBall
         }
         if ballType == .spooky {
             guard numberOfSpookyBalls > 0 else {
                 return
             }
-            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed, vSpeed: verticalSpeed, type: ballType)
+            let newBall = Ball(centre: BallConstants.ballInitialPosition, hSpeed: horizontalSpeed,
+                               vSpeed: verticalSpeed, type: ballType)
             addItem(zeggleItem: newBall)
             numberOfSpookyBalls -= 1
             ball = newBall
@@ -189,15 +208,24 @@ class Level: Hashable {
         }
         scoreCalculator?.resolve()
 
-        guard itemRemover != nil else {
+        guard let itemRemover = itemRemover else {
             return
         }
-        itemRemover?.resolve()
+
+        itemRemover.resolve()
 
         guard gameMode?.checkCondition() != nil else {
             return
         }
         gameMode?.checkCondition()
+    }
+
+    func lockTime() {
+        timerLock = true
+    }
+
+    func unlockTime() {
+        timerLock = false
     }
 
     static func == (lhs: Level, rhs: Level) -> Bool {

@@ -13,6 +13,9 @@ struct ZeggleApp: App {
     var body: some Scene {
         WindowGroup {
             GameView(gameLoop: GameLoop(level: SampleLevel.level))
+                .onAppear {
+                    MyMusicPlayer.sharedInstance
+                }
         }
     }
 }

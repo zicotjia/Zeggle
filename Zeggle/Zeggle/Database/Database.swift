@@ -114,6 +114,8 @@ class Database {
                 return PegColor.blue
             case "orange":
                 return PegColor.orange
+            case "zombie":
+                return PegColor.zombie
             default:
                 return nil
             }
@@ -166,8 +168,8 @@ class Database {
                 return Level(zeggleItems: [])
             }
 
-            var numberOfBalls = 10
-            var numberOfSpookyBalls = 10
+            var numberOfBalls = 5
+            var numberOfSpookyBalls = 5
             for row in queryRows {
                 guard let noOfBalls = row[0] as? Double,
                       let noOfSpookyBalls = row[1] as? Double else {
@@ -196,6 +198,9 @@ class Database {
         var levels: [Level] = []
 
         for levelName in getLevelNames() {
+            if levelName == "" {
+                continue
+            }
             let level = getLevelWithName(name: levelName)
             levels.append(level)
         }
@@ -209,7 +214,7 @@ class Database {
 
             let preparedQuery = try database?.prepare(query)
 
-            try preparedQuery?.run(level.name, level.numberOfBalls, level.numberOfSpookyBalls)
+            try preparedQuery?.run(level.name, level.numberOfStandardBalls, level.numberOfSpookyBalls)
             print("Saved Level \(level.name) into Database")
         } catch {
             print(error)
