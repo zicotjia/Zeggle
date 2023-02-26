@@ -1,8 +1,8 @@
 # CS3217 Problem Set 4
 
-**Name:** Your name
+**Name:** Zico
 
-**Matric No:** Your matric no
+**Matric No:** A0239156Y
 
 ## Tips
 1. CS3217's docs is at https://cs3217.github.io/cs3217-docs. Do visit the docs often, as
@@ -18,34 +18,55 @@
 3. Do not burn out. Have fun!
 
 ## Dev Guide
-You may put your dev guide either in this section, or in a new file entirely.
-You are encouraged to include diagrams where appropriate in order to enhance
-your guide.
+The entire project can be broken up to 5 components
+
+![High Level Diagram](https://github.com/cs3217-2223/problem-set-4-zicotjia/blob/master/Diagrams/HighLevelDiagram.png)
+
+## Features Not Implemented 
+1. Rectangle Block (poorly implemented collision logic)
+2. Bucket (cannot implement collision logic)
+3. Rotatable Item (cannot implement physics engine logic)
+4. Ka-Boom powerup (cannot implement physics engine logic)
+5. Spicy Peg confusion peg (cannot implement correctly)
+6. Preloaded Level (no time to implement)
+7. Integration (no main menu)
 
 ## Rules of the Game
-Please write the rules of your game here. This section should include the
-following sub-sections. You can keep the heading format here, and you can add
-more headings to explain the rules of your game in a structured manner.
-Alternatively, you can rewrite this section in your own style. You may also
-write this section in a new file entirely, if you wish.
+There are currently 4 Game Modes that is selectable . They are selectable in the level designer
+
+1. StandardMode
+   -  No time limit. To win you have to clear all the pegs (including zombie pegs). You lose if you run out of ammo.
+ 
+2. TimeAttack
+   -  60 seconds time limit. Similar to StandardMode but you have to clear all the pegs before the time limit end.
+   
+3. BeatTheScore
+   -  60 seconds time limit. Beat the target score before the time ends. You lose if time is over or you run out of pegs. All pegs reward 2 points when hit
+   
+4. DodgeBall
+   -  60 seconds time limit. You win if you can deplete all your ammo without hitting any peg.
 
 ### Cannon Direction
-Please explain how the player moves the cannon.
+Press a location in the screen and the cannon will aim and shoot a ball in the direction you tapped
 
 ### Win and Lose Conditions
-Please explain how the player wins/loses the game.
+Depends on the gameMode
 
 ## Level Designer Additional Features
+Can select gameMode and resize item. Can select how many balls does the player start with in the level.
 
 ### Peg Rotation
-Please explain how the player rotates the triangular pegs.
+Not implemented
 
 ### Peg Resizing
-Please explain how the player resizes the pegs.
+There is a slider that allow you to adjust the size of the peg in the level designer
 
 ## Bells and Whistles
-Please write all of the additional features that you have implemented so that
-your grader can award you credit.
+For Bells and Whistles the biggest feature I want to implement is an entirely independent audio engine that can be used by the game without any coupling. It play audio by assembling of MIDI notes and then playing it. Having self learnt up to the beginning of grade 2 music theory, I cannot assure that the audio engine technical implementation adhere correctly to music theory concepts that is used (I may use the wrong term here and there).
+
+1. Audio Engine that can generate and play simple tunes using MIDI and through building an abstraction layer on top of Swift AudioToolBox, also provided the app with a default soundFont in case the device has no soundFont. Sound played by the Audio Engine should imitate an acoustic guitar with nylon string.
+2. MusicalPeg modifier, play music when the peg is hit and an arpegio depending on the number of pegs hit. 
+3. Standard GameMode and timeAttack GameMode. Number of Balls is also edittable by the player.
 
 ## Tests
 If you decide to write how you are going to do your tests instead of writing
