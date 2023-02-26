@@ -25,6 +25,18 @@ class PegCreator {
             case .zombie:
                 PegView(peg: .constant(peg), deleteButtonOn: .constant(state == .deletePeg),
                         imageName: ImageNameToFile.zombie)
+            case .red:
+                PegView(peg: .constant(peg),
+                        deleteButtonOn: .constant(state == .deletePeg),
+                        imageName: peg.removeFlag ? ImageNameToFile.redPegGlow : ImageNameToFile.redPeg)
+            case .yellow:
+                PegView(peg: .constant(peg),
+                        deleteButtonOn: .constant(state == .deletePeg),
+                        imageName: peg.removeFlag ? ImageNameToFile.yellowPegGlow : ImageNameToFile.yellowPeg)
+            case .pink:
+                PegView(peg: .constant(peg),
+                        deleteButtonOn: .constant(state == .deletePeg),
+                        imageName: peg.removeFlag ? ImageNameToFile.pinkPegGlow : ImageNameToFile.pinkPeg)
             }
         } else {
             EmptyView()

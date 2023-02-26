@@ -116,6 +116,12 @@ class Database {
                 return PegColor.orange
             case "zombie":
                 return PegColor.zombie
+            case "pink":
+                return PegColor.pink
+            case "yellow":
+                return PegColor.yellow
+            case "red":
+                return PegColor.red
             default:
                 return nil
             }
@@ -231,6 +237,12 @@ class Database {
                 return "blue"
             case .zombie:
                 return "zombie"
+            case .red:
+                return "red"
+            case .yellow:
+                return "yellow"
+            case .pink:
+                return "pink"
             }
         }
 

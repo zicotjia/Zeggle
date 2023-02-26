@@ -11,6 +11,12 @@ enum LevelEditorStates: Equatable {
             return ItemType.bluePeg
         case .item(value: .zombiePeg):
             return ItemType.zombiePeg
+        case .item(value: .yellowPeg):
+            return ItemType.yellowPeg
+        case .item(value: .redPeg):
+            return ItemType.redPeg
+        case .item(value: .pinkPeg):
+            return ItemType.pinkPeg
         default:
             return nil
         }

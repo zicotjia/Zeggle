@@ -17,6 +17,12 @@ class GameItemFactory {
             return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .blue)
         case .zombiePeg:
             return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .zombie)
+        case .redPeg:
+            return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .red)
+        case .yellowPeg:
+            return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .yellow)
+        case .pinkPeg:
+            return Peg(centre: PhysicsVector2D(centre: centre), radius: radius, color: .pink)
         }
     }
 }
