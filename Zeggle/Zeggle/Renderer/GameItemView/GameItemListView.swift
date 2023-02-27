@@ -16,7 +16,7 @@ struct GameItemListView: View {
             ForEach(Array(entities), id: \.self) { entity in
                 GameItemViewCreator.createItemView(item: entity, state: .off)
             }
-        }
+        }.frame(width: DimensionsConstants.levelWidth, height: DimensionsConstants.levelHeight)
 
     }
 }

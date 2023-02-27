@@ -110,6 +110,7 @@
 		17D8422029A6890E00AA69D8 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 17D8421F29A6890E00AA69D8 /* SQLite */; };
 		17D8422329A6893300AA69D8 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8422229A6893300AA69D8 /* Database.swift */; };
 		17E0BC9629ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 17E0BC9529ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 */; };
+		17E0BC9829ACACD200188DE0 /* PlaceableAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E0BC9729ACACD200188DE0 /* PlaceableAreaView.swift */; };
 		17F0180A29AA6CED00EE5C38 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180929AA6CED00EE5C38 /* Note.swift */; };
 		17F0180D29AA73FC00EE5C38 /* Beat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180C29AA73FC00EE5C38 /* Beat.swift */; };
 		17F0180F29AA751800EE5C38 /* NoteBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0180E29AA751800EE5C38 /* NoteBeat.swift */; };
@@ -163,7 +164,6 @@
 		172D335D29A94B2B002CBC7A /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		172D335F29AA15E8002CBC7A /* AddItemButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButtonView.swift; sourceTree = "<group>"; };
 		172D336129AA465B002CBC7A /* GameItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemFactory.swift; sourceTree = "<group>"; };
-		172D336329AA4DA2002CBC7A /* GameItemViewCreator */ = {isa = PBXFileReference; lastKnownFileType = text; name = GameItemViewCreator; path = ../../../../../../GameItemViewCreator; sourceTree = "<group>"; };
 		174D14B529A28D9600B7DF03 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		174D14B929A2912C00B7DF03 /* BlockCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreator.swift; sourceTree = "<group>"; };
 		17543FF029A26BDE00F387A2 /* LineBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBody.swift; sourceTree = "<group>"; };
@@ -228,6 +228,7 @@
 		17D8421929A63EC200AA69D8 /* LevelPickerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerScene.swift; sourceTree = "<group>"; };
 		17D8422229A6893300AA69D8 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		17E0BC9529ABD9CC00188DE0 /* Best of Guitars-4U-v1.0.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Best of Guitars-4U-v1.0.sf2"; path = "AudioEngine/SoundFont/Best of Guitars-4U-v1.0.sf2"; sourceTree = "<group>"; };
+		17E0BC9729ACACD200188DE0 /* PlaceableAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceableAreaView.swift; sourceTree = "<group>"; };
 		17F0180929AA6CED00EE5C38 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		17F0180C29AA73FC00EE5C38 /* Beat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beat.swift; sourceTree = "<group>"; };
 		17F0180E29AA751800EE5C38 /* NoteBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBeat.swift; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 				172D332229A7CA0A002CBC7A /* LevelEditorButtons */,
 				172D333A29A7D182002CBC7A /* LevelEditorView.swift */,
 				172D333C29A7D192002CBC7A /* ToolBarView.swift */,
+				17E0BC9729ACACD200188DE0 /* PlaceableAreaView.swift */,
 			);
 			path = LevelEditor;
 			sourceTree = "<group>";
@@ -597,7 +599,6 @@
 		17D8420C29A611C700AA69D8 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				172D336329AA4DA2002CBC7A /* GameItemViewCreator */,
 				17D8420D29A611D300AA69D8 /* GameDetailsView.swift */,
 				17D8421729A6300100AA69D8 /* BallDetailsView.swift */,
 				172D335829A937A2002CBC7A /* AmmoView.swift */,
@@ -867,6 +868,7 @@
 				17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */,
 				170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */,
 				172D332529A7CA2A002CBC7A /* AddBluePegButtonView.swift in Sources */,
+				17E0BC9829ACACD200188DE0 /* PlaceableAreaView.swift in Sources */,
 				17F0181729AA77C700EE5C38 /* Track.swift in Sources */,
 				172D330E29A7A42A002CBC7A /* LevelView.swift in Sources */,
 				172D333329A7CCE5002CBC7A /* NameBarView.swift in Sources */,

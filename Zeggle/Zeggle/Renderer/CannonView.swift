@@ -17,13 +17,13 @@ struct CannonView: View {
                 .resizable()
                 .frame(width: CannonConstants.width, height: CannonConstants.height)
                 .position(x: CannonConstants.xPos, y: CannonConstants.yPos)
-                .rotationEffect(.degrees(Double(angle)),
+                .rotationEffect(.degrees(Double(angle - 90)),
                                 anchor: UnitPoint(x: CannonConstants.xPos /
                                                   DimensionsConstants.rightWall,
                                                   y: CannonConstants.yPos /
                                                   DimensionsConstants.floor))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(width: DimensionsConstants.deviceWidth, height: DimensionsConstants.levelHeight)
         .contentShape(Rectangle())
         .onTapGesture(coordinateSpace: .global) { location in
 

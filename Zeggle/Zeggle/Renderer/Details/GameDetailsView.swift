@@ -29,7 +29,8 @@ struct GameDetailsView: View {
                 Text("Target = \(gameLoop.level.target)")
                 Spacer()
             }
-        }
+        }.frame(height: DimensionsConstants.detailViewHeight)
+            .background(Color.white)
     }
 }
 

@@ -8,6 +8,12 @@
 import Foundation
 
 class SampleLevel {
+
+    static func createFilledLevelOne() -> Level {
+        let level = Level(zeggleItems: [])
+
+        return level
+    }
     static let level = Level(zeggleItems: [Peg(centre: PhysicsVector2D(horizontal: 100, vertical: 300),
                                                radius: 20, color: .blue),
                                            Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 400),

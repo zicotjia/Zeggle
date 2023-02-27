@@ -18,7 +18,7 @@ struct ImageNameToFile {
     static let pinkPegGlow = "peg-pink-glow"
     static let ball = "ball"
     static let background = "background"
-    static let cannon = "cannon copy"
+    static let cannon = "cannon 1"
     static let block = "rectangle-gray"
     static let bucket = "bucket"
     static let spooky = "peg-purple"

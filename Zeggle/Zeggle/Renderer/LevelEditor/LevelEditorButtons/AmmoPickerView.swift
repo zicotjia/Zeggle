@@ -16,7 +16,7 @@ struct AmmoPickerView: View {
         HStack {
             Spacer()
             HStack {
-                VStack {
+                HStack {
                     Image(ImageNameToFile.ball)
                         .resizable()
                         .frame(width: 50, height: 50)
@@ -36,7 +36,7 @@ struct AmmoPickerView: View {
 
             Spacer()
             HStack {
-                VStack {
+                HStack {
                     Image(ImageNameToFile.spooky)
                         .resizable()
                         .frame(width: 50, height: 50)

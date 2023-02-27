@@ -14,8 +14,8 @@ struct BallConstants {
     static let ballInitialVelocity = CGFloat(100)
     static let ballSpeedWhenSpawned = CGFloat(0)
     static let ballInitialPosition = PhysicsVector2D(
-        horizontal: DimensionsConstants.horizontalCentrePosition,
-        vertical: 50)
+        horizontal: CannonConstants.xPos,
+        vertical: CannonConstants.yPos)
     static let ballInitialXPosition = DimensionsConstants.horizontalCentrePosition
     static let ballInitialYPosition = 50
     static let VelocityStuckRange = (-5...5)

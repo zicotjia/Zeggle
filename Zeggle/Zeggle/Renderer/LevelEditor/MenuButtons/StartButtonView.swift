@@ -6,11 +6,7 @@ struct StartButtonView: View {
     @State var gameMode = GameMode.standard
 
     var body: some View {
-        VStack {
-            Button("Start") {
-                levelListViewModel.updateLevel(level: gameLoop.level)
-                gameLoop.startGame()
-            }
+        HStack {
             Picker("Game Mode", selection: $gameMode) {
                 ForEach(GameMode.allCases) { gameMode in
                     Text(gameMode.rawValue)
@@ -18,8 +14,12 @@ struct StartButtonView: View {
                 .onChange(of: gameMode) { _ in
                     gameLoop.changeGameMode(gameMode: gameMode)
                 }
+            }.frame(minWidth: 120)
+            Button("Start") {
+                levelListViewModel.updateLevel(level: gameLoop.level)
+                gameLoop.startGame()
             }
-        }.frame(minWidth: 100)
+        }
     }
 }
 

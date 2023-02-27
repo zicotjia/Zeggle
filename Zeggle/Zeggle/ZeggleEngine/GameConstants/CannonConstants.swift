@@ -8,8 +8,8 @@ import CoreGraphics
 
 struct CannonConstants {
     static let xPos: CGFloat = DimensionsConstants.horizontalCentrePosition
-    static let yPos: CGFloat = 50
-    static let height: CGFloat = 150
-    static let width: CGFloat = 150
+    static let yPos: CGFloat = DimensionsConstants.deviceHeight * 0.06
+    static let height: CGFloat = 120
+    static let width: CGFloat = 120
     static let positionVector = PhysicsVector2D(horizontal: xPos, vertical: yPos)
 }

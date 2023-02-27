@@ -6,7 +6,8 @@ struct LevelSelectView: View {
 
     var body: some View {
         ZStack {
-            BackgroundView()
+            Image(ImageNameToFile.background)
+                .resizable(resizingMode: .stretch)
             VStack {
                 ScrollView(.vertical) {
                     SampleLevelListView(sampleLevels: levelListViewModel.sampleLevels)

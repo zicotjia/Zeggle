@@ -12,23 +12,26 @@ struct GameScene: View {
 
     var body: some View {
         let gameEnded = gameLoop.gameHasEnded()
-        return VStack {
-            GameDetailsView().environmentObject(gameLoop)
-            ZStack {
-                BackgroundView().environmentObject(gameLoop)
-                GameItemListView(entities: gameLoop.level.items).environmentObject(gameLoop)
-                CannonView().environmentObject(gameLoop)
-            }
-        }.alert(isPresented: .constant(gameEnded)) {
-            Alert(title: Text(gameLoop.gameEndMessage()), message: Text("Do you want to replay?"),
-                  primaryButton: Alert.Button.default(Text("No"), action: {
-                    gameLoop.exitLevel()
-                    }),
-                  secondaryButton: Alert.Button.cancel(Text("Yes"), action: {
-                    gameLoop.restart()
-                    })
-            )
-        }
+        return VStack(spacing: 0) {
+                    ZStack {
+                        BackgroundView()
+                        VStack {
+                            GameItemListView(entities: gameLoop.level.items).environmentObject(gameLoop)
+                        }
+                        CannonView().environmentObject(gameLoop)
+                    }
+                    GameDetailsView().environmentObject(gameLoop)
+
+            }.alert(isPresented: .constant(gameEnded)) {
+                Alert(title: Text(gameLoop.gameEndMessage()), message: Text("Do you want to replay?"),
+                      primaryButton: Alert.Button.default(Text("No"), action: {
+                        gameLoop.exitLevel()
+                        }),
+                      secondaryButton: Alert.Button.cancel(Text("Yes"), action: {
+                        gameLoop.restart()
+                        })
+                )
+            }.frame(width: DimensionsConstants.deviceWidth, height: DimensionsConstants.deviceHeight)
 
     }
 }

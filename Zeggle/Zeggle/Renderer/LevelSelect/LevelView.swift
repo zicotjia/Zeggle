@@ -7,13 +7,11 @@ struct LevelView: View {
 
     var body: some View {
         ZStack {
-           Image(ImageNameToFile.background)
-                .resizable(resizingMode: .stretch)
-                .ignoresSafeArea()
+            BackgroundView()
             ForEach(Array(entities), id: \.self) { entity in
                 GameItemViewCreator.createItemView(item: entity, state: levelEditorState)
             }
-        }
+        }.frame(width: DimensionsConstants.levelWidth, height: DimensionsConstants.levelHeight)
     }
 }
 

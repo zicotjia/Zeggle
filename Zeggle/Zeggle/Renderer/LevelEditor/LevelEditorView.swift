@@ -17,7 +17,13 @@ struct LevelEditorView: View {
 
             let position = value.location
 
-            guard position.y < DimensionsConstants.tappableMinY else {
+            let low = position.y - itemRadius
+            let high = position.y + itemRadius
+            print("low = \(low)")
+            print("high = \(high)")
+
+            guard high < DimensionsConstants.tappableMaxY
+                    && low > DimensionsConstants.tappableMinY else {
                 return
             }
 
@@ -32,14 +38,17 @@ struct LevelEditorView: View {
     }
 
     var body: some View {
-        VStack {
+
+        VStack(spacing: 0) {
+            Spacer()
             ZStack {
                 LevelView(entities: gameLoop.level.items, levelEditorState: $levelEditorState)
                     .gesture(tapGesture)
-                    .border(.black, width: 3)
+                    .frame(height: DimensionsConstants.tappableLevelHeight, alignment: .bottom)
             }
             ToolBarView(levelEditorState: $levelEditorState, radius: $itemRadius)
         }
+
     }
 }
 

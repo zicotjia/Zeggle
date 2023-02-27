@@ -12,7 +12,7 @@ struct AmmoView: View {
 
     var body: some View {
         HStack {
-            VStack {
+            HStack {
                 Image(ImageNameToFile.ball)
                     .resizable()
                     .frame(width: 50, height: 50)
@@ -23,7 +23,7 @@ struct AmmoView: View {
                 Text("x \(gameLoop.getNumberOfBallsLeft())")
             }
 
-            VStack {
+            HStack {
                 Image(ImageNameToFile.spooky)
                     .resizable()
                     .frame(width: 50, height: 50)
