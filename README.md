@@ -74,7 +74,7 @@ There are 3 Physics Bodies type that can be used to represent object.
 Audio Engine is a package that allow the game to play music and assemble sequence of notes by abstracting the functionalities of Swift's AudioToolBox package. 
 
 #### Note
-Note refers to musical note. A musical note to MIDI note number mapper is provided for convenience in assembling MIDI notes. 
+Note refers to musical note. A musical note to MIDI note number mapper is provided for convenience in assembling MIDI notes. This is so that user of this engine will need not to know the MIDI number of the notes. 
 
 #### Beat
 Beat refers to a duration of a note. There are currently 4 beats in the audio engine which are: half, one, two, four. A beat to float mapper is provided to translate the beat to its respective duration ratio.
@@ -95,7 +95,7 @@ Scale comprising of the notes in the CMajorScale
 Track refers to a sequence of NoteBeat. It can construct a musicalSequence from the sequence of NoteBeat by translating them into MIDI notes with the corresponding duration to be played by the music player.
 
 #### MyMusicPlayer
-MyMusicPlayer refer to a music player. It consume a track and produce a sound based on the track. It will load a soundFont in the bundle to give a standardised soundFont to be used by all devices. The sound profile used is currently that of an acoustic guitar. Its abstracts the process of creating the AUGraph.
+MyMusicPlayer refer to a music player. It consume a track and produce a sound based on the track. It will load a soundFont in the bundle to give a standardised soundFont to be used by all devices. The sound profile used is currently that of an classical guitar. Its abstracts the process of creating the AUGraph.
 
 ### Renderer
 Renderer holds all the views in the game.
@@ -106,12 +106,14 @@ GameScene is the same as PS3 it shows the level that is being played and details
 
 LevelEditorView shows the level editor similar to PS2. It communicates with the level and view-model to signal changes in the level or saving of level into storage, it also tells the level if there is a change in the game mode to be played. The levelEditor allow the user to pick what object to put into the level and also the size of the objects.
 
-LevelPickerScene shows the list of level in the game. It communicates with the LevelListViewModel to get the levels stored in the game. Clicking on any of the level preview will load the levelEditor for that level
-
+LevelPickerScene shows the list of level in the game. It communicates with the LevelListViewModel to get the levels stored in the game. Clicking on any of the level preview will load the levelEditor for that level. The first 3 levels are sample level and the 4th level is a test level.
 
 ### GameLoop
 GameLoop handle the logic of the game as it is being run, the level interact with the game loop to update its states as the game goes on. It also hold the state of the game such as whether it is in the middle of gameplay, is it in level picker or level designer to tell the renderer what to render.
 
+### Performance
+A sample level with 64 pegs is in the game. No noticeable performance issue even when sound is being played in an iPad 8
+Another sample level with around 52 pegs with 12 zombie pegs had no noticeable performance issue when played in an iPad 8 
 
 ## Rules of the Game
 There are currently 4 Game Modes that is selectable . They are selectable in the level designer
@@ -123,10 +125,19 @@ There are currently 4 Game Modes that is selectable . They are selectable in the
    -  60 seconds time limit. Similar to StandardMode but you have to clear all the pegs before the time limit end.
    
 3. BeatTheScore
-   -  60 seconds time limit. Beat the target score before the time ends. You lose if time is over or you run out of pegs. All pegs reward 2 points when hit
+   -  Time limit depends on the target to score which also depends on number of pegs and the total score. Beat the target score before the time ends. You lose if time is over or you run out of pegs.
    
 4. DodgeBall
    -  60 seconds time limit. You win if you can deplete all your ammo without hitting any peg.
+
+Different coloured pegs will award different points
+   - Pink: 10
+   - Red: 8
+   - Blue: 6
+   - Yellow: 4
+   - Orange: 2
+
+ZombiePeg does not award points
 
 ### Cannon Direction
 Press a location in the screen and the cannon will aim and shoot a ball in the direction you tapped
@@ -135,20 +146,40 @@ Press a location in the screen and the cannon will aim and shoot a ball in the d
 Depends on the gameMode
 
 ## Level Designer Additional Features
-Can select gameMode and resize item. Can select how many balls does the player start with in the level.
+- Can select gameMode and resize item with item preview. Can select how many balls does the player start with in the level.
+
+- Reset now restore the previously saved state of that level.
+
+- Reset also works as a quick load feature. Filling another level name and clicking reset will automatically load the level with said name, beware that you will lose all unsaved progress if you quick load without saving beforehand.
+
+- Quick loading a sample level will create an empty level.
+
+- There is a create new level button at the bottom of the level picker.
+
+- Cannot save a level with name similar to the sample levels or empty name.
+
+- Editting level B but saving with level A in the textBox will overwrite level A and B will remain uneditted.
+
+- Starting a level will also saves the level
 
 ### Peg Rotation
 Not implemented
 
 ### Peg Resizing
-There is a slider that allow you to adjust the size of the peg in the level designer
+There is a slider that allow you to adjust the size of the peg in the level designer, there is also a preview of the item
 
 ## Bells and Whistles
 For Bells and Whistles the biggest feature I want to implement is an entirely independent audio engine that can be used by the game without any coupling. It play audio by assembling of MIDI notes and then playing it. Having self learnt up to the beginning of grade 2 music theory, I cannot assure that the audio engine technical implementation adhere correctly to music theory concepts that is used (I may use the wrong term here and there).
 
-1. Audio Engine that can generate and play simple tunes using MIDI and through building an abstraction layer on top of Swift AudioToolBox, also provided the app with a default soundFont in case the device has no soundFont. Sound played by the Audio Engine should imitate an acoustic guitar with nylon string.
-2. MusicalPeg modifier, play music when the peg is hit and an arpegio depending on the number of pegs hit. 
+The Audio Engine works by picking notes in a scale so the sequence of notes picked will sound naturally well together. A not so musically-inclined user will be able to use this engine easily.
+
+1. Audio Engine that can generate and play simple tunes using MIDI and through building an abstraction layer on top of Swift AudioToolBox, also provided the app with a default soundFont in case the device has no soundFont. Sound played by the Audio Engine should imitate a classical guitar.
+2. Music modifier, play music when the peg is hit and an arpegio depending on the number of pegs hit. Allow user to make music while randomly hitting pegs. In this mode the item removal is done in reverse sequence they are hit while matching the arpeggio sound, timer is lock while items are being removed. The recommended way to play this app.
 3. Standard GameMode and timeAttack GameMode. Number of Balls is also edittable by the player.
+4. Revamped the buttons of the level editor for more uses, elaborated above
+5. A result screen is shown after winning or losing prompting the user to replay or go to level editor. An editted sample level will load its original state when replay is clicked whereas custom level will retain all the changes made
+6. Made the UI more colorful
+7. Add more variation of pegs following the theme of a certain J-Rock Bank :).
 
 ## Tests
 
@@ -389,6 +420,9 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
    - When rename is called and new name differ from previous name, name of level will change
    - When rename is called and new name is same as previous name, name of level will not change
    
+-  setGameMode
+   - Check that the new gameMode is properly assigned to the level
+   
 -  setItemRemover
    - Check that itemRemover is not nil when calling init
    
@@ -428,6 +462,8 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
    -  Check that all items are updated
    -  If there is no remover, the game should keep going on even if the ball touch the ground
 
+### ObjectRemover
+
 #### StandardRemover
 
 -  init
@@ -453,6 +489,27 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
 - init
    -  Check that level is initialised correctly and displayLink setting is correct
 
+### ConditionChecker
+Test is better done while playtesting
+
+#### StandardMode
+- init
+   -  Check that level is initialised correctly
+ 
+#### TimeAttack
+- init
+   -  Same as StandardMode
+   -  Check that a StandardMode checker is also initialised
+
+#### BeatTheScore
+- init
+   -  Same as StandardMode
+   -  Check that the level is given an appropriate score and timer
+
+#### DodgeBall
+-  init
+   -  Same as StandardMode
+
 ### Renderer
 #### PegCreator
 
@@ -477,6 +534,42 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
    - pass in a `Ball` and check it creates a ball view
    - pass in a `Peg` and check it createds a peg view
    - any other `ZeggleItem` will produce an empty view 
+
+#### LevelPicker
+-  When sliding down the level picker, the first 4 levels should be the sample level
+-  There should be no duplicate level name in the level picker
+-  The level preview should be accurate to the actual level
+
+#### LevelEditor
+
+   - Test Level Editor Buttons
+      - Coloured Peg Button
+         -  If initially translucent, pressing it will make it opaque and turn every other button translucent.
+         -  If initially opaque, pressing it will make it translucent.
+         -  When opaque
+            -  tapping near another object in the level will do nothing.
+            -  tapping near the edge of the screen will do nothing.
+            -  tapping on the lower portion of the level will do
+            -  tapping anywhere free will add the coloured peg into the level
+         -  Regardless of opacity
+            -  long tapping an object will delete the object
+      -  Delete Button
+         -  When opaque
+            -  tapping any object will remove it.
+            -  tapping anywhere else will do nothing.
+         -  Same behaviour with the other two buttons for other gesture.
+      -  Item Size Slider
+         - Coloured Peg is highlited
+            - Should show a preview of the peg of the correct color
+            - Dragging the slider will change the size of the preview
+            - Check that placing a peg will produce a peg of the same size as the preview
+         - Other item highlighted or no item highlighted
+            - Should show nothing
+        
+   - Test ammo setter
+     -  Clicking on the picker will show a number range between 1 to 50
+     -  Choosing a number will update the ammo counter of the appropriate balltype
+     -  Ammo changed is preserved when level is saved or when replay happen
    
 ### Play Testing
 
@@ -503,11 +596,20 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
    - Ensure that the peg remains in place after collision
    - Check that the peg is lit
    - Check that peg remains lit after repeated collision
+-  Zombie ball hit another peg
+   - same as being hit by a ball
 
-#### Item Remover
+#### Standard Remover
 -  Shoot the cannon at the pegs, ensuring to hit at least one peg
    - After the ball touches the ground, the ball will fade out of the screen
    - The lit peg will also fade out of the screen 
+   - If ball is stuck after some time, remove all lit peg
+   
+#### Rhythm Remover
+-  Shoot the cannon at the pegs, ensuring to hit at least one peg
+   - After the ball touches the ground, the ball will fade out of the screen while a sound is played 
+   - The lit peg will also fade out of the screen in the reverse sequence they are hit following a certain consisten rhythm
+   - If the ball is stuck after some time, remove all lit peg in the reverse sequence they are hit
    
 #### Handling Stuck Ball
 -  Shoot the cannon in a location full of pegs
@@ -536,23 +638,70 @@ let collisionResolver = CollisionResolverA(physicsWorld: testWorld)
    - Cannon won't shoot if standard balls is highlighted
    
 #### StandardMode
--  Create a level with some pegs
+-  Create a level with some pegs and set the game mode
    - When all the pegs in the screen is gone, check that an alert pop up showing the win screen
    - When all ammo is gone and there is still pegs in the screen, check that an alert pop up showing the lose screen
    - When all ammo is gone and there is no more peg, check that an alert pop up showing the lose screen
    
 #### TimeAttack
--  Create a level with some pegs
+-  Create a level with some pegs and set the game mode
    - Do the same check as StandardMode
+   - Check that the timer decrement every second
    - When timer reached 0, check that an alert pop up showing the lose screen
    - When timer reached 0 and all peg has been hit but not removed, show the lose screen
    
 #### BeatTheScore
--  Create a level with some pegs
+-  Create a level with some pegs and set the game mode
    - Check that the target points is reachable
+   - Check that the timer set is fair (not too low) and decrement every second
    - When timer reached 0, if the number of point is less than target, show the lose screen
    - If number of point is more than or equal target, show the win screen
    - If number of point is more than or equal target and timer reached 0, show the win screen
+
+#### DodgeBall
+-  Create a level with some pegs and set the game mode
+   - Check that the timer decrement every second
+   - If a collision with a ball happen dont immediately show lose screen. Show lose screen when ball is stuck of left the level
+   - If no more ammo and timer is still above 0, show the win screen
+  
+#### GameDetails
+-  Ball Ammo
+   - Decreement when the corresponding ball is shot
+   - Clicking on it will change the ball type when cannon is shot and also highlight the correct ball type touched
+   - Only one ball type can be highlighted
+-  Timer
+   -  Shown when gameMode is beatTheScore, timeAttack or dodgeBall
+   -  Decrement by 1 every second
+   -  Hidden for other gameMode
+-  Score
+   -  Shown in every GameMode
+   -  Only increment after item is removed, not when item collide   
+-  Target
+   -  Shown in beatTheScore only
+   -  Does not decrement or increment
+
+#### LevelEditor Button
+-  Loaded sample level
+   - Making changes then saving will do nothing if text field is empty
+   - Clicking load will make the screen return to level picker
+   - Clicking start will start the game with the editted level
+   - Pressing replay after game end will reload the sample level without any level editor changes
+   - Saving with a filled text field will save a level or overwrite a level with that name, preserving all edits in the new level while the sample level remain the same
+   - Saving with a filled text field with the same name as a sample level or empty name will do nothing, check that no new level is created
+   - Clicking reset will reset all edits made in the sample level
+   - Clicking reset with a fillted text field will load the level with the text field name, if there is no level with that name, load an empty level 
+   - After game end, pressing replay will load the sample level without any edits.
+  
+-  Loaded custom level
+   - Clicking load will make the screen return to level picker, unsaved edits will be lost
+   - Saving with an unclicked text field or the text field with the current level name will update the level
+   - Saving with an filled text field with a non sample level name will create a new level or overwrite the level with the same name, the current level will not have its edits preserved
+   - Making changes and pressing reset without making any save will revert the level to its previously saved state
+   - Making changes and pressing reset with a filled text field will load the leve with the name in text field if the level exist, losing all changes made
+   - Making changes and pressing reset with a filled text field will load an empty level if no such level exist, losing all changes made
+   - Starting a level will also saves accordingly to the name in the text field
+   - After game end, pressing replay will preserve all edits when the start button is clicked
+  
 
 ## Written Answers
 
