@@ -176,6 +176,6 @@ class BodiesCollision: Resolvable {
 
     // quick fix for when bodies are stuck into each other due to overlap, to fix move back bodies to a previous state.
     private func immediatelyDisplaceCollidingItem(entity: PhysicsBody) {
-        entity.updatePosition(timeElapsed: -0.12)
+        entity.updatePosition(timeElapsed: -0.15)
     }
 }
