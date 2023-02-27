@@ -39,6 +39,10 @@ class DodgeBall: ConditionChecker {
         for item in level.items where !(item is Ball) && item.undergoingDeletion {
             level.triggerLose()
         }
+
+        if level.timer < 0 {
+            level.triggerLose()
+        }
     }
 
 }
