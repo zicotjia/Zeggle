@@ -20,19 +20,31 @@ class Peg: ZeggleItem {
                    height: 0, width: 0, mass: PegConstants.defaultMass, isFixed: true,
                    elasticity: PegConstants.defaultElasticity, shape: .round)
 
-        changePoint(to: 2)
-
         if color == .zombie {
             self.zombie = true
             self.physicsBody.setMass(to: 10)
             physicsBody.setCollisionAction {
                 self.physicsBody.unlockBodyInPlace()
             }
-            changePoint(to: 0)
         } else {
             physicsBody.setCollisionAction {
                 self.setHasCollided()
             }
+        }
+
+        switch color {
+        case .pink:
+            changePoint(to: 10)
+        case .red:
+            changePoint(to: 8)
+        case .blue:
+            changePoint(to: 6)
+        case .yellow:
+            changePoint(to: 4)
+        case .orange:
+            changePoint(to: 2)
+        case .zombie:
+            changePoint(to: 0)
         }
 
     }
