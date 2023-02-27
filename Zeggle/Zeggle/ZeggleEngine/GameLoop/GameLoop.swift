@@ -14,7 +14,7 @@ class GameLoop: ObservableObject {
     @Published var state: GameState
     @Published var test = Float(0.0)
     private(set) var gameMode: GameMode = .standard
-    private(set) var sample = false
+    private(set) var musicOn = false
 
     var displayLink: CADisplayLink!
 
@@ -34,10 +34,12 @@ class GameLoop: ObservableObject {
     }
 
     func toggleMusicOn() {
+        musicOn = true
         level.toggleMusicOn()
     }
 
     func toggleMusicOff() {
+        musicOn = false
         level.toggleMusicOff()
     }
 
@@ -110,6 +112,11 @@ class GameLoop: ObservableObject {
 
     func startGame() {
         level.changeGameMode(gameMode: gameMode)
+        if musicOn {
+            level.toggleMusicOn()
+        } else {
+            level.toggleMusicOff()
+        }
         state = .inGame
     }
 

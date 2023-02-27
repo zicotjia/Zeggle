@@ -6,21 +6,19 @@ struct LevelEditorButtonView: View {
     @State var numberOfBalls = 0
 
     var body: some View {
-        VStack {
-            HStack {
-                Spacer().frame(width: 20)
-                ForEach(ItemType.allCases) { item in
-                    AddItemButtonView(levelEditorState: $levelEditorState, itemType: item)
+        HStack {
+            VStack {
+                HStack {
+                    ForEach(ItemType.allCases) { item in
+                        AddItemButtonView(levelEditorState: $levelEditorState, itemType: item)
+                    }
+                    DeleteButtonView(levelEditorState: $levelEditorState)
                 }
-                Spacer()
-                DeleteButtonView(levelEditorState: $levelEditorState)
-                SizeSliderView(radius: $radius)
-                Spacer().frame(width: 20)
-            }
-            HStack {
-                AmmoPickerView()
-            }
+                    AmmoPickerView()
+                }
+            SizeSliderView(radius: $radius, levelEditorState: $levelEditorState)
         }
+
     }
 }
 

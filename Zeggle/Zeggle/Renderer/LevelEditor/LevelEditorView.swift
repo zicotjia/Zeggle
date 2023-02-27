@@ -19,8 +19,6 @@ struct LevelEditorView: View {
 
             let low = position.y - itemRadius
             let high = position.y + itemRadius
-            print("low = \(low)")
-            print("high = \(high)")
 
             guard high < DimensionsConstants.tappableMaxY
                     && low > DimensionsConstants.tappableMinY else {

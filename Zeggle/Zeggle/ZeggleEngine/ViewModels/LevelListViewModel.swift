@@ -11,12 +11,24 @@ class LevelListViewModel: ObservableObject {
     }
 
     func getLevelsFromDB() {
+        sampleLevels = SampleLevel.generateSampleLevels()
         levels = []
-        levels.append(contentsOf: Database.getLevelsWithPegs())
+
+        let names = sampleLevels.map {$0.name}
+        for level in Database.getLevelsWithPegs() {
+            if names.contains(level.name) {
+                continue
+            }
+            levels.append(level)
+        }
+
     }
 
     func updateLevel(level: Level) {
         Database.updateLevelAndPegsToDB(level: level)
+        for sampleLevel in sampleLevels where sampleLevel.name == level.name {
+            return
+        }
         getLevelsFromDB()
     }
 

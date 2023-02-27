@@ -13,9 +13,10 @@ struct ToolBarView: View {
 
     var body: some View {
         HStack {
-            VStack {
+            VStack(spacing: 0) {
                 MenuButtonsView()
                 LevelEditorButtonView(levelEditorState: $levelEditorState, radius: $radius)
+                    .background(Color.brown).frame(maxHeight: .infinity)
             }.frame(width: DimensionsConstants.rightWall, height: DimensionsConstants.toolBarHeight)
         }
 

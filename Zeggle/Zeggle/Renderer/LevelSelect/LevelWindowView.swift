@@ -17,6 +17,6 @@ struct LevelWindowView: View {
 
 struct LevelWindowView_Previews: PreviewProvider {
     static var previews: some View {
-        LevelWindowView(level: SampleLevel.level)
+        LevelWindowView(level: SampleLevel.createColorfulLevel())
     }
 }

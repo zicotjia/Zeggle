@@ -6,59 +6,140 @@
 //
 
 import Foundation
+import UIKit
 
 class SampleLevel {
 
     static func createFilledLevelOne() -> Level {
         let level = Level(zeggleItems: [])
 
+        var xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+
+        let xStep = DimensionsConstants.rightWall * 0.1
+
+        var yStart = DimensionsConstants.tappableMinY + DimensionsConstants.tappableMaxY * 0.1
+
+        let yStep = DimensionsConstants.tappableMaxY * 0.1
+
+        for _ in (0..<8) {
+            let newPeg = Peg(centre: PhysicsVector2D(horizontal: xStart, vertical: yStart),
+                             radius: 25,
+                             color: .blue)
+
+            level.addItem(zeggleItem: newPeg)
+            xStart += xStep
+            yStart += yStep
+        }
+
+        level.rename(newName: "Sample 1")
+
         return level
     }
-    static let level = Level(zeggleItems: [Peg(centre: PhysicsVector2D(horizontal: 100, vertical: 300),
-                                               radius: 20, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 400),
-                                               radius: 30, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 500),
-                                               radius: 20, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 600),
-                                               radius: 30, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 700),
-                                               radius: 40, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 100, vertical: 800),
-                                               radius: 20, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 300),
-                                               radius: 30, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 300),
-                                               radius: 40, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 300),
-                                               radius: 20, color: .blue),
-                                           Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 300),
-                                               radius: 10, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 300),
-                                               radius: 40, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 700, vertical: 300),
-                                               radius: 30, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 400),
-                                               radius: 20, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 500),
-                                               radius: 10, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 600),
-                                               radius: 10, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 700),
-                                               radius: 20, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 700, vertical: 800),
-                                               radius: 30, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 400),
-                                               radius: 30, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 400),
-                                               radius: 20, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 400),
-                                               radius: 10, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 350, vertical: 450),
-                                               radius: 30, color: .orange),
-                                           Peg(centre: PhysicsVector2D(horizontal: 450, vertical: 450),
-                                               radius: 20, color: .orange)
-                                          ])
+
+    static func createColorfulLevel() -> Level {
+        let pallete: [PegColor] = [.blue, .pink, .red, .yellow]
+
+        let level = Level(zeggleItems: [])
+
+        var xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+
+        let xStep = DimensionsConstants.rightWall * 0.1
+
+        var yStart = DimensionsConstants.tappableMinY + DimensionsConstants.tappableMaxY * 0.1
+
+        let yStep = DimensionsConstants.tappableMaxY * 0.1
+
+        var pointer = 0
+
+        for _ in (0..<8) {
+            for _ in (0..<8) {
+                let newPeg = Peg(centre: PhysicsVector2D(horizontal: xStart, vertical: yStart),
+                                 radius: 25,
+                                 color: pallete[pointer])
+                level.addItem(zeggleItem: newPeg)
+                xStart += xStep
+                pointer += 1
+                if pointer == 4 {
+                    pointer = 0
+                }
+            }
+            xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+            yStart += yStep
+        }
+
+        level.rename(newName: "Peggle the Rock")
+
+        return level
+
+    }
+
+    static func createZombieLevel() -> Level {
+        let pallete: [PegColor] = [.blue, .pink, .red, .yellow]
+
+        let level = Level(zeggleItems: [])
+
+        var xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+
+        let xStep = DimensionsConstants.rightWall * 0.1
+
+        var yStart = DimensionsConstants.tappableMinY + DimensionsConstants.tappableMaxY * 0.1
+
+        let yStep = DimensionsConstants.tappableMaxY * 0.1
+
+        var pointer = 0
+
+        for _ in (0..<8) {
+            for _ in (0..<8) {
+                if pointer == 4 {
+                    let newPeg = Peg(centre: PhysicsVector2D(horizontal: xStart, vertical: yStart),
+                                     radius: 25,
+                                     color: .zombie)
+                    level.addItem(zeggleItem: newPeg)
+                    pointer = 0
+                    continue
+                }
+                let newPeg = Peg(centre: PhysicsVector2D(horizontal: xStart, vertical: yStart),
+                                 radius: 25,
+                                 color: pallete[pointer])
+                level.addItem(zeggleItem: newPeg)
+                xStart += xStep
+                pointer += 1
+                if pointer == 5 {
+                    pointer = 0
+                }
+            }
+            xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+            yStart += yStep
+        }
+
+        level.rename(newName: "Zombie")
+
+        return level
+    }
+
+    static func createBlockAndBucketLevel() -> Level {
+        let level = Level(zeggleItems: [])
+
+        var xStart = DimensionsConstants.leftWall + DimensionsConstants.rightWall * 0.1
+
+        let xStep = DimensionsConstants.rightWall * 0.1
+
+        var yStart = DimensionsConstants.tappableMinY + DimensionsConstants.tappableMaxY * 0.1
+
+        let yStep = DimensionsConstants.tappableMaxY * 0.1
+
+        for _ in (0..<8) {
+            let block = Block(centre: PhysicsVector2D(horizontal: xStart, vertical: yStart), height: 50)
+            level.addItem(zeggleItem: block)
+            xStart += xStep
+            yStart += yStep
+        }
+
+        level.rename(newName: "Test block and bucket")
+        level.createBucket()
+
+        return level
+    }
 
     static let emptyLevel =  {
         let level = Level(zeggleItems: [])
@@ -78,67 +159,15 @@ class SampleLevel {
     }()
 
     static func generateSampleLevels() -> [Level] {
-        let filledLevel = Level(zeggleItems: [Peg(centre: PhysicsVector2D(horizontal: 100, vertical: 300),
-                                                  radius: 20, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 400),
-                                                  radius: 30, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 500),
-                                                  radius: 20, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 600),
-                                                  radius: 30, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 700),
-                                                  radius: 40, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 100, vertical: 800),
-                                                  radius: 20, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 300),
-                                                  radius: 30, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 300),
-                                                  radius: 40, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 200, vertical: 300),
-                                                  radius: 20, color: .blue),
-                                              Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 300),
-                                                  radius: 10, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 300),
-                                                  radius: 40, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 700, vertical: 300),
-                                                  radius: 30, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 400),
-                                                  radius: 20, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 500),
-                                                  radius: 10, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 600),
-                                                  radius: 10, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 600, vertical: 700),
-                                                  radius: 20, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 700, vertical: 800),
-                                                  radius: 30, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 400, vertical: 400),
-                                                  radius: 30, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 500, vertical: 400),
-                                                  radius: 20, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 400),
-                                                  radius: 10, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 350, vertical: 450),
-                                                  radius: 30, color: .orange),
-                                              Peg(centre: PhysicsVector2D(horizontal: 450, vertical: 450),
-                                                  radius: 20, color: .zombie)
-                                             ])
-        filledLevel.rename(newName: "Sample 1")
 
-        let filledLevel2 = Level(zeggleItems: [Peg(centre: PhysicsVector2D(horizontal: 300, vertical: 400),
-                                           radius: 10, color: .orange),
-                                       Peg(centre: PhysicsVector2D(horizontal: 350, vertical: 450),
-                                           radius: 30, color: .orange),
-                                       Peg(centre: PhysicsVector2D(horizontal: 450, vertical: 450),
-                                           radius: 20, color: .orange)])
-        filledLevel2.rename(newName: "Sample 2")
+        let filledLevel = createFilledLevelOne()
 
-        let emptyLevel = Level(zeggleItems: [])
-        emptyLevel.rename(newName: "emptyLevel")
+        let filledLevel2 = createColorfulLevel()
 
-        let testBlock = Level(zeggleItems: [Block(centre: PhysicsVector2D(horizontal: 400, vertical: 800), height: 50)])
-        testBlock.rename(newName: "testBlock")
+        let zombieLevel = createZombieLevel()
 
-        return [filledLevel, filledLevel2, emptyLevel, testBlock]
+        let testBlock = createBlockAndBucketLevel()
+
+        return [filledLevel, filledLevel2, zombieLevel, testBlock]
     }
 }

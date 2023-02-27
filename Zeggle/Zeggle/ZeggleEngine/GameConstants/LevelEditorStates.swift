@@ -40,6 +40,14 @@ enum LevelEditorStates: Equatable {
             return ImageNameToFile.orangePeg
         case .item(value: .bluePeg):
             return ImageNameToFile.bluePeg
+        case .item(value: .pinkPeg):
+            return ImageNameToFile.pinkPeg
+        case .item(value: .yellowPeg):
+            return ImageNameToFile.yellowPeg
+        case .item(value: .redPeg):
+            return ImageNameToFile.redPeg
+        case .item(value: .zombiePeg):
+            return ImageNameToFile.zombie
         default:
             return nil
         }

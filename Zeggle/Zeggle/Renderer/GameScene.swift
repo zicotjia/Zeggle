@@ -13,6 +13,7 @@ struct GameScene: View {
     var body: some View {
         let gameEnded = gameLoop.gameHasEnded()
         return VStack(spacing: 0) {
+            Spacer()
                     ZStack {
                         BackgroundView()
                         VStack {

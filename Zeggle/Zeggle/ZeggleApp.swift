@@ -12,9 +12,9 @@ struct ZeggleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GameView(gameLoop: GameLoop(level: SampleLevel.level))
+            GameView(gameLoop: GameLoop(level: SampleLevel.createFilledLevelOne()))
                 .onAppear {
-                    MyMusicPlayer.sharedInstance
+                    MyMusicPlayer.sharedInstance.activate()
                 }
         }
     }

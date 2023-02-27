@@ -8,7 +8,7 @@ import CoreGraphics
 
 struct BallConstants {
     static let defaultIsFixed = false
-    static let radius: CGFloat = 27
+    static let radius: CGFloat = 27 * DimensionsConstants.resolutionRatio
     static let defaultMass = Float(10.0)
     static let elasticity = Float(0.6)
     static let ballInitialVelocity = CGFloat(100)

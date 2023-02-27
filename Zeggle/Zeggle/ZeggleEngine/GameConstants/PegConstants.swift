@@ -12,7 +12,7 @@ struct PegConstants {
     static let initialVerticalSpeed = CGFloat.zero
     static let defaultMass = Float(1000)
     static let defaultIsFixed = true
-    static let radius: CGFloat = 27
+    static let radius: CGFloat = 27 * DimensionsConstants.resolutionRatio
     static let minimumX = CGFloat.zero
     static let maximumX: CGFloat = UIScreen.main.bounds.size.width
     static let minimumY = CGFloat.zero

@@ -9,17 +9,28 @@ import SwiftUI
 
 struct SizeSliderView: View {
     @Binding var radius: CGFloat
+    @Binding var levelEditorState: LevelEditorStates
 
     var body: some View {
-        HStack {
-            Text("Size ")
-            Slider(value: $radius, in: 10...70)
+        VStack {
+            HStack {
+                Text("Size ")
+                Slider(value: $radius, in: 10...50)
+            }
+            HStack {
+                if let image = levelEditorState.image {
+                    Image(image).resizable()
+                        .frame(width: radius * 2 * DimensionsConstants.resolutionRatio,
+                               height: radius * 2 * DimensionsConstants.resolutionRatio)
+                }
+            }.frame(minWidth: 90, minHeight: 90)
         }
+
     }
 }
 
 struct SizeSliderView_Previews: PreviewProvider {
     static var previews: some View {
-        SizeSliderView(radius: .constant(20))
+        SizeSliderView(radius: .constant(20), levelEditorState: .constant(.deletePeg))
     }
 }

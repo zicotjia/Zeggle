@@ -10,9 +10,9 @@ import UIKit
 struct DimensionsConstants {
     static let defaultHeight: CGFloat = 2160
     static let defaultWidth: CGFloat = 1620
-    static let deviceHeight: CGFloat = UIScreen.main.bounds.size.height
-    static let deviceWidth: CGFloat = UIScreen.main.bounds.size.width
-    static let resolutionRatio: CGFloat = deviceWidth / defaultWidth
+    static let deviceHeight: CGFloat = UIScreen.main.bounds.height
+    static let deviceWidth: CGFloat = UIScreen.main.bounds.width
+    static let resolutionRatio: CGFloat = UIScreen.main.bounds.width / 810
     static let detailViewHeight: CGFloat = deviceHeight * 0.1
     static let toolBarHeight: CGFloat = deviceHeight * 0.2
     static let boxedHeight = deviceWidth
@@ -26,8 +26,8 @@ struct DimensionsConstants {
     static let tappableMinX = 0
     static let tappableMaxX = levelWidth
     static let ceiling: CGFloat = 0
-    static let floor: CGFloat = UIScreen.main.bounds.size.height
+    static let floor: CGFloat = UIScreen.main.bounds.height
     static let leftWall: CGFloat = 0
-    static let rightWall: CGFloat = UIScreen.main.bounds.size.width
+    static let rightWall: CGFloat = UIScreen.main.bounds.width
     static let horizontalCentrePosition: CGFloat = rightWall / 2
 }

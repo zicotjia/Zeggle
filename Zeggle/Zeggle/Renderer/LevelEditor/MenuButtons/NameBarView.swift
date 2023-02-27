@@ -16,7 +16,7 @@ struct NameBarView: View {
         .focused($isFocused)
         .onChange(of: isFocused) { _ in
             gameLoop.renameLevel(newName: newName)
-        }
+        }.multilineTextAlignment(.center)
 
     }
 }

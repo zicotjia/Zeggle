@@ -28,6 +28,6 @@ struct AddItemButtonView: View {
 
 struct AddItemButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddBluePegButtonView(levelEditorState: .constant(LevelEditorStates.off))
+        AddItemButtonView(levelEditorState: .constant(LevelEditorStates.off), itemType: .bluePeg)
     }
 }

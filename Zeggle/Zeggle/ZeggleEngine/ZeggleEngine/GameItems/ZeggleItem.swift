@@ -30,8 +30,8 @@ class ZeggleItem: Hashable {
         switch shape {
         case .round:
             self.physicsBody = RoundBody(centre: centre, hSpeed: hSpeed,
-                                           vSpeed: vSpeed, radius: radius, mass: mass,
-                                           isFixed: isFixed, elasticity: elasticity)
+                                         vSpeed: vSpeed, radius: radius * DimensionsConstants.resolutionRatio,
+                                         mass: mass, isFixed: isFixed, elasticity: elasticity)
         case .rectangle:
             self.physicsBody = RectangleBody(centre: centre, hSpeed: hSpeed,
                                              vSpeed: vSpeed, height: height, width: width,

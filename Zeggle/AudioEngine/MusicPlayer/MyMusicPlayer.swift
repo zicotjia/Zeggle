@@ -23,7 +23,7 @@ class MyMusicPlayer {
 
         self.processingGraph = processingGraph
         self.refreshMusicPlayer()
-        self.generateAUNode(preset: 0)
+        self.generateAUNode(preset: 13)
     }
 
     func playTrack(track: Track) {
@@ -51,6 +51,10 @@ class MyMusicPlayer {
             MusicSequenceSetAUGraph(sequence, self.processingGraph)
             MusicPlayerStart(self.musicPlayer!)
         }
+    }
+
+    func activate() {
+
     }
 
     private func refreshMusicPlayer() {

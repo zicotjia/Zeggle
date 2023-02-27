@@ -6,19 +6,23 @@ struct StartButtonView: View {
     @State var gameMode = GameMode.standard
 
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Picker("Game Mode", selection: $gameMode) {
                 ForEach(GameMode.allCases) { gameMode in
-                    Text(gameMode.rawValue)
+                    Text(gameMode.rawValue).truncationMode(.tail)
                 }
                 .onChange(of: gameMode) { _ in
                     gameLoop.changeGameMode(gameMode: gameMode)
                 }
-            }.frame(minWidth: 120)
+            }
+            .frame(minWidth: DimensionsConstants.deviceWidth * 0.2, maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.pink)
             Button("Start") {
                 levelListViewModel.updateLevel(level: gameLoop.level)
                 gameLoop.startGame()
             }
+            .frame(minWidth: DimensionsConstants.deviceWidth * 0.1, maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.purple)
         }
     }
 }

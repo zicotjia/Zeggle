@@ -221,7 +221,6 @@ class Database {
             let preparedQuery = try database?.prepare(query)
 
             try preparedQuery?.run(level.name, level.numberOfStandardBalls, level.numberOfSpookyBalls)
-            print("Saved Level \(level.name) into Database")
         } catch {
             print(error)
         }

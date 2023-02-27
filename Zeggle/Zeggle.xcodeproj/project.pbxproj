@@ -20,9 +20,7 @@
 		172D331429A7A5F7002CBC7A /* LevelWindowConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D331329A7A5F7002CBC7A /* LevelWindowConstants.swift */; };
 		172D331629A7A6C1002CBC7A /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D331529A7A6C1002CBC7A /* LevelSelectView.swift */; };
 		172D331829A7A6FD002CBC7A /* LevelSelectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D331729A7A6FD002CBC7A /* LevelSelectionConstants.swift */; };
-		172D332529A7CA2A002CBC7A /* AddBluePegButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332429A7CA2A002CBC7A /* AddBluePegButtonView.swift */; };
 		172D332729A7CA77002CBC7A /* ButtonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332629A7CA77002CBC7A /* ButtonConstants.swift */; };
-		172D332929A7CB56002CBC7A /* AddOrangePegButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332829A7CB56002CBC7A /* AddOrangePegButtonView.swift */; };
 		172D332B29A7CB6D002CBC7A /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332A29A7CB6D002CBC7A /* DeleteButtonView.swift */; };
 		172D332D29A7CB8F002CBC7A /* LevelEditorButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332C29A7CB8F002CBC7A /* LevelEditorButtonsView.swift */; };
 		172D332F29A7CBB9002CBC7A /* LoadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D332E29A7CBB9002CBC7A /* LoadButtonView.swift */; };
@@ -138,9 +136,7 @@
 		172D331329A7A5F7002CBC7A /* LevelWindowConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelWindowConstants.swift; sourceTree = "<group>"; };
 		172D331529A7A6C1002CBC7A /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 		172D331729A7A6FD002CBC7A /* LevelSelectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionConstants.swift; sourceTree = "<group>"; };
-		172D332429A7CA2A002CBC7A /* AddBluePegButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBluePegButtonView.swift; sourceTree = "<group>"; };
 		172D332629A7CA77002CBC7A /* ButtonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConstants.swift; sourceTree = "<group>"; };
-		172D332829A7CB56002CBC7A /* AddOrangePegButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrangePegButtonView.swift; sourceTree = "<group>"; };
 		172D332A29A7CB6D002CBC7A /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
 		172D332C29A7CB8F002CBC7A /* LevelEditorButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelEditorButtonsView.swift; sourceTree = "<group>"; };
 		172D332E29A7CBB9002CBC7A /* LoadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadButtonView.swift; sourceTree = "<group>"; };
@@ -288,8 +284,6 @@
 		172D332229A7CA0A002CBC7A /* LevelEditorButtons */ = {
 			isa = PBXGroup;
 			children = (
-				172D332429A7CA2A002CBC7A /* AddBluePegButtonView.swift */,
-				172D332829A7CB56002CBC7A /* AddOrangePegButtonView.swift */,
 				172D332A29A7CB6D002CBC7A /* DeleteButtonView.swift */,
 				172D332C29A7CB8F002CBC7A /* LevelEditorButtonsView.swift */,
 				172D334529A8BE90002CBC7A /* AmmoPickerView.swift */,
@@ -857,7 +851,6 @@
 				17CA29C429955A84006C66B9 /* BallView.swift in Sources */,
 				172D332D29A7CB8F002CBC7A /* LevelEditorButtonsView.swift in Sources */,
 				17CA299C29940139006C66B9 /* ObjectRemover.swift in Sources */,
-				172D332929A7CB56002CBC7A /* AddOrangePegButtonView.swift in Sources */,
 				17C87E842997EC8100AB8141 /* BallCreator.swift in Sources */,
 				17F0181D29AA8F3200EE5C38 /* SampleTrack.swift in Sources */,
 				172D334429A8B1C1002CBC7A /* GameMode.swift in Sources */,
@@ -867,7 +860,6 @@
 				17C381DF2990079B00417B5A /* PhysicsVector1D.swift in Sources */,
 				17CA29BB2995560F006C66B9 /* BackgroundView.swift in Sources */,
 				170B60DC29A51F1A0001E943 /* BucketCreator.swift in Sources */,
-				172D332529A7CA2A002CBC7A /* AddBluePegButtonView.swift in Sources */,
 				17E0BC9829ACACD200188DE0 /* PlaceableAreaView.swift in Sources */,
 				17F0181729AA77C700EE5C38 /* Track.swift in Sources */,
 				172D330E29A7A42A002CBC7A /* LevelView.swift in Sources */,
@@ -1030,8 +1022,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1060,8 +1052,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

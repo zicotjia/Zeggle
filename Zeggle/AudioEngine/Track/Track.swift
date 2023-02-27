@@ -54,15 +54,6 @@ class Track {
             time += beat
         }
 
-        var inMessage = MIDIChannelMessage(status: 0xB0, data1: 0, data2: 120, reserved: 0)
-        MusicTrackNewMIDIChannelEvent(track!, 0, &inMessage)
-
-        inMessage = MIDIChannelMessage(status: 0xB0, data1: 32, data2: 0, reserved: 0)
-        MusicTrackNewMIDIChannelEvent(track!, 0, &inMessage)
-
-//        inMessage = MIDIChannelMessage(status: 0xC0, data1: 24, data2: 0, reserved: 0)
-//        var err = MusicTrackNewMIDIChannelEvent(track!, 0.0, &inMessage)
-
         guard let sequence = sequence else {
             fatalError()
         }

@@ -10,17 +10,22 @@ import SwiftUI
 struct MenuButtonsView: View {
 
     var body: some View {
-        HStack {
-            Spacer().frame(width: 8)
+        HStack(spacing: 0) {
             LoadButtonView()
-            Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.cyan)
             SaveButtonView()
-            Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.red)
             ResetButtonView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.yellow)
             NameBarView()
+                .frame(minWidth: DimensionsConstants.deviceWidth * 0.3, maxWidth: .infinity, maxHeight: .infinity)
             ToggleMusicView()
+                .frame(minWidth: 120, maxWidth: .infinity, maxHeight: .infinity)
             StartButtonView()
-            Spacer().frame(width: 8)
+
         }
     }
 }

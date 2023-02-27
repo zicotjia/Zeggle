@@ -30,7 +30,7 @@ struct GameDetailsView: View {
                 Spacer()
             }
         }.frame(height: DimensionsConstants.detailViewHeight)
-            .background(Color.white)
+            .background(Color.pink)
     }
 }
 

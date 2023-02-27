@@ -13,7 +13,7 @@ struct ToggleMusicView: View {
 
     var body: some View {
         VStack {
-            Toggle("Toggle Musical Zeggle", isOn: $isOn)
+            Toggle("Music", isOn: $isOn)
                 .onChange(of: isOn) { _ in
                     if isOn {
                         gameLoop.toggleMusicOn()
