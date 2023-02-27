@@ -17,6 +17,25 @@
    some exceptions may be made as long as code quality is not compromised.
 3. Do not burn out. Have fun!
 
+
+## Features Not Fully Implemented 
+1. Rectangle Block, there is a test level with it (poorly implemented collision logic)
+2. Bucket, there is a test level with it (cannot implement collision logic)
+3. Rotatable Item (cannot implement physics engine logic)
+4. Ka-Boom powerup (cannot implement physics engine logic)
+5. Spicy Peg confusion peg (cannot implement correctly)
+7. Integration (no main menu)
+
+## Notes & Change in specification
+1. Check that soundFont is properly downloaded, it can be found in the AudioEngine Folder
+2. If there is no soundFont the music player will play a sine wave instead of guitar
+3. It is highly recommended to play in music mode. The non music mode is still there in case I will still be graded by PS3 integration in PS4
+4. The reset button has been changed to reset the level to its previously saved state instead of clearing the level for convenience sake.
+5. There are 3 sample levels and 1 test level. The sample levels and all other levels are made to scale correctly to all iPad size while the test level is not necessarily made to scale correctly. 
+6. Deleting level is not implemented
+7. The level editor won't be able to place item down the lower portion of the level. This is by design. It is to accomodate for the bucket which I fail to implement as of now and may come back to it in the future. There should be no item near the bucket so the bucket will not collide or overlap with other item as it is oscillating.
+8. There is no rectangle block in the level editor
+
 ## Dev Guide
 The entire project can be broken up to 5 components
 
@@ -93,15 +112,6 @@ LevelPickerScene shows the list of level in the game. It communicates with the L
 ### GameLoop
 GameLoop handle the logic of the game as it is being run, the level interact with the game loop to update its states as the game goes on. It also hold the state of the game such as whether it is in the middle of gameplay, is it in level picker or level designer to tell the renderer what to render.
 
-
-## Features Not Implemented 
-1. Rectangle Block (poorly implemented collision logic)
-2. Bucket (cannot implement collision logic)
-3. Rotatable Item (cannot implement physics engine logic)
-4. Ka-Boom powerup (cannot implement physics engine logic)
-5. Spicy Peg confusion peg (cannot implement correctly)
-6. Preloaded Level (no time to implement)
-7. Integration (no main menu and samples cannot reload without exitting the game)
 
 ## Rules of the Game
 There are currently 4 Game Modes that is selectable . They are selectable in the level designer
