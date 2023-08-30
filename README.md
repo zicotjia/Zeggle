@@ -14,11 +14,9 @@ https://github.com/zicotjia/Zeggle/assets/77394751/2e98b011-9d2a-4a9d-b95c-239fe
 
 Player can edit the level to their liking by adding pegs of different types and size. Players can also decide how many balls the player has access to in the level. 
 
-
-
 Player can also pick a game mode here (Go down to "Rules of Game" section for more details). Clicking on start will load the level with the selected game mode
 
-
+To save a level, name the level then click on save. If no name is selected, save changes made to the clicked level. If a level with the same name as the selected name exist, overwrite the existing level. 
 
 ## Ball
 1. Standard Ball <img width="39" alt="image" src="https://github.com/zicotjia/Zeggle/assets/77394751/d22320a4-adbe-470e-846b-7e213baee7a3">
@@ -68,8 +66,8 @@ Different coloured pegs will award different points
 
 ZombiePeg does not award points
 
-### Win and Lose Conditions
-Depends on the gameMode
+## Create level
+Create level button will load a level designer with no objects, click save after naming level to save the created level. 
 
 ## Level Designer Additional Features
 - Can select gameMode and resize item with item preview. Can select how many balls does the player start with in the level.
