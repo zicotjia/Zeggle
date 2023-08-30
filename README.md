@@ -6,7 +6,9 @@ This app is a simple clone of the game Peggle made entirely in Swift. In this ga
 ## Level Selector
 https://github.com/zicotjia/Zeggle/assets/77394751/a89140b7-a1d3-458c-a44d-f75778af5880
 
-Player can scroll down to pick which level to play. Clicking on the any level will load the level in the level designer
+Player can scroll down to pick which level to play. tapping on the any level will load the level in the level designer
+
+There are 3 default levels: "Level 1", "Rock", "Zombie"
 
 ## Level Designer
 
@@ -14,12 +16,22 @@ https://github.com/zicotjia/Zeggle/assets/77394751/2e98b011-9d2a-4a9d-b95c-239fe
 
 Player can edit the level to their liking by adding pegs of different types and size. Players can also decide how many balls the player has access to in the level. 
 
-Player can also pick a game mode here (Go down to "Rules of Game" section for more details). Clicking on start will load the level with the selected game mode
+https://github.com/zicotjia/Zeggle/assets/77394751/2387050b-a9ce-468d-be8a-c526f2e96f1c
 
-To save a level, name the level then click on save. If no name is selected, save changes made to the clicked level. If a level with the same name as the selected name exist, overwrite the existing level. 
+Player can also pick a game mode here (Go down to "Rules of Game" section for more details). tapping on start will load the level with the selected game mode
+
+https://github.com/zicotjia/Zeggle/assets/77394751/8a630ec3-33fb-4550-b9f9-484a98023967
+
+To create a new level, load a level in the level designer and make edits. Name the level then tap the save button, a new level with the specified name and layouts will be created. If no name is selected, save changes made to the taped level. If a level with the same name as the selected name exist, overwrite the existing level. 
+
+https://github.com/zicotjia/Zeggle/assets/77394751/5e34da0e-75ff-46b1-b2a8-426adb0abd97
+
+The 3 default levels cannot be editted but you can create a new level from it by specifying a different level name to be saved.
 
 ## Load button
-User can quickly load a level by selecting a name in the name selector and clicking the load button. If a level with the specified name exist, the level designer will load that level. If not then the user will be redirected to the level selector
+https://github.com/zicotjia/Zeggle/assets/77394751/116ea641-e254-427f-b3c1-4541e22cfb87
+
+Tapping on the load button will redirect user to the level selector.
 
 ## Ball
 1. Standard Ball <img width="39" alt="image" src="https://github.com/zicotjia/Zeggle/assets/77394751/d22320a4-adbe-470e-846b-7e213baee7a3">
@@ -41,9 +53,7 @@ Press a location in the screen and the cannon will aim and shoot a ball in the d
 ## Ball Selection
 https://github.com/zicotjia/Zeggle/assets/77394751/bada8693-1f4d-4d94-9637-cd7f658e628a
 
-Click on any of the ball to select what ball to be shot by the cannon.
-
-## Level Designer
+tap on any of the ball to select what ball to be shot by the cannon.
    
 ## Rules of the Game
 There are currently 4 Game Modes that is selectable . They are selectable in the level designer
@@ -70,21 +80,8 @@ Different coloured pegs will award different points
 ZombiePeg does not award points
 
 ## Create level
-Create level button will load a level designer with no objects, click save after naming level to save the created level. 
+https://github.com/zicotjia/Zeggle/assets/77394751/7cc22f5b-0511-4e9c-9e63-baf497708efd
 
-## Level Designer Additional Features
-- Can select gameMode and resize item with item preview. Can select how many balls does the player start with in the level.
+Create level button will load a level designer with no objects, tap save after naming level to save the created level. 
 
-- Reset now restore the previously saved state of that level.
 
-- Reset also works as a quick load feature. Filling another level name and clicking reset will automatically load the level with said name, beware that you will lose all unsaved progress if you quick load without saving beforehand.
-
-- Quick loading a sample level will create an empty level.
-
-- There is a create new level button at the bottom of the level picker.
-
-- Cannot save a level with name similar to the sample levels or empty name.
-
-- Editting level B but saving with level A in the textBox will overwrite level A and B will remain uneditted.
-
-- Starting a level will also saves the level
