@@ -18,6 +18,9 @@ Player can also pick a game mode here (Go down to "Rules of Game" section for mo
 
 To save a level, name the level then click on save. If no name is selected, save changes made to the clicked level. If a level with the same name as the selected name exist, overwrite the existing level. 
 
+## Load button
+User can quickly load a level by selecting a name in the name selector and clicking the load button. If a level with the specified name exist, the level designer will load that level. If not then the user will be redirected to the level selector
+
 ## Ball
 1. Standard Ball <img width="39" alt="image" src="https://github.com/zicotjia/Zeggle/assets/77394751/d22320a4-adbe-470e-846b-7e213baee7a3">
    - A standard ball that disappear when it reaches the bottom of the screen
