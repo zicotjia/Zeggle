@@ -1,5 +1,6 @@
 A peggle clone made in Swift for the NUS module CS3217
 
+## Navigation 
 ## Rules of the Game
 There are currently 4 Game Modes that is selectable . They are selectable in the level designer
 
