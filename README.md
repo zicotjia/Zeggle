@@ -84,4 +84,8 @@ https://github.com/zicotjia/Zeggle/assets/77394751/7cc22f5b-0511-4e9c-9e63-baf49
 
 Create level button will load a level designer with no objects, tap save after naming level to save the created level. 
 
+## Toggle Music
+https://github.com/zicotjia/Zeggle/assets/77394751/5f5c386f-c9ff-4e96-8243-9a5b432c19ba
+
+When music is toggled on, music notes will be played when a peg is hit and when it is removed
 
