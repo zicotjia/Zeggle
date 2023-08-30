@@ -16,6 +16,7 @@ struct ZeggleApp: App {
                 .onAppear {
                     MyMusicPlayer.sharedInstance.activate()
                 }
+                .ignoresSafeArea()
         }
     }
 }

@@ -31,7 +31,7 @@ class SampleLevel {
             yStart += yStep
         }
 
-        level.rename(newName: "Sample 1")
+        level.rename(newName: "Level 1")
 
         return level
     }
@@ -67,7 +67,7 @@ class SampleLevel {
             yStart += yStep
         }
 
-        level.rename(newName: "Peggle the Rock")
+        level.rename(newName: "Rock")
 
         return level
 
@@ -166,8 +166,6 @@ class SampleLevel {
 
         let zombieLevel = createZombieLevel()
 
-        let testBlock = createBlockAndBucketLevel()
-
-        return [filledLevel, filledLevel2, zombieLevel, testBlock]
+        return [filledLevel, filledLevel2, zombieLevel]
     }
 }

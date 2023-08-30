@@ -12,10 +12,6 @@ struct PhysicsVector1D {
 
     private(set) var magnitude: CGFloat
 
-    init(magnitude: CGFloat) {
-        self.magnitude = magnitude
-    }
-
     func reverse() -> PhysicsVector1D {
         return PhysicsVector1D(magnitude: -1 * magnitude)
     }

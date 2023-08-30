@@ -29,6 +29,10 @@ struct LevelSelectView: View {
                     gameLoop.switchLevel(level: Level(zeggleItems: []))
                     gameLoop.enterLevelEditor()
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(.white)
+                .padding(.bottom, 20)
+                .foregroundColor(.black)
             }
         }
    }
