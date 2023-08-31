@@ -5,10 +5,10 @@ struct LevelSelectView: View {
     @EnvironmentObject var gameLoop: GameLoop
 
     var body: some View {
-        ZStack {
-            Image(ImageNameToFile.background)
-                .resizable(resizingMode: .stretch)
-            VStack {
+        VStack {
+            ZStack {
+                Image(ImageNameToFile.background)
+                    .resizable(resizingMode: .stretch)
                 ScrollView(.vertical) {
                     SampleLevelListView(sampleLevels: levelListViewModel.sampleLevels)
                     LazyVGrid(columns: [GridItem(.flexible())]) {
@@ -25,15 +25,15 @@ struct LevelSelectView: View {
                         }
                     }
                 }
-                Button("Create New Level") {
-                    gameLoop.switchLevel(level: Level(zeggleItems: []))
-                    gameLoop.enterLevelEditor()
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.white)
-                .padding(.bottom, 20)
-                .foregroundColor(.black)
             }
+            Button("Create New Level") {
+                gameLoop.switchLevel(level: Level(zeggleItems: []))
+                gameLoop.enterLevelEditor()
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.blue)
+            .padding(.bottom, 20)
+            .foregroundColor(.black)
         }
    }
 }

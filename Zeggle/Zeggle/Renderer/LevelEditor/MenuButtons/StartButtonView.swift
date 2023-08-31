@@ -17,12 +17,14 @@ struct StartButtonView: View {
             }
             .frame(minWidth: DimensionsConstants.deviceWidth * 0.2, maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.pink)
+            .foregroundColor(.black)
             Button("Start") {
                 levelListViewModel.updateLevel(level: gameLoop.level)
                 gameLoop.startGame()
             }
             .frame(minWidth: DimensionsConstants.deviceWidth * 0.1, maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.purple)
+            .foregroundColor(.black)
         }
     }
 }

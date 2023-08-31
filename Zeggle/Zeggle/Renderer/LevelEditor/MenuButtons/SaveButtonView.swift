@@ -7,7 +7,7 @@ struct SaveButtonView: View {
     var body: some View {
         Button("Save") {
             levelListViewModel.updateLevel(level: gameLoop.level)
-        }
+        }.foregroundColor(.black)
     }
 }
 

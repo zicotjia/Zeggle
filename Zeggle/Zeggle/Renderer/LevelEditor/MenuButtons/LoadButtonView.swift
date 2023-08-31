@@ -15,7 +15,7 @@ struct LoadButtonView: View {
     var body: some View {
         Button("Load") {
             gameLoop.changeState(state: .levelPicker)
-        }
+        }.foregroundColor(.black)
     }
 }
 

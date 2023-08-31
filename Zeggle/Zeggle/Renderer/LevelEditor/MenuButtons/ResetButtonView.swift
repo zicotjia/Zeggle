@@ -6,7 +6,7 @@ struct ResetButtonView: View {
     var body: some View {
         Button("Reset") {
             gameLoop.resetLevel()
-        }
+        }.foregroundColor(.black)
     }
 }
 
